@@ -1,0 +1,56 @@
+﻿@model UsuarioModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Editar Usuario</h5>
+    <div class="card-body">
+        <form asp-action="Edit" asp-controller="Maintainer" method="post">
+            <input asp-for="IdUsuario" type="hidden" class="form-control">
+
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input asp-for="Nombre" type="text" class="form-control">
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Paterno</label>
+                <input asp-for="Paterno" type="text" class="form-control">
+                <span asp-validation-for="Paterno" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Materno</label>
+                <input asp-for="Materno" type="text" class="form-control">
+                <span asp-validation-for="Materno" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input asp-for="Email" type="text" class="form-control">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nombre de usuario</label>
+                <input asp-for="NombreUsuario" type="text" class="form-control">
+                <span asp-validation-for="NombreUsuario" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Celular</label>
+                <input asp-for="Movil" type="text" class="form-control">
+                <span asp-validation-for="Movil" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input">
+                <label asp-for="Activo" class="form-check-label" for="exampleCheck1">Activo</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-action="GetList" asp-controller="Maintainer" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>

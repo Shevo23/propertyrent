@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - InmueblesWeb</title>
+	<link rel="stylesheet" href="~/css/LoginInternal.css" />
+	<script type="text/javascript" src="~/js/LoginInternal.js"></script>
+	@await RenderSectionAsync("Scripts", required: false)
+	
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
+<footer>
+	<p>
+		<i class="fa fa-heart"></i>&copy; 2023 - InmueblesWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+	</p>
+</footer>

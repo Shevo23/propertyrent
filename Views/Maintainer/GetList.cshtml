@@ -1,0 +1,45 @@
+﻿@model List<UsuarioModel>
+@{
+    ViewData["Title"] = "GetList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Lista usuarios</h5>
+    <div class="card-body">
+        <a asp-action="Save" asp-controller="Maintainer" class="btn btn-success">Crear nuevo</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Paterno</th>
+                    <th>Materno</th>
+                    <th>Email</th>
+                    <th>NombreUsuario</th>
+                    <th>Movil</th>
+                    <th>Activo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>@item.Paterno</td>
+                        <td>@item.Materno</td>
+                        <td>@item.Email</td>
+                        <td>@item.NombreUsuario</td>
+                        <td>@item.Movil</td>
+                        <td>@item.Activo</td>
+                        <td>
+                            <a asp-action="Edit" asp-controller="Maintainer" class="btn btn-primary btn-sm" asp-route-idUsuario="@item.IdUsuario">Editar</a>
+                        </td>
+                        <td>
+                            <a asp-action="Delete" asp-controller="Maintainer" class="btn btn-danger btn-sm" asp-route-idUsuario="@item.IdUsuario">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
