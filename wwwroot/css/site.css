@@ -14,13 +14,24 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #f4f4f4;
 }
 
+.hero-image {
+    background-image: url('../images/logo.jpg');
+    background-color: #f4f4f4;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.5;
+    /*position: relative;*/
+}
 
 footer {
-    background-color: #222;
-    color: #fff;
+    background-color: #9c9c9c;
+    color: #fbd253;
     font-size: 14px;
     bottom: 0;
     position: fixed;
@@ -32,6 +43,7 @@ footer {
 
     footer p {
         margin: 10px 0;
+        color: #fbd253;
     }
 
     footer i {
@@ -39,6 +51,6 @@ footer {
     }
 
     footer a {
-        color: #3c97bf;
+        color: #fff;
         text-decoration: none;
     }

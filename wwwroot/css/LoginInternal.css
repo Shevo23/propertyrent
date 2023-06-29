@@ -1,12 +1,12 @@
 ﻿
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+/*@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');*/
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    background: #f6f5f7;
+    background: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,8 +46,8 @@ a {
 
 button {
     border-radius: 20px;
-    border: 1px solid #FF4B2B;
-    background-color: #FF4B2B;
+    border: 1px solid #990f26;
+    background-color: #990f26;
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
@@ -90,7 +90,7 @@ input {
 }
 
 .container {
-    background-color: #fff;
+    background-color: #f4f4f4;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     position: relative;
@@ -159,9 +159,9 @@ input {
 }
 
 .overlay {
-    background: #FF416C;
-    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-    background: linear-gradient(to right, #FF4B2B, #FF416C);
+    background: #990f26;
+    background: -webkit-linear-gradient(to right, #FF4B2B, #990f26);
+    background: linear-gradient(to right, #FF4B2B, #990f26);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
@@ -226,8 +226,8 @@ input {
     }
 
 footer {
-    background-color: #222;
-    color: #fff;
+    background-color: #9c9c9c;
+    color: #fbd253;
     font-size: 14px;
     bottom: 0;
     position: fixed;
@@ -239,6 +239,7 @@ footer {
 
     footer p {
         margin: 10px 0;
+        color: #fbd253;
     }
 
     footer i {
@@ -246,6 +247,6 @@ footer {
     }
 
     footer a {
-        color: #3c97bf;
+        color: #fff;
         text-decoration: none;
     }
