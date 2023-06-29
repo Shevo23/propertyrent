@@ -8,32 +8,6 @@ namespace InmueblesWeb.Data
 {
     public class UsuarioData
     {
-        public int ValidaUsuario(UsuarioModel usuarioModel)
-        {
-
-            usuarioModel.Password = ConvertirSha256(usuarioModel.Password);
-
-            var cn = new Conexion();
-
-            using (var conexion = new SqlConnection(cn.GetConexionSQL()))
-            {
-                conexion.Open();
-
-                SqlCommand cmd = new SqlCommand("sp_ValidaUsuario", conexion);
-                cmd.Parameters.Add(new SqlParameter("Email", usuarioModel.Email));
-                cmd.Parameters.Add(new SqlParameter("Password", usuarioModel.Password));
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                var result = cmd.ExecuteScalar();
-
-
-                usuarioModel.IdUsuario = result == null ? 0 : (int)result;
-
-            }
-
-            return usuarioModel.IdUsuario;
-        }
-
         public List<UsuarioModel> GetUsuarios()
         {
             var oLista = new List<UsuarioModel>();

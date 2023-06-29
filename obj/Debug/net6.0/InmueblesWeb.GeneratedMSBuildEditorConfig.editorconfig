@@ -40,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxFZGl0Um9sZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Maintainer/EditTipoIdentificacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxFZGl0VGlwb0lkZW50aWZpY2FjaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Maintainer/GetList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxHZXRMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,12 +52,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxHZXRMaXN0Um9sZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Maintainer/GetListTiposIdentificacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxHZXRMaXN0VGlwb3NJZGVudGlmaWNhY2lvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Maintainer/Save.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxTYXZlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Maintainer/SaveRoles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxTYXZlUm9sZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Maintainer/SaveTipoIdentificacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxTYXZlVGlwb0lkZW50aWZpY2FjaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Shared/Error.cshtml]

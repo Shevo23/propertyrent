@@ -15,12 +15,13 @@ namespace InmueblesWeb.Models
         [Required(ErrorMessage = "El campo materno es obligatorio")]
         public string? Materno { get; set; }
 
-        [Required(ErrorMessage = "El campo email es obligatorio")]
+        [Required(ErrorMessage = "El email es obligatorio")]
         public string? Email { get; set; }
 
-        [Required(ErrorMessage = "El campo nombre usuario es obligatorio")]
+        [Required(ErrorMessage = "El nombre usuario es obligatorio")]
         public string? NombreUsuario { get; set; }
-        
+
+        [Required(ErrorMessage = "El password es obligatorio")]
         public string? Password { get; set; }
 
         [Required(ErrorMessage = "El campo celular es obligatorio")]

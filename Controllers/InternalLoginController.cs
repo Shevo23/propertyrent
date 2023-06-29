@@ -6,7 +6,7 @@ namespace InmueblesWeb.Controllers
 {
     public class InternalLoginController : Controller
     {
-        UsuarioData usuarioData = new UsuarioData();
+        LoginData loginData = new LoginData();
 
         public IActionResult Login()
         {
@@ -14,9 +14,14 @@ namespace InmueblesWeb.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(UsuarioModel usuarioModel)
+        public IActionResult Login(LoginModel usuarioModel)
         {
-            var response = usuarioData.ValidaUsuario(usuarioModel);
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var response = loginData.ValidaUsuario(usuarioModel);
 
             
             if (response == 1)

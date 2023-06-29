@@ -159,9 +159,61 @@ namespace InmueblesWeb.Controllers
 
         #region TipoIdentificacion
 
+        public IActionResult EditTipoIdentificacion(int idTipoIdentificacion)
+        {
+            var oUsuario = identificacionData.GetTipoIdentificacion(idTipoIdentificacion);
+
+            return View(oUsuario);
+        }
+
+        [HttpPost]
+        public IActionResult EditTipoIdentificacion(TipoIdentificacionModel  tipoIdentificacionModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var response = identificacionData.EditTipoIdentificacion(tipoIdentificacionModel);
+
+            if (response)
+            {
+                return RedirectToAction("GetListTiposIdentificacion");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public IActionResult SaveTipoIdentificacion(TipoIdentificacionModel tipoIdentificacionModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var response = identificacionData.SaveTipoIdentificacion(tipoIdentificacionModel);
+
+            if (response)
+            {
+                return RedirectToAction("GetListTiposIdentificacion");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public IActionResult SaveTipoIdentificacion()
+        {
+            return View();
+        }
+
         public IActionResult GetListTiposIdentificacion()
         {
-            var oListaRoles = rolesData.GetRoles();
+            var oListaRoles = identificacionData.GetTipoIdentificacion();
             return View(oListaRoles);
         }
 
