@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ow/hJE1vDgqQihesLFzXdDyHjampoawmwtOlhWvshf1GQ25/THhInuT2gCj2QoxW2wCTugqwxmE+MMYPxGgbsg==",
+  "dgSpecHash": "VrFpt/USVtbPEfQTyoWKfI8bmSMJNJX55Ggl4Y9JVv1TYR/M+LP67ufm9SqeExCVP7y4bzA1OD12ZVeMdHusCA==",
   "success": true,
-  "projectFilePath": "C:\\Proyectos Locales\\Inmuebles\\InmueblesWeb\\InmueblesWeb.csproj",
+  "projectFilePath": "C:\\Users\\THINKPAD\\source\\repos\\InmoviliariaServ\\InmueblesWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\THINKPAD\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\THINKPAD\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

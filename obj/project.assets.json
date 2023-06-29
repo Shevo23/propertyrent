@@ -11689,11 +11689,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Proyectos Locales\\Inmuebles\\InmueblesWeb\\InmueblesWeb.csproj",
+      "projectUniqueName": "C:\\Users\\THINKPAD\\source\\repos\\InmoviliariaServ\\InmueblesWeb.csproj",
       "projectName": "InmueblesWeb",
-      "projectPath": "C:\\Proyectos Locales\\Inmuebles\\InmueblesWeb\\InmueblesWeb.csproj",
+      "projectPath": "C:\\Users\\THINKPAD\\source\\repos\\InmoviliariaServ\\InmueblesWeb.csproj",
       "packagesPath": "C:\\Users\\THINKPAD\\.nuget\\packages\\",
-      "outputPath": "C:\\Proyectos Locales\\Inmuebles\\InmueblesWeb\\obj\\",
+      "outputPath": "C:\\Users\\THINKPAD\\source\\repos\\InmoviliariaServ\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

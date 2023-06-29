@@ -9,73 +9,73 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = InmueblesWeb
 build_property.RootNamespace = InmueblesWeb
-build_property.ProjectDir = C:\Proyectos Locales\Inmuebles\InmueblesWeb\
+build_property.ProjectDir = C:\Users\THINKPAD\source\repos\InmoviliariaServ\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Proyectos Locales\Inmuebles\InmueblesWeb
+build_property.MSBuildProjectDirectory = C:\Users\THINKPAD\source\repos\InmoviliariaServ
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/Home/Index.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/Home/Privacy.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/InternalLogin/Login.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/InternalLogin/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWxMb2dpblxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/Maintainer/Delete.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Maintainer/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/Maintainer/Edit.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Maintainer/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/Maintainer/EditRoles.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Maintainer/EditRoles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxFZGl0Um9sZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/Maintainer/GetList.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Maintainer/GetList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxHZXRMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/Maintainer/GetListRoles.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Maintainer/GetListRoles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxHZXRMaXN0Um9sZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/Maintainer/Save.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Maintainer/Save.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxTYXZlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/Maintainer/SaveRoles.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Maintainer/SaveRoles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbnRhaW5lclxTYXZlUm9sZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/Shared/Error.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/Shared/_LayoutInternal.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Shared/_LayoutInternal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRJbnRlcm5hbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/_ViewImports.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/_ViewStart.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos Locales/Inmuebles/InmueblesWeb/Views/Shared/_Layout.cshtml]
+[C:/Users/THINKPAD/source/repos/InmoviliariaServ/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-lq66nrw3qa
