@@ -9,6 +9,7 @@ namespace InmueblesWeb.Controllers
         UsuarioData usuarioData = new UsuarioData();
         RolesData rolesData = new RolesData();
         TipoIdentificacionData identificacionData = new TipoIdentificacionData();
+        TipoPropiedadData propiedadData = new TipoPropiedadData();
 
         #region Usuarios
 
@@ -214,6 +215,68 @@ namespace InmueblesWeb.Controllers
         public IActionResult GetListTiposIdentificacion()
         {
             var oListaRoles = identificacionData.GetTipoIdentificacion();
+            return View(oListaRoles);
+        }
+
+        #endregion
+
+        #region TipoPropiedad
+
+        public IActionResult EditTipoPropiedad(int idTipoPropiedad)
+        {
+            var oPropiedad = propiedadData.GetTipoPropiedad(idTipoPropiedad);
+
+            return View(oPropiedad);
+        }
+
+        [HttpPost]
+        public IActionResult EditTipoPropiedad(TipoPropiedadModel tipoPropiedadModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var response = propiedadData.EditTipoPropiedad(tipoPropiedadModel);
+
+            if (response)
+            {
+                return RedirectToAction("GetListTipoPropiedad");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public IActionResult SaveTipoPropiedad(TipoPropiedadModel tipoPropiedadModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var response = propiedadData.SaveTipoPropiedad(tipoPropiedadModel);
+
+            if (response)
+            {
+                return RedirectToAction("GetListTipoPropiedad");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public IActionResult SaveTipoPropiedad()
+        {
+            return View();
+        }
+
+        public IActionResult GetListTipoPropiedad()
+        {
+            var oListaRoles = propiedadData.GetTipoPropiedad();
             return View(oListaRoles);
         }
 

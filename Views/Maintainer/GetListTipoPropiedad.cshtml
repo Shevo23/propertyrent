@@ -1,0 +1,33 @@
+﻿@model List<TipoPropiedadModel>
+@{
+    ViewData["Title"] = "GetListTipoPropiedad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Lista tipos de propiedad</h5>
+    <div class="card-body">
+        <a asp-action="SaveTipoPropiedad" asp-controller="Maintainer" class="btn btn-success">Crear nuevo</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id Tipo</th>
+                    <th>Descripcion</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.IdTipoPropiedad</td>
+                        <td>@item.Descripcion</td>
+                        <td>
+                            <a asp-action="EditTipoPropiedad" asp-controller="Maintainer" class="btn btn-primary btn-sm" asp-route-idUsuario="@item.IdTipoPropiedad">Editar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

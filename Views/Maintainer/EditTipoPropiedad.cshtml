@@ -1,0 +1,21 @@
+﻿@model TipoPropiedadModel
+@{
+    ViewData["Title"] = "EditTipoPropiedad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Editar tipo identificación</h5>
+    <div class="card-body">
+        <form asp-action="EditTipoPropiedad" asp-controller="Maintainer" method="post">
+            <input asp-for="IdTipoPropiedad" type="hidden" class="form-control">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input asp-for="Descripcion" type="text" class="form-control">
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-action="GetListTipoPropiedad" asp-controller="Maintainer" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>
