@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Inmobiliaria.Master.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link rel="shortcut icon" href="<%=ResolveUrl("~/images/logo.ico")%>" />
+    <title>Inmobiliaria Ser.</title>
+
+    <!-- CSS -->
+    <link href="<%=ResolveUrl("~/Content/bootstrap.css") %>" rel="stylesheet" />
+    <link href="<%=ResolveUrl("~/css/Styles.css") %>" rel="stylesheet" />
+    
+    <script src="<%=ResolveUrl("~/Scripts/jquery-3.4.1.js")%>"></script>
+
+    <script src="<%=ResolveUrl("~/Scripts/bootstrap.js")%>"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" autocomplete="off" >
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></asp:ScriptManager>
+
+        <div class="principal">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="background-color: #990f26; color: #ffffff">
+                <a class="navbar-brand" href="<%=ResolveUrl("~/Views/Default.aspx")%>">Inmobiliaria Serv.</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdo" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inmuebles</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="<%=ResolveUrl("~/Views/Inmobiliaria/Inmuebles.aspx")%>">Registro de inmuebles</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Reportes</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configuración</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="<%=ResolveUrl("~/Views/Settings/Usuarios.aspx")%>">Usuarios</a>
+                                <a class="dropdown-item" href="<%=ResolveUrl("~/Views/Settings/Roles.aspx")%>">Roles dentro del sistema</a>
+                                <a class="dropdown-item" href="<%=ResolveUrl("~/Views/Settings/UsuariosRoles.aspx")%>">Roles por usuario</a>
+                                <a class="dropdown-item" href="<%=ResolveUrl("~/Views/Settings/TipoIdentificacion.aspx")%>">Tipos de identificación</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="<%=ResolveUrl("~/Views/Settings/TipoPropiedad.aspx")%>">Tipos de propiedades</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton ID="lnkSalir" runat="server" class="nav-link" OnClick="lnkSalir_Click">Cerrar sesión</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                
+            </asp:ContentPlaceHolder>
+
+             <%--<footer>
+                <p>
+                    &copy; <%= DateTime.Now.Year %> <i class="fa fa-heart"></i>
+                    Inmobiliaria Serv.
+                </p>
+            </footer>--%>
+            <nav class="navbar fixed-bottom navbar-light bg-light">
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            </nav>
+
+        </div>
+    </form>
+</body>
+</html>

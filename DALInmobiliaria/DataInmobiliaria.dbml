@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDInmuebles" Class="DataInmobiliariaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-5DD360I\SQLEXPRESS;Initial Catalog=BDInmuebles;Integrated Security=True" SettingsObjectName="DALInmobiliaria.Properties.Settings" SettingsPropertyName="BDInmueblesConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_DeleteUsuario" Method="sp_DeleteUsuario">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GetRoles" Method="sp_GetRoles">
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetRolesResult">
+      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetTipoPropiedad" Method="sp_GetTipoPropiedad">
+    <Parameter Name="IdTipoPropiedad" Parameter="idTipoPropiedad" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetTipoPropiedadResult">
+      <Column Name="IdTipoPropiedad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetUsuarios" Method="sp_GetUsuarios">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetUsuariosResult">
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Paterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Materno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreUsuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Movil" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetUsuariosRoles" Method="sp_GetUsuariosRoles">
+    <Parameter Name="IdUsuarioRol" Parameter="idUsuarioRol" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetUsuariosRolesResult">
+      <Column Name="IdUsuarioRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetValidaUsuario" Method="sp_GetValidaUsuario">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="sp_GetValidaUsuarioResult">
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Paterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Materno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreUsuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Movil" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_InsertRoles" Method="sp_InsertRoles">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertTipoPropiedad" Method="sp_InsertTipoPropiedad">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUsuario" Method="sp_InsertUsuario">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Materno" Parameter="materno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NombreUsuario" Parameter="nombreUsuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Movil" Parameter="movil" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUsuariosRoles" Method="sp_InsertUsuariosRoles">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateRoles" Method="sp_UpdateRoles">
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateTipoPropiedad" Method="sp_UpdateTipoPropiedad">
+    <Parameter Name="IdTipoPropiedad" Parameter="idTipoPropiedad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateUsuario" Method="sp_UpdateUsuario">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Materno" Parameter="materno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NombreUsuario" Parameter="nombreUsuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Movil" Parameter="movil" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateUsuariosRoles" Method="sp_UpdateUsuariosRoles">
+    <Parameter Name="IdUsuarioRol" Parameter="idUsuarioRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GetTiposIdentificacion" Method="sp_GetTiposIdentificacion">
+    <Parameter Name="IdTipoIdentificacion" Parameter="idTipoIdentificacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetTiposIdentificacionResult">
+      <Column Name="IdTipoIdentificacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_UpdateTipoIdentificacion" Method="sp_UpdateTipoIdentificacion">
+    <Parameter Name="IdTipoIdentificacion" Parameter="idTipoIdentificacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertTipoIdentificacion" Method="sp_InsertTipoIdentificacion">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GetEstatusInmueble" Method="sp_GetEstatusInmueble">
+    <ElementType Name="sp_GetEstatusInmuebleResult">
+      <Column Name="IdEstatusInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetPaises" Method="sp_GetPaises">
+    <ElementType Name="sp_GetPaisesResult">
+      <Column Name="IdPais" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetMunicipios" Method="sp_GetMunicipios">
+    <Parameter Name="IdEstado" Parameter="idEstado" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetMunicipiosResult">
+      <Column Name="IdMunicipio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetEstados" Method="sp_GetEstados">
+    <ElementType Name="sp_GetEstadosResult">
+      <Column Name="IdEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdPais" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetAsentamientos" Method="sp_GetAsentamientos">
+    <Parameter Name="IdMunicipio" Parameter="idMunicipio" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetAsentamientosResult">
+      <Column Name="IdAsentamiento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CP" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="IdTipoAsentamiento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdMunicipio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
