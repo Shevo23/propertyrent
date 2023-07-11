@@ -165,9 +165,6 @@ namespace Inmobiliaria.Views
             }
         }
 
-
-        #endregion
-
         protected void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -194,6 +191,7 @@ namespace Inmobiliaria.Views
             }
         }
 
-        
+        #endregion
+
     }
 }
