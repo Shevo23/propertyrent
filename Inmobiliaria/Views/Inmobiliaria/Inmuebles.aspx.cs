@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -20,7 +22,7 @@ namespace Inmobiliaria.Views
 
             try
             {
-                dsAsentamiento = catalogos.GetMunicipios(idMunicipio);
+                dsAsentamiento = catalogos.GetAsentamientos(idMunicipio);
 
                 if (dsAsentamiento.Tables[0].Rows.Count > 0)
                 {
@@ -143,6 +145,84 @@ namespace Inmobiliaria.Views
             }
         }
 
+        private void GetInmuebles(int idInmueble)
+        {
+            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            DataSet dsInmuebles = new DataSet();
+
+            try
+            {
+                if (idInmueble == 0)
+                {
+                    dsInmuebles = inmobiliaria.GetInmuebles();
+
+                    if (dsInmuebles.Tables[0].Rows.Count > 0)
+                    {
+                        grdInmuebles.DataSource = dsInmuebles;
+                        grdInmuebles.DataBind();
+                    }
+                }
+                else
+                {
+                    dsInmuebles = inmobiliaria.GetInmuebles(idInmueble);
+
+                    if (dsInmuebles.Tables[0].Rows.Count > 0)
+                    {
+                        txtNombreInmueble.Text = dsInmuebles.Tables[0].Rows[0]["NombreInmueble"].ToString();
+                        txtDescripcion.Text = dsInmuebles.Tables[0].Rows[0]["Descripcion"].ToString();
+                        txtCostoTotal.Text = dsInmuebles.Tables[0].Rows[0]["CostoTotal"].ToString();
+                        txtCostoMensual.Text = dsInmuebles.Tables[0].Rows[0]["CostoMensual"].ToString();
+                        txtCostoMantenimiento.Text = dsInmuebles.Tables[0].Rows[0]["CostoMto"].ToString();
+                        txtAntiguedad.Text = dsInmuebles.Tables[0].Rows[0]["Antiguedad"].ToString();
+                        cmbTipoPropiedad.SelectedValue = dsInmuebles.Tables[0].Rows[0]["IdTipoPropiedad"].ToString();
+                        cmbEstado.SelectedValue = dsInmuebles.Tables[0].Rows[0]["IdEstado"].ToString();
+                        GetMunicipios(int.Parse(cmbEstado.SelectedValue));
+                        cmbMunicipio.SelectedValue = dsInmuebles.Tables[0].Rows[0]["IdMunicipio"].ToString();
+                        GetAsentamientos(int.Parse(cmbMunicipio.SelectedValue));
+                        cmbAsentamiento.SelectedValue = dsInmuebles.Tables[0].Rows[0]["IdAsentamiento"].ToString();
+                        cmbEstatusInmueble.SelectedValue = dsInmuebles.Tables[0].Rows[0]["IdEstatusInmueble"].ToString();
+                        chkNuevo.Checked = Convert.ToBoolean(dsInmuebles.Tables[0].Rows[0]["Nuevo"]);
+                        txtNumRecamaras.Text = dsInmuebles.Tables[0].Rows[0]["NumRecamaras"].ToString();
+                        txtNumBanos.Text = dsInmuebles.Tables[0].Rows[0]["NumBanos"].ToString();
+                        txtNumServicios.Text = dsInmuebles.Tables[0].Rows[0]["NumServicios"].ToString();
+                        txtNumEstacionamiento.Text = dsInmuebles.Tables[0].Rows[0]["NumEstacionamientos"].ToString();
+                        chkAlberca.Checked = Convert.ToBoolean(dsInmuebles.Tables[0].Rows[0]["ConAlberca"]);
+                        txtNumM2.Text = dsInmuebles.Tables[0].Rows[0]["NumM2"].ToString();
+                        txtNumTotal.Text = dsInmuebles.Tables[0].Rows[0]["NumTotal"].ToString();
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void GetImagenes(int IdInmueble)
+        {
+            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            DataSet dsInmuebles = new DataSet();
+
+            try
+            {
+                dsInmuebles = inmobiliaria.GetImagenesInmueble(IdInmueble);
+
+                if (dsInmuebles.Tables[0].Rows.Count > 0)
+                {
+                    grdImagenes.DataSource = dsInmuebles;
+                    
+                    grdImagenes.DataBind();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         #endregion
 
         #region Events
@@ -153,6 +233,7 @@ namespace Inmobiliaria.Views
             {
                 if (!IsPostBack)
                 {
+                    GetInmuebles(0);
                     GetEstados();
                     GetEstatusInmueble();
                     GetTipoPropiedad();
@@ -193,5 +274,206 @@ namespace Inmobiliaria.Views
 
         #endregion
 
+        protected void btn_Guardar_Click(object sender, EventArgs e)
+        {
+            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            int? idInmueble;
+            try
+            {
+                if (bool.Parse(ViewState["oInsertar"].ToString()))
+                {
+                    idInmueble = inmobiliaria.InsertInmuebles(txtNombreInmueble.Text.Trim(), txtDescripcion.Text.Trim(), 0, 0, decimal.Parse(txtCostoTotal.Text.Trim())
+                        , decimal.Parse(txtCostoMensual.Text.Trim()), decimal.Parse(txtCostoMantenimiento.Text.Trim()), Convert.ToInt32(chkNuevo.Checked), int.Parse(txtAntiguedad.Text.Trim())
+                        , int.Parse(cmbTipoPropiedad.SelectedValue), int.Parse(cmbAsentamiento.SelectedValue), int.Parse(cmbEstatusInmueble.SelectedValue));
+
+                    // ViewState["IdInmueble"] = idInmueble;
+
+                    inmobiliaria.InsertDetalleInmuebles(int.Parse(txtNumRecamaras.Text.Trim()), int.Parse(txtNumBanos.Text.Trim()), int.Parse(txtNumServicios.Text.Trim())
+                        , int.Parse(txtNumEstacionamiento.Text.Trim()), Convert.ToInt32(chkAlberca.Checked), int.Parse(txtNumM2.Text.Trim()), int.Parse(txtNumTotal.Text.Trim())
+                        , Convert.ToInt32(idInmueble));
+
+                    inmobiliaria.InsertUsuariosInmuebles(1, Convert.ToInt32(idInmueble), DateTime.Now);
+
+                    flpFotosInmueble.Enabled = true;
+                    btn_Guardar.Enabled = false;
+
+                    GetInmuebles(0);
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void btn_Agregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ViewState["oInsertar"] = true;
+                flpFotosInmueble.Enabled = false;
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void btnGuardarImagenInmueble_Click(object sender, EventArgs e)
+        {
+            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            int iUploadedCnt = 0;
+            int iFailedCnt = 0;
+
+            try
+            {
+                if (flpFotosInmueble.HasFiles)
+                {
+                    HttpFileCollection hfc = Request.Files;
+
+                    if (hfc.Count <= 10)
+                    {
+                        for (int i = 0; i <= hfc.Count - 1; i++)
+                        {
+                            HttpPostedFile hpf = hfc[i];
+                            if (hpf.ContentLength > 0)
+                            {
+                                if (!File.Exists(Server.MapPath("~/Inmuebles/") +
+                            Path.GetFileName(hpf.FileName)))
+                                {
+                                    DirectoryInfo objDir =
+                                        new DirectoryInfo(Server.MapPath("~/Inmuebles/"));
+
+                                    string sFileName = Path.GetFileName(hpf.FileName);
+                                    string sFileExt = Path.GetExtension(hpf.FileName);
+
+                                    // CHECK FOR DUPLICATE FILES.
+                                    FileInfo[] objFI =
+                                        objDir.GetFiles(sFileName.Replace(sFileExt, "") + ".*");
+
+                                    if (objFI.Length > 0)
+                                    {
+
+                                        foreach (FileInfo file in objFI)
+                                        {
+                                            string sFileName1 = objFI[0].Name;
+                                            string sFileExt1 = Path.GetExtension(objFI[0].Name);
+
+                                            if (sFileName1.Replace(sFileExt1, "") ==
+                                                    sFileName.Replace(sFileExt, ""))
+                                            {
+                                                iFailedCnt += 1;        // NOT ALLOWING DUPLICATE.
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        // SAVE THE FILE IN A FOLDER.
+                                        hpf.SaveAs(Server.MapPath("~/Inmuebles/") + "Inmueble_" + ViewState["IdInmueble"].ToString() + "_" +
+                                            Path.GetFileName(hpf.FileName));
+
+                                        string path = Server.MapPath("~/Inmuebles/") + "Inmueble_" + ViewState["IdInmueble"].ToString() + "_" +
+                                            Path.GetFileName(hpf.FileName);
+
+                                        inmobiliaria.InsertImagenesInmueble(hpf.FileName, path, int.Parse(ViewState["IdInmueble"].ToString()));
+
+                                        iUploadedCnt += 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void btnGuardarArchivosInmueble_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void ibtnEditar_Click(object sender, ImageClickEventArgs e)
+        {
+            try
+            {
+                ViewState["oInsertar"] = false;
+
+                ImageButton button = (ImageButton)sender;
+                GridViewRow namingContainer = button.NamingContainer as GridViewRow;
+
+                ViewState["IdInmueble"] = Convert.ToInt32(grdInmuebles.DataKeys[namingContainer.RowIndex].Values["IdInmueble"].ToString());
+
+                GetInmuebles(Convert.ToInt32(ViewState["IdInmueble"].ToString()));
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void ibtnImagenes_Click(object sender, ImageClickEventArgs e)
+        {
+            try
+            {
+                ImageButton button = (ImageButton)sender;
+                GridViewRow namingContainer = button.NamingContainer as GridViewRow;
+
+                ViewState["IdInmueble"] = Convert.ToInt32(grdInmuebles.DataKeys[namingContainer.RowIndex].Values["IdInmueble"].ToString());
+
+                GetImagenes(int.Parse(ViewState["IdInmueble"].ToString()));
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void grdImagenes_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            try
+            {
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                {
+                    DataRowView dr = (DataRowView)e.Row.DataItem;
+                    string path = dr["UbicacionImagen"].ToString();
+                    string imageUrl = "~/Inmuebles/" + Path.GetFileName(path);
+
+                    (e.Row.FindControl("img") as System.Web.UI.WebControls.Image).ImageUrl = imageUrl;
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

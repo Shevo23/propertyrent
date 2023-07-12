@@ -15,6 +15,33 @@ namespace Inmobiliaria.Views
     {
 
         /// <summary>
+        /// flpFotosInmueble control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload flpFotosInmueble;
+
+        /// <summary>
+        /// grdImagenes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdImagenes;
+
+        /// <summary>
+        /// btnGuardarImagenInmueble control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardarImagenInmueble;
+
+        /// <summary>
         /// UpdatePanel2 control.
         /// </summary>
         /// <remarks>
@@ -58,6 +85,15 @@ namespace Inmobiliaria.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCostoTotal;
+
+        /// <summary>
+        /// txtCostoMensual control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCostoMensual;
 
         /// <summary>
         /// txtCostoMantenimiento control.
@@ -123,6 +159,15 @@ namespace Inmobiliaria.Views
         protected global::System.Web.UI.WebControls.DropDownList cmbEstatusInmueble;
 
         /// <summary>
+        /// chkNuevo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkNuevo;
+
+        /// <summary>
         /// txtNumRecamaras control.
         /// </summary>
         /// <remarks>
@@ -175,6 +220,42 @@ namespace Inmobiliaria.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumTotal;
+
+        /// <summary>
+        /// chkAlberca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkAlberca;
+
+        /// <summary>
+        /// FileUpload1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+
+        /// <summary>
+        /// listImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label listImages;
+
+        /// <summary>
+        /// btnGuardarArchivosInmueble control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardarArchivosInmueble;
 
         /// <summary>
         /// btn_Guardar control.

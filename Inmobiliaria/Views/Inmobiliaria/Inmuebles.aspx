@@ -1,9 +1,73 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inmuebles.aspx.cs" MasterPageFile="~/Master/Site.Master" Inherits="Inmobiliaria.Views.Inmuebles" %>
 
+
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <br />
         <br />
+        <br />
+        <div id="divAgregarImagenes" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-xl" role="document">
+                <asp:UpdatePanel runat="server">
+                    <ContentTemplate>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h5>Imagenes del inmueble</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroupFileAddon01">Cargar</span>
+                                            </div>
+                                            <div class="custom-file">
+                                                <asp:FileUpload runat="server" type="file" class="custom-file-input" ID="flpFotosInmueble" aria-describedby="inputGroupFileAddon01"
+                                                    AllowMultiple="true" accept=".png,.jpg,.jpeg" />
+                                                <label class="custom-file-label" for="flpFotosInmueble">Seleccione imagenes</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <asp:UpdatePanel runat="server">
+                                            <ContentTemplate>
+                                                <asp:GridView ID="grdImagenes" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered"
+                                                    OnRowDataBound="grdImagenes_RowDataBound">
+                                                    <Columns>
+                                                        <asp:BoundField DataField="IdImagenInmueble" HeaderText="#" ItemStyle-Width="30" />
+                                                        <asp:BoundField DataField="IdInmueble" HeaderText="Id Inmueble" Visible="false" />
+                                                        <asp:BoundField DataField="NombreImagen" HeaderText="Nombre de la imagen" ItemStyle-Width="50" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle" />
+                                                        <asp:TemplateField ControlStyle-CssClass="img-thumbnail" ItemStyle-Width="100" ItemStyle-HorizontalAlign="Center">
+                                                            <ItemTemplate>
+                                                                <asp:Image ID="img" runat="server" Height="100px" Width="100px" />
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                    </Columns>
+                                                </asp:GridView>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <asp:Button Text="Cargar imagenes" CssClass="btn btn-default btn-save" ID="btnGuardarImagenInmueble" runat="server" OnClick="btnGuardarImagenInmueble_Click" />
+                            </div>
+                        </div>
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:PostBackTrigger ControlID="btnGuardarImagenInmueble" />
+                    </Triggers>
+                </asp:UpdatePanel>
+            </div>
+        </div>
         <br />
         <div id="divAgregar" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog modal-xl" role="document">
@@ -46,6 +110,14 @@
                                                 <span class="input-group-text" id="inputGroup-sizing">Costo total:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtCostoTotal" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup">Costo mensual:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtCostoMensual" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
@@ -111,7 +183,7 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="form-group">
-                                            <asp:CheckBox Text="Nuevo?" runat="server" />
+                                            <asp:CheckBox ID="chkNuevo" Text=" El inmueble es nuevo?" runat="server" />
                                         </div>
                                     </div>
                                 </div>
@@ -174,33 +246,38 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="form-group">
-                                            <asp:CheckBox Text="Alberca?" runat="server" />
+                                            <asp:CheckBox ID="chkAlberca" Text=" Cuenta con alberca?" runat="server" />
                                         </div>
                                     </div>
                                 </div>
                                 <hr />
+
+                                <hr />
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <h5>Imagenes del inmueble</h5>
+                                        <h5>Archivos del inmueble</h5>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text" id="inputGroupFileAddon01">Cargar</span>
+                                                <span class="input-group-text" id="inputGroupFileAddon02">Cargar</span>
                                             </div>
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                                                <label class="custom-file-label" for="inputGroupFile01">Seleccione imagenes</label>
+                                                <asp:FileUpload runat="server" type="file" class="custom-file-input" ID="FileUpload1" aria-describedby="inputGroupFileAddon02"
+                                                    AllowMultiple="true" />
+                                                <label class="custom-file-label" for="flpFotosInmueble">Seleccione imagenes</label>
                                             </div>
-                                        </div>
-                                    </div>
 
+                                            <asp:Label ID="listImages" runat="server" />
+                                        </div>
+                                        <asp:Button Text="Guardar imagen" CssClass="btn btn-default btn-save" ID="btnGuardarArchivosInmueble" runat="server" OnClick="btnGuardarArchivosInmueble_Click" />
+                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <asp:Button ID="btn_Guardar" runat="server" CssClass="btn btn-default btn-save" Text="Guardar" ValidationGroup="Global" data-dismiss="modal" UseSubmitBehavior="false" />
+                                <asp:Button ID="btn_Guardar" runat="server" CssClass="btn btn-default btn-save" Text="Guardar" ValidationGroup="Global" data-dismiss="modal" UseSubmitBehavior="false" OnClick="btn_Guardar_Click" />
                             </div>
                         </div>
                     </ContentTemplate>
@@ -217,7 +294,7 @@
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <ContentTemplate>
 
-                                <asp:Button ID="btn_Agregar" runat="server" Text="Agregar" CssClass="btn btn-default btn-green" data-toggle="modal" data-target="#divAgregar" />
+                                <asp:Button ID="btn_Agregar" runat="server" Text="Agregar" CssClass="btn btn-default btn-green" data-toggle="modal" data-target="#divAgregar" OnClick="btn_Agregar_Click" />
 
                             </ContentTemplate>
                             <Triggers>
@@ -228,17 +305,38 @@
                     <div class="card-body">
                         <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                             <ContentTemplate>
-                                <div class="table table-responsive">
+                                <div class="table table-responsive" style="font-size: small">
                                     <asp:GridView ID="grdInmuebles" runat="server" AutoGenerateColumns="false" CssClass="table table-striped"
-                                        DataKeyNames="IdRol">
+                                        DataKeyNames="IdInmueble">
                                         <Columns>
-                                            <asp:TemplateField HeaderStyle-CssClass="header-grid">
+                                            <asp:TemplateField>
                                                 <ItemTemplate>
-                                                    <asp:ImageButton runat="server" ID="ibtnEditar" ToolTip="Editar" ImageUrl="~/Images/pencil.png" data-toggle="modal" data-target="#divAgregar" />
+                                                    <asp:ImageButton runat="server" ID="ibtnEditar" ToolTip="Editar" ImageUrl="~/Images/Editar.png" Width="20px" data-toggle="modal" data-target="#divAgregar" OnClick="ibtnEditar_Click" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField DataField="IdRol" HeaderText="Id Rol" />
-                                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
+                                            <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton runat="server" ID="ibtnImagenes" ToolTip="Editar" ImageUrl="~/Images/Cargar.png" Width="20px" data-toggle="modal" data-target="#divAgregarImagenes" OnClick="ibtnImagenes_Click" />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:BoundField DataField="IdInmueble" HeaderText="Id Inmueble" />
+                                            <asp:BoundField DataField="Nombre" HeaderText="Nombre Inmueble" />
+                                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" Visible="false" />
+                                            <asp:TemplateField HeaderText="Usado / Nuevo" Visible="false">
+                                                <ItemTemplate>
+                                                    <asp:CheckBox ID="chkNuevo" runat="server" CssClass="pull-left" Checked='<%#Convert.ToBoolean(Eval("Nuevo")) %>' Enabled="false" />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:BoundField DataField="CostoTotal" HeaderText="Costo total" DataFormatString="{0:C}" />
+                                            <asp:BoundField DataField="CostoMensual" HeaderText="Costo Mensual" DataFormatString="{0:C}" />
+                                            <asp:BoundField DataField="Propiedad" HeaderText="Tipo Propiedad" />
+                                            <asp:BoundField DataField="Asentamiento" HeaderText="Colonia" />
+                                            <asp:BoundField DataField="Municipio" HeaderText="Municipio" />
+                                            <asp:BoundField DataField="Estado" HeaderText="Estado" />
+                                            <asp:BoundField DataField="FechaAlta" HeaderText="Fecha registro" DataFormatString="{0:dd/MM/yyyy}" />
+                                            <asp:BoundField DataField="EstatusInmueble" HeaderText="Estatus" />
+
+
 
                                         </Columns>
                                     </asp:GridView>
