@@ -17,6 +17,28 @@ namespace BTLInmobiliaria
             context = new DataInmobiliariaDataContext(conexion);
         }
 
+        #region Delete
+
+        public void DeleteArchivosInmueble(int idArchivoInmueble)
+        {
+            context.Connection.Open();
+
+            context.sp_DeleteArchivosInmueble(idArchivoInmueble);
+
+            context.Connection.Close();
+        }
+
+        public void DeleteImagenesInmueble(int idImagenInmueble)
+        {
+            context.Connection.Open();
+
+            context.sp_DeleteImagenesInmueble(idImagenInmueble);
+
+            context.Connection.Close();
+        }
+
+        #endregion
+
         #region Update
 
         public void UpdateUsuariosInmuebles(int idUsuarioInmueble, int idUsuario, int idInmueble, DateTime fechaModificacion)
@@ -24,15 +46,6 @@ namespace BTLInmobiliaria
             context.Connection.Open();
 
             context.sp_UpdateUsuariosInmuebles(idUsuarioInmueble, idUsuario, idInmueble, fechaModificacion);
-
-            context.Connection.Close();
-        }
-
-        public void UpdateImagenesInmueble(int idImagenInmueble, string nombreImagen, string ubicacionImagen, int idInmueble)
-        {
-            context.Connection.Open();
-
-            context.sp_UpdateImagenesInmueble(idImagenInmueble, nombreImagen, ubicacionImagen, idInmueble);
 
             context.Connection.Close();
         }
@@ -58,6 +71,15 @@ namespace BTLInmobiliaria
         #endregion
 
         #region Insert
+
+        public void InsertArchivosInmueble(string nombreImagen, string ubicacionImagen, int idInmueble)
+        {
+            context.Connection.Open();
+
+            context.sp_InsertArchivosInmueble(nombreImagen, ubicacionImagen, idInmueble);
+
+            context.Connection.Close();
+        }
 
         public void InsertUsuariosInmuebles(int idUsuario, int idInmueble, DateTime fechaAlta)
         {
@@ -102,6 +124,25 @@ namespace BTLInmobiliaria
         #endregion
 
         #region Select
+
+        public DataSet GetArchivosInmueble(int idInmueble)
+        {
+            DataTable data;
+
+            context.Connection.Open();
+
+            var dsResult = context.sp_GetArchivosInmueble(idInmueble);
+
+            data = dsResult.CopyToDataTable();
+
+            context.Connection.Close();
+
+            DataSet resultDataSet = new DataSet();
+
+            resultDataSet.Tables.Add(data);
+
+            return resultDataSet;
+        }
 
         public DataSet GetImagenesInmueble(int idInmueble)
         {

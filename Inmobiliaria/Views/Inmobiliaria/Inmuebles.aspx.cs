@@ -212,8 +212,31 @@ namespace Inmobiliaria.Views
                 if (dsInmuebles.Tables[0].Rows.Count > 0)
                 {
                     grdImagenes.DataSource = dsInmuebles;
-                    
+
                     grdImagenes.DataBind();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void GetArchivos(int IdInmueble)
+        {
+            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            DataSet dsInmuebles = new DataSet();
+
+            try
+            {
+                dsInmuebles = inmobiliaria.GetArchivosInmueble(IdInmueble);
+
+                if (dsInmuebles.Tables[0].Rows.Count > 0)
+                {
+                    grdArchivos.DataSource = dsInmuebles;
+
+                    grdArchivos.DataBind();
                 }
             }
             catch (Exception)
@@ -365,11 +388,11 @@ namespace Inmobiliaria.Views
                             HttpPostedFile hpf = hfc[i];
                             if (hpf.ContentLength > 0)
                             {
-                                if (!File.Exists(Server.MapPath("~/Inmuebles/") +
+                                if (!File.Exists(Server.MapPath("~/Inmuebles/Imagenes/") +
                             Path.GetFileName(hpf.FileName)))
                                 {
                                     DirectoryInfo objDir =
-                                        new DirectoryInfo(Server.MapPath("~/Inmuebles/"));
+                                        new DirectoryInfo(Server.MapPath("~/Inmuebles/Imagenes/"));
 
                                     string sFileName = Path.GetFileName(hpf.FileName);
                                     string sFileExt = Path.GetExtension(hpf.FileName);
@@ -397,13 +420,15 @@ namespace Inmobiliaria.Views
                                     else
                                     {
                                         // SAVE THE FILE IN A FOLDER.
-                                        hpf.SaveAs(Server.MapPath("~/Inmuebles/") + "Inmueble_" + ViewState["IdInmueble"].ToString() + "_" +
+                                        hpf.SaveAs(Server.MapPath("~/Inmuebles/Imagenes/") + "Img_Inmueble_" + ViewState["IdInmueble"].ToString() + "_" +
                                             Path.GetFileName(hpf.FileName));
 
-                                        string path = Server.MapPath("~/Inmuebles/") + "Inmueble_" + ViewState["IdInmueble"].ToString() + "_" +
+                                        string path = Server.MapPath("~/Inmuebles/Imagenes/") + "Img_Inmueble_" + ViewState["IdInmueble"].ToString() + "_" +
                                             Path.GetFileName(hpf.FileName);
 
-                                        inmobiliaria.InsertImagenesInmueble(hpf.FileName, path, int.Parse(ViewState["IdInmueble"].ToString()));
+                                        string nameCompose = "Img_Inmueble_" + ViewState["IdInmueble"].ToString() + "_" + hpf.FileName;
+
+                                        inmobiliaria.InsertImagenesInmueble(nameCompose, path, int.Parse(ViewState["IdInmueble"].ToString()));
 
                                         iUploadedCnt += 1;
                                     }
@@ -422,9 +447,72 @@ namespace Inmobiliaria.Views
 
         protected void btnGuardarArchivosInmueble_Click(object sender, EventArgs e)
         {
+            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            int iUploadedCnt = 0;
+            int iFailedCnt = 0;
+
             try
             {
+                if (flpArchivosInmueble.HasFiles)
+                {
+                    HttpFileCollection hfc = Request.Files;
 
+                    if (hfc.Count <= 10)
+                    {
+                        for (int i = 0; i <= hfc.Count - 1; i++)
+                        {
+                            HttpPostedFile hpf = hfc[i];
+                            if (hpf.ContentLength > 0)
+                            {
+                                if (!File.Exists(Server.MapPath("~/Inmuebles/Archivos/") +
+                            Path.GetFileName(hpf.FileName)))
+                                {
+                                    DirectoryInfo objDir =
+                                        new DirectoryInfo(Server.MapPath("~/Inmuebles/Archivos/"));
+
+                                    string sFileName = Path.GetFileName(hpf.FileName);
+                                    string sFileExt = Path.GetExtension(hpf.FileName);
+
+                                    // CHECK FOR DUPLICATE FILES.
+                                    FileInfo[] objFI =
+                                        objDir.GetFiles(sFileName.Replace(sFileExt, "") + ".*");
+
+                                    if (objFI.Length > 0)
+                                    {
+
+                                        foreach (FileInfo file in objFI)
+                                        {
+                                            string sFileName1 = objFI[0].Name;
+                                            string sFileExt1 = Path.GetExtension(objFI[0].Name);
+
+                                            if (sFileName1.Replace(sFileExt1, "") ==
+                                                    sFileName.Replace(sFileExt, ""))
+                                            {
+                                                iFailedCnt += 1;        // NOT ALLOWING DUPLICATE.
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        // SAVE THE FILE IN A FOLDER.
+                                        hpf.SaveAs(Server.MapPath("~/Inmuebles/Archivos/") + "File_Inmueble_" + ViewState["IdInmueble"].ToString() + "_" +
+                                            Path.GetFileName(hpf.FileName));
+
+                                        string path = Server.MapPath("~/Inmuebles/Archivos/") + "File_Inmueble_" + ViewState["IdInmueble"].ToString() + "_" +
+                                            Path.GetFileName(hpf.FileName);
+
+                                        string nameCompose = "File_Inmueble_" + ViewState["IdInmueble"].ToString() + "_" + hpf.FileName;
+
+                                        inmobiliaria.InsertArchivosInmueble(nameCompose, path, int.Parse(ViewState["IdInmueble"].ToString()));
+
+                                        iUploadedCnt += 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
             catch (Exception)
             {
@@ -481,7 +569,7 @@ namespace Inmobiliaria.Views
                 {
                     DataRowView dr = (DataRowView)e.Row.DataItem;
                     string path = dr["UbicacionImagen"].ToString();
-                    string imageUrl = "~/Inmuebles/" + Path.GetFileName(path);
+                    string imageUrl = "~/Inmuebles/Imagenes/" + Path.GetFileName(path);
 
                     (e.Row.FindControl("img") as System.Web.UI.WebControls.Image).ImageUrl = imageUrl;
 
@@ -499,6 +587,12 @@ namespace Inmobiliaria.Views
         {
             try
             {
+                ImageButton button = (ImageButton)sender;
+                GridViewRow namingContainer = button.NamingContainer as GridViewRow;
+
+                ViewState["IdInmueble"] = Convert.ToInt32(grdInmuebles.DataKeys[namingContainer.RowIndex].Values["IdInmueble"].ToString());
+
+                GetArchivos(int.Parse(ViewState["IdInmueble"].ToString()));
 
             }
             catch (Exception)
@@ -541,7 +635,90 @@ namespace Inmobiliaria.Views
             }
         }
 
+        protected void ibtnEliminarImagen_Click(object sender, ImageClickEventArgs e)
+        {
+            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+
+            try
+            {
+                ViewState["oInsertar"] = false;
+
+                ImageButton button = (ImageButton)sender;
+                GridViewRow namingContainer = button.NamingContainer as GridViewRow;
+
+                ViewState["IdImagenInmueble"] = Convert.ToInt32(grdImagenes.DataKeys[namingContainer.RowIndex].Values["IdImagenInmueble"].ToString());
+                ViewState["NombreImagen"] = grdImagenes.DataKeys[namingContainer.RowIndex].Values["NombreImagen"].ToString();
+
+                string filePath = Server.MapPath("~/Inmuebles/Imagenes") + ViewState["NombreImagen"].ToString();
+
+                File.Delete(filePath);
+
+                inmobiliaria.DeleteImagenesInmueble(int.Parse(ViewState["IdImagenInmueble"].ToString()));
+
+                GetImagenes(Convert.ToInt32(ViewState["IdImagenInmueble"].ToString()));
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void grdArchivos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            try
+            {
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                {
+                    DataRowView dr = (DataRowView)e.Row.DataItem;
+                    string path = dr["UbicacionArchivo"].ToString();
+                    string imageUrl = "~/Inmuebles/Archivos/" + Path.GetFileName(path);
+
+                    (e.Row.FindControl("archivo") as System.Web.UI.WebControls.Image).ImageUrl = imageUrl;
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void ibtnEliminarArchivo_Click(object sender, ImageClickEventArgs e)
+        {
+            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+
+            try
+            {
+                ViewState["oInsertar"] = false;
+
+                ImageButton button = (ImageButton)sender;
+                GridViewRow namingContainer = button.NamingContainer as GridViewRow;
+
+                ViewState["IdArchivoInmueble"] = Convert.ToInt32(grdArchivos.DataKeys[namingContainer.RowIndex].Values["IdArchivoInmueble"].ToString());
+                ViewState["NombreArchivo"] = grdArchivos.DataKeys[namingContainer.RowIndex].Values["NombreArchivo"].ToString();
+
+                string filePath = Server.MapPath("~/Inmuebles/Archivos/") + ViewState["NombreArchivo"].ToString();
+
+                File.Delete(filePath);
+
+                inmobiliaria.DeleteArchivosInmueble(int.Parse(ViewState["IdArchivoInmueble"].ToString()));
+
+                GetArchivos(Convert.ToInt32(ViewState["IdArchivoInmueble"].ToString()));
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         #endregion
+
 
     }
 }

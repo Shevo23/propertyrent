@@ -167,13 +167,6 @@
     <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_UpdateImagenesInmueble" Method="sp_UpdateImagenesInmueble">
-    <Parameter Name="IdImagenInmueble" Parameter="idImagenInmueble" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NombreImagen" Parameter="nombreImagen" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="UbicacionImagen" Parameter="ubicacionImagen" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.sp_UpdateInmuebles" Method="sp_UpdateInmuebles">
     <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
     <Parameter Name="NombreInmueble" Parameter="nombreInmueble" Type="System.String" DbType="VarChar(100)" />
@@ -298,6 +291,29 @@
       <Column Name="Movil" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="Password" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="Activo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_DeleteArchivosInmueble" Method="sp_DeleteArchivosInmueble">
+    <Parameter Name="IdArchivoInmueble" Parameter="idArchivoInmueble" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteImagenesInmueble" Method="sp_DeleteImagenesInmueble">
+    <Parameter Name="IdImagenInmueble" Parameter="idImagenInmueble" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertArchivosInmueble" Method="sp_InsertArchivosInmueble">
+    <Parameter Name="NombreArchivo" Parameter="nombreArchivo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="UbicacionArchivo" Parameter="ubicacionArchivo" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GetArchivosInmueble" Method="sp_GetArchivosInmueble">
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetArchivosInmuebleResult">
+      <Column Name="IdArchivoInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreArchivo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UbicacionArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>
