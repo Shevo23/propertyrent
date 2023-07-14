@@ -233,6 +233,9 @@ namespace Inmobiliaria.Views
             {
                 if (!IsPostBack)
                 {
+                    cmbMunicipio.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbAsentamiento.Items.Insert(0, new ListItem("Seleccione..."));
+
                     GetInmuebles(0);
                     GetEstados();
                     GetEstatusInmueble();
@@ -271,8 +274,6 @@ namespace Inmobiliaria.Views
                 throw;
             }
         }
-
-        #endregion
 
         protected void btn_Guardar_Click(object sender, EventArgs e)
         {
@@ -316,8 +317,26 @@ namespace Inmobiliaria.Views
             try
             {
                 ViewState["oInsertar"] = true;
-                flpFotosInmueble.Enabled = false;
 
+                txtNombreInmueble.Text = string.Empty;
+                txtDescripcion.Text = string.Empty;
+                txtCostoTotal.Text = string.Empty;
+                txtCostoMensual.Text = string.Empty;
+                txtCostoMantenimiento.Text = string.Empty;
+                txtAntiguedad.Text = string.Empty;
+                cmbTipoPropiedad.SelectedIndex = 0;
+                cmbEstado.SelectedIndex = 0;
+                cmbMunicipio.SelectedIndex = 0;
+                cmbAsentamiento.SelectedIndex = 0;
+                cmbEstatusInmueble.SelectedIndex = 0;
+                txtNumRecamaras.Text = string.Empty;
+                txtNumBanos.Text = string.Empty;
+                txtNumServicios.Text = string.Empty;
+                txtNumEstacionamiento.Text = string.Empty;
+                txtNumM2.Text = string.Empty;
+                txtNumTotal.Text = string.Empty;
+                chkAlberca.Checked = false;
+                chkNuevo.Checked = false;
 
             }
             catch (Exception)
@@ -475,5 +494,54 @@ namespace Inmobiliaria.Views
                 throw;
             }
         }
+
+        protected void ibtnArchivos_Click(object sender, ImageClickEventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ViewState["oInsertar"] = null;
+
+                txtNombreInmueble.Text = string.Empty;
+                txtDescripcion.Text = string.Empty;
+                txtCostoTotal.Text = string.Empty;
+                txtCostoMensual.Text = string.Empty;
+                txtCostoMantenimiento.Text = string.Empty;
+                txtAntiguedad.Text = string.Empty;
+                cmbTipoPropiedad.SelectedIndex = 0;
+                cmbEstado.SelectedIndex = 0;
+                cmbMunicipio.SelectedIndex = 0;
+                cmbAsentamiento.SelectedIndex = 0;
+                cmbEstatusInmueble.SelectedIndex = 0;
+                txtNumRecamaras.Text = string.Empty;
+                txtNumBanos.Text = string.Empty;
+                txtNumServicios.Text = string.Empty;
+                txtNumEstacionamiento.Text = string.Empty;
+                txtNumM2.Text = string.Empty;
+                txtNumTotal.Text = string.Empty;
+                chkAlberca.Checked = false;
+                chkNuevo.Checked = false;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        #endregion
+
     }
 }

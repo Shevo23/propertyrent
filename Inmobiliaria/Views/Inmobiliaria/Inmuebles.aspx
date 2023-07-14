@@ -1,11 +1,72 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inmuebles.aspx.cs" MasterPageFile="~/Master/Site.Master" Inherits="Inmobiliaria.Views.Inmuebles" %>
 
-
-
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <br />
         <br />
+        <br />
+        <div id="divAgregarArchivos" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-xl" role="document">
+                <asp:UpdatePanel runat="server">
+                    <ContentTemplate>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h5>Archivos del inmueble</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroupFile">Cargar</span>
+                                            </div>
+                                            <div class="custom-file">
+                                                <asp:FileUpload runat="server" type="file" class="custom-file-input" ID="flpArchivosInmueble" aria-describedby="inputGroupFile"
+                                                    AllowMultiple="true" accept=".png,.jpg,.jpeg" />
+                                                <label class="custom-file-label" for="flpFotosInmueble">Seleccione archivos</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <asp:UpdatePanel runat="server">
+                                            <ContentTemplate>
+                                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered">
+                                                    <Columns>
+                                                        <asp:BoundField DataField="IdImagenInmueble" HeaderText="#" ItemStyle-Width="30" />
+                                                        <asp:BoundField DataField="IdInmueble" HeaderText="Id Inmueble" Visible="false" />
+                                                        <asp:BoundField DataField="NombreImagen" HeaderText="Nombre de la imagen" ItemStyle-Width="50" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle" />
+                                                        <asp:TemplateField ControlStyle-CssClass="img-thumbnail" ItemStyle-Width="100" ItemStyle-HorizontalAlign="Center">
+                                                            <ItemTemplate>
+                                                                <asp:Image ID="img" runat="server" Height="100px" Width="100px" />
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                    </Columns>
+                                                </asp:GridView>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <asp:Button Text="Cargar imagenes" CssClass="btn btn-success" ID="btnArchivosInmueble" runat="server" />
+                            </div>
+                        </div>
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:PostBackTrigger ControlID="btnGuardarImagenInmueble" />
+                    </Triggers>
+                </asp:UpdatePanel>
+            </div>
+        </div>
         <br />
         <div id="divAgregarImagenes" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog modal-xl" role="document">
@@ -39,13 +100,18 @@
                                     <div class="col-md-12">
                                         <asp:UpdatePanel runat="server">
                                             <ContentTemplate>
-                                                <asp:GridView ID="grdImagenes" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered"
+                                                <asp:GridView ID="grdImagenes" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered"
                                                     OnRowDataBound="grdImagenes_RowDataBound">
                                                     <Columns>
-                                                        <asp:BoundField DataField="IdImagenInmueble" HeaderText="#" ItemStyle-Width="30" />
-                                                        <asp:BoundField DataField="IdInmueble" HeaderText="Id Inmueble" Visible="false" />
-                                                        <asp:BoundField DataField="NombreImagen" HeaderText="Nombre de la imagen" ItemStyle-Width="50" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle" />
-                                                        <asp:TemplateField ControlStyle-CssClass="img-thumbnail" ItemStyle-Width="100" ItemStyle-HorizontalAlign="Center">
+                                                        <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
+                                                            <ItemTemplate>
+                                                                <asp:ImageButton runat="server" ID="ibtnEliminar" ToolTip="Eliminar" ImageUrl="~/Images/borrar.png" Width="20px" />
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                        <asp:BoundField DataField="IdImagenInmueble" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                                        <asp:BoundField DataField="IdInmueble" HeaderText="Id Inmueble" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                                        <asp:BoundField DataField="NombreImagen" HeaderText="Nombre de la imagen" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                                        <asp:TemplateField ControlStyle-CssClass="img-thumbnail" HeaderText="Imagen" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White">
                                                             <ItemTemplate>
                                                                 <asp:Image ID="img" runat="server" Height="100px" Width="100px" />
                                                             </ItemTemplate>
@@ -58,7 +124,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <asp:Button Text="Cargar imagenes" CssClass="btn btn-default btn-save" ID="btnGuardarImagenInmueble" runat="server" OnClick="btnGuardarImagenInmueble_Click" />
+                                <asp:Button Text="Cargar imagenes" CssClass="btn btn-success" ID="btnGuardarImagenInmueble" runat="server" OnClick="btnGuardarImagenInmueble_Click" />
                             </div>
                         </div>
                     </ContentTemplate>
@@ -250,34 +316,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <hr />
 
-                                <hr />
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <h5>Archivos del inmueble</h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="inputGroupFileAddon02">Cargar</span>
-                                            </div>
-                                            <div class="custom-file">
-                                                <asp:FileUpload runat="server" type="file" class="custom-file-input" ID="FileUpload1" aria-describedby="inputGroupFileAddon02"
-                                                    AllowMultiple="true" />
-                                                <label class="custom-file-label" for="flpFotosInmueble">Seleccione imagenes</label>
-                                            </div>
-
-                                            <asp:Label ID="listImages" runat="server" />
-                                        </div>
-                                        <asp:Button Text="Guardar imagen" CssClass="btn btn-default btn-save" ID="btnGuardarArchivosInmueble" runat="server" OnClick="btnGuardarArchivosInmueble_Click" />
-                                    </div>
-                                </div>
                             </div>
                             <div class="modal-footer">
-                                <asp:Button ID="btn_Guardar" runat="server" CssClass="btn btn-default btn-save" Text="Guardar" ValidationGroup="Global" data-dismiss="modal" UseSubmitBehavior="false" OnClick="btn_Guardar_Click" />
+                                <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-danger" Text="Cancelar" data-dismiss="modal" OnClick="btnCancelar_Click" />
+                                <asp:Button ID="btn_Guardar" runat="server" CssClass="btn btn-success" Text="Guardar" ValidationGroup="Global" data-dismiss="modal" UseSubmitBehavior="false" OnClick="btn_Guardar_Click" />
                             </div>
                         </div>
                     </ContentTemplate>
@@ -290,58 +333,60 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title">Inmuebles registrados</h5>
-                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                            <ContentTemplate>
-
-                                <asp:Button ID="btn_Agregar" runat="server" Text="Agregar" CssClass="btn btn-default btn-green" data-toggle="modal" data-target="#divAgregar" OnClick="btn_Agregar_Click" />
-
-                            </ContentTemplate>
-                            <Triggers>
-                                <asp:AsyncPostBackTrigger EventName="Click" ControlID="btn_Agregar" />
-                            </Triggers>
-                        </asp:UpdatePanel>
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <h4 class="card-title">Inmuebles registrados</h4>
+                            </div>
+                            <div class="col-sm-2">
+                                <asp:Button ID="btn_Agregar" runat="server" Text="Agregar" CssClass="btn btn-default btn-info" data-toggle="modal" data-target="#divAgregar" OnClick="btn_Agregar_Click" />
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                             <ContentTemplate>
                                 <div class="table table-responsive" style="font-size: small">
-                                    <asp:GridView ID="grdInmuebles" runat="server" AutoGenerateColumns="false" CssClass="table table-striped"
+                                    <asp:GridView ID="grdInmuebles" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered"
                                         DataKeyNames="IdInmueble">
                                         <Columns>
-                                            <asp:TemplateField>
+                                            <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton runat="server" ID="ibtnEditar" ToolTip="Editar" ImageUrl="~/Images/Editar.png" Width="20px" data-toggle="modal" data-target="#divAgregar" OnClick="ibtnEditar_Click" />
+                                                    <asp:ImageButton runat="server" ID="ibtnEditar" ToolTip="Editar" ImageUrl="~/Images/editar.png" Width="25px" data-toggle="modal" data-target="#divAgregar" OnClick="ibtnEditar_Click" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField>
+                                            <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton runat="server" ID="ibtnImagenes" ToolTip="Editar" ImageUrl="~/Images/Cargar.png" Width="20px" data-toggle="modal" data-target="#divAgregarImagenes" OnClick="ibtnImagenes_Click" />
+                                                    <asp:ImageButton runat="server" ID="ibtnImagenes" ToolTip="Ver imagenes" ImageUrl="~/Images/imagenes.png" Width="25px" data-toggle="modal" data-target="#divAgregarImagenes" OnClick="ibtnImagenes_Click" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField DataField="IdInmueble" HeaderText="Id Inmueble" />
-                                            <asp:BoundField DataField="Nombre" HeaderText="Nombre Inmueble" />
-                                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" Visible="false" />
-                                            <asp:TemplateField HeaderText="Usado / Nuevo" Visible="false">
+                                            <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
+                                                <ItemTemplate>
+                                                    <asp:ImageButton runat="server" ID="ibtnArchivos" ToolTip="Ver archivos" ImageUrl="~/Images/archivos.png" Width="15px" data-toggle="modal" data-target="#divAgregarArchivos" OnClick="ibtnArchivos_Click" />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:BoundField DataField="IdInmueble" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="Nombre" HeaderText="Nombre Inmueble" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:TemplateField HeaderText="Usado / Nuevo" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White">
                                                 <ItemTemplate>
                                                     <asp:CheckBox ID="chkNuevo" runat="server" CssClass="pull-left" Checked='<%#Convert.ToBoolean(Eval("Nuevo")) %>' Enabled="false" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField DataField="CostoTotal" HeaderText="Costo total" DataFormatString="{0:C}" />
-                                            <asp:BoundField DataField="CostoMensual" HeaderText="Costo Mensual" DataFormatString="{0:C}" />
-                                            <asp:BoundField DataField="Propiedad" HeaderText="Tipo Propiedad" />
-                                            <asp:BoundField DataField="Asentamiento" HeaderText="Colonia" />
-                                            <asp:BoundField DataField="Municipio" HeaderText="Municipio" />
-                                            <asp:BoundField DataField="Estado" HeaderText="Estado" />
-                                            <asp:BoundField DataField="FechaAlta" HeaderText="Fecha registro" DataFormatString="{0:dd/MM/yyyy}" />
-                                            <asp:BoundField DataField="EstatusInmueble" HeaderText="Estatus" />
-
-
-
+                                            <asp:BoundField DataField="CostoTotal" HeaderText="Costo total" DataFormatString="{0:C}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="CostoMensual" HeaderText="Costo Mensual" DataFormatString="{0:C}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="Propiedad" HeaderText="Tipo Propiedad" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="Asentamiento" HeaderText="Colonia" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="Municipio" HeaderText="Municipio" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="Estado" HeaderText="Estado" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="FechaAlta" HeaderText="Fecha registro" DataFormatString="{0:dd/MM/yyyy}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="EstatusInmueble" HeaderText="Estatus" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
                                         </Columns>
                                     </asp:GridView>
                                 </div>
                             </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger EventName="Click" ControlID="btn_Agregar" />
+                            </Triggers>
                         </asp:UpdatePanel>
                     </div>
                 </div>

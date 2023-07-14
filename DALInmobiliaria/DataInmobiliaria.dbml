@@ -43,21 +43,6 @@
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_GetValidaUsuario" Method="sp_GetValidaUsuario">
-    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(200)" />
-    <ElementType Name="sp_GetValidaUsuarioResult">
-      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Paterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Materno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NombreUsuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Movil" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="Activo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.sp_InsertRoles" Method="sp_InsertRoles">
     <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
@@ -286,6 +271,33 @@
       <Column Name="NombreImagen" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="UbicacionImagen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetUsuarioPermisos" Method="sp_GetUsuarioPermisos">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetUsuarioPermisosResult">
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Paterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Materno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetValidaUsuario" Method="sp_GetValidaUsuario">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="sp_GetValidaUsuarioResult">
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Paterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Materno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreUsuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Movil" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

@@ -107,8 +107,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\Cargar.png" />
-    <Content Include="images\Editar.png" />
+    <Content Include="images\archivos.png" />
+    <Content Include="images\borrar.png" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -118,6 +118,8 @@
     <Content Include="css\signin.css" />
     <Content Include="css\Styles.css" />
     <Content Include="Global.asax" />
+    <Content Include="images\editar.png" />
+    <Content Include="images\imagenes.png" />
     <Content Include="images\logoInicial.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

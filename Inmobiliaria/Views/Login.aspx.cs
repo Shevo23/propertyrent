@@ -64,7 +64,9 @@ namespace Inmobiliaria.Views
 
                 if (dsUsuario.Tables[0].Rows.Count > 0)
                 {
-                    FormsAuthentication.SetAuthCookie(txtEmail.Text.Trim(), true);
+                    FormsAuthentication.SetAuthCookie(txtEmail.Text, true);
+
+                    Session["IdUsuario"] = dsUsuario.Tables[0].Rows[0]["IdUsuario"].ToString();
 
                     Response.Redirect("~/Views/Default.aspx");
                 }
@@ -73,9 +75,9 @@ namespace Inmobiliaria.Views
                     ShowMessage("Nombre de usuario o password incorrecto.", MessageType.Advertencia);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                string ms = ex.Message;
                 throw;
             }
         }

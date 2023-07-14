@@ -148,5 +148,30 @@ namespace Inmobiliaria.Views.Settings
                 throw;
             }
         }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ViewState["oInsertar"] = null;
+
+
+                lbl_Titulo.Text = "Agregar nuevo";
+                txtNombre.Text = string.Empty;
+                txtPaterno.Text = string.Empty;
+                txtMaterno.Text = string.Empty;
+                txtEmail.Text = string.Empty;
+                txtNombreUsuario.Text = string.Empty;
+                txtMovil.Text = string.Empty;
+                txtPassword.Text = string.Empty;
+                chk_Estatus.Checked = true;
+                chk_Estatus.Enabled = false;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

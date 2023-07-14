@@ -380,6 +380,25 @@ namespace BTLInmobiliaria
             context.Connection.Close();
         }
 
+        public DataSet GetUsuarioPermisos(int idUsuario)
+        {
+            DataTable data;
+
+            context.Connection.Open();
+
+            var dsResult = context.sp_GetUsuarioPermisos(idUsuario);
+
+            data = dsResult.CopyToDataTable();
+
+            context.Connection.Close();
+
+            DataSet resultDataSet = new DataSet();
+
+            resultDataSet.Tables.Add(data);
+
+            return resultDataSet;
+        }
+
         public DataSet GetValidaUsuario(string email, string password)
         {
             DataTable data;

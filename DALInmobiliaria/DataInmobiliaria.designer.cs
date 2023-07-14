@@ -97,13 +97,6 @@ namespace DALInmobiliaria
 			return ((ISingleResult<sp_GetUsuariosRolesResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetValidaUsuario")]
-		public ISingleResult<sp_GetValidaUsuarioResult> sp_GetValidaUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="VarChar(200)")] string password)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email, password);
-			return ((ISingleResult<sp_GetValidaUsuarioResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertRoles")]
 		public int sp_InsertRoles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(50)")] string descripcion)
 		{
@@ -285,6 +278,20 @@ namespace DALInmobiliaria
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idInmueble);
 			return ((ISingleResult<sp_GetImagenesInmuebleResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetUsuarioPermisos")]
+		public ISingleResult<sp_GetUsuarioPermisosResult> sp_GetUsuarioPermisos([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuario", DbType="Int")] System.Nullable<int> idUsuario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idUsuario);
+			return ((ISingleResult<sp_GetUsuarioPermisosResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetValidaUsuario")]
+		public ISingleResult<sp_GetValidaUsuarioResult> sp_GetValidaUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="VarChar(200)")] string password)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email, password);
+			return ((ISingleResult<sp_GetValidaUsuarioResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -639,176 +646,6 @@ namespace DALInmobiliaria
 				if ((this._Descripcion != value))
 				{
 					this._Descripcion = value;
-				}
-			}
-		}
-	}
-	
-	public partial class sp_GetValidaUsuarioResult
-	{
-		
-		private int _IdUsuario;
-		
-		private string _Nombre;
-		
-		private string _Paterno;
-		
-		private string _Materno;
-		
-		private string _Email;
-		
-		private string _NombreUsuario;
-		
-		private string _Movil;
-		
-		private string _Password;
-		
-		private System.Nullable<int> _Activo;
-		
-		public sp_GetValidaUsuarioResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUsuario", DbType="Int NOT NULL")]
-		public int IdUsuario
-		{
-			get
-			{
-				return this._IdUsuario;
-			}
-			set
-			{
-				if ((this._IdUsuario != value))
-				{
-					this._IdUsuario = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50)")]
-		public string Nombre
-		{
-			get
-			{
-				return this._Nombre;
-			}
-			set
-			{
-				if ((this._Nombre != value))
-				{
-					this._Nombre = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paterno", DbType="VarChar(50)")]
-		public string Paterno
-		{
-			get
-			{
-				return this._Paterno;
-			}
-			set
-			{
-				if ((this._Paterno != value))
-				{
-					this._Paterno = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Materno", DbType="VarChar(50)")]
-		public string Materno
-		{
-			get
-			{
-				return this._Materno;
-			}
-			set
-			{
-				if ((this._Materno != value))
-				{
-					this._Materno = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this._Email = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreUsuario", DbType="VarChar(50)")]
-		public string NombreUsuario
-		{
-			get
-			{
-				return this._NombreUsuario;
-			}
-			set
-			{
-				if ((this._NombreUsuario != value))
-				{
-					this._NombreUsuario = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Movil", DbType="VarChar(10)")]
-		public string Movil
-		{
-			get
-			{
-				return this._Movil;
-			}
-			set
-			{
-				if ((this._Movil != value))
-				{
-					this._Movil = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(200)")]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this._Password = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activo", DbType="Int")]
-		public System.Nullable<int> Activo
-		{
-			get
-			{
-				return this._Activo;
-			}
-			set
-			{
-				if ((this._Activo != value))
-				{
-					this._Activo = value;
 				}
 			}
 		}
@@ -1791,6 +1628,310 @@ namespace DALInmobiliaria
 				if ((this._IdInmueble != value))
 				{
 					this._IdInmueble = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetUsuarioPermisosResult
+	{
+		
+		private int _IdUsuario;
+		
+		private string _Nombre;
+		
+		private string _Paterno;
+		
+		private string _Materno;
+		
+		private string _Email;
+		
+		private int _IdRol;
+		
+		private string _Descripcion;
+		
+		public sp_GetUsuarioPermisosResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUsuario", DbType="Int NOT NULL")]
+		public int IdUsuario
+		{
+			get
+			{
+				return this._IdUsuario;
+			}
+			set
+			{
+				if ((this._IdUsuario != value))
+				{
+					this._IdUsuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50)")]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paterno", DbType="VarChar(50)")]
+		public string Paterno
+		{
+			get
+			{
+				return this._Paterno;
+			}
+			set
+			{
+				if ((this._Paterno != value))
+				{
+					this._Paterno = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Materno", DbType="VarChar(50)")]
+		public string Materno
+		{
+			get
+			{
+				return this._Materno;
+			}
+			set
+			{
+				if ((this._Materno != value))
+				{
+					this._Materno = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdRol", DbType="Int NOT NULL")]
+		public int IdRol
+		{
+			get
+			{
+				return this._IdRol;
+			}
+			set
+			{
+				if ((this._IdRol != value))
+				{
+					this._IdRol = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(50)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetValidaUsuarioResult
+	{
+		
+		private int _IdUsuario;
+		
+		private string _Nombre;
+		
+		private string _Paterno;
+		
+		private string _Materno;
+		
+		private string _Email;
+		
+		private string _NombreUsuario;
+		
+		private string _Movil;
+		
+		private string _Password;
+		
+		private System.Nullable<int> _Activo;
+		
+		public sp_GetValidaUsuarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUsuario", DbType="Int NOT NULL")]
+		public int IdUsuario
+		{
+			get
+			{
+				return this._IdUsuario;
+			}
+			set
+			{
+				if ((this._IdUsuario != value))
+				{
+					this._IdUsuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50)")]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paterno", DbType="VarChar(50)")]
+		public string Paterno
+		{
+			get
+			{
+				return this._Paterno;
+			}
+			set
+			{
+				if ((this._Paterno != value))
+				{
+					this._Paterno = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Materno", DbType="VarChar(50)")]
+		public string Materno
+		{
+			get
+			{
+				return this._Materno;
+			}
+			set
+			{
+				if ((this._Materno != value))
+				{
+					this._Materno = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreUsuario", DbType="VarChar(50)")]
+		public string NombreUsuario
+		{
+			get
+			{
+				return this._NombreUsuario;
+			}
+			set
+			{
+				if ((this._NombreUsuario != value))
+				{
+					this._NombreUsuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Movil", DbType="VarChar(10)")]
+		public string Movil
+		{
+			get
+			{
+				return this._Movil;
+			}
+			set
+			{
+				if ((this._Movil != value))
+				{
+					this._Movil = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(200)")]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this._Password = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activo", DbType="Int")]
+		public System.Nullable<int> Activo
+		{
+			get
+			{
+				return this._Activo;
+			}
+			set
+			{
+				if ((this._Activo != value))
+				{
+					this._Activo = value;
 				}
 			}
 		}

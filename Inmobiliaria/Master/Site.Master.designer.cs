@@ -42,6 +42,33 @@ namespace Inmobiliaria.Master
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
+        /// menuInmuebles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor menuInmuebles;
+
+        /// <summary>
+        /// menuReportes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl menuReportes;
+
+        /// <summary>
+        /// menuConfiguracion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor menuConfiguracion;
+
+        /// <summary>
         /// lnkSalir control.
         /// </summary>
         /// <remarks>
@@ -49,6 +76,24 @@ namespace Inmobiliaria.Master
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkSalir;
+
+        /// <summary>
+        /// lblRol control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblRol;
+
+        /// <summary>
+        /// lblUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblUsuario;
 
         /// <summary>
         /// ContentPlaceHolder1 control.

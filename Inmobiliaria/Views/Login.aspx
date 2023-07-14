@@ -19,7 +19,7 @@
                     <br />
                     <br />
                     <br />
-                    <h1>Inmobiliaria Serv.</h1>
+                    <h1 style="color:#fbd253">Inmobiliaria Serv.</h1>
                     <br />
                     <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Correo electrónico"></asp:TextBox>
                     <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="Contraseña" TextMode="Password"></asp:TextBox>
@@ -44,15 +44,6 @@
                     Inmobiliaria Serv.
                 </p>
             </footer>
-            <%--<img class="mb-4" src="../images/logo.jpg" alt="" width="200" height="45">
-            <br />
-            <br />
-            <br />
-            <h1 class="h4 mb-3 font-weight-normal">Inmobiliaria Serv.</h1>
-            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Correo electronico"></asp:TextBox>
-            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="Contraseña" TextMode="Password"></asp:TextBox>
-            <asp:Button runat="server" Text="Entrar" CssClass="btn btn-lg btn-primary btn-block" ID="btnIngresar" OnClick="btnIngresar_Click"  />
-            <p class="mt-5 mb-3 text-muted">Ingram Micro <%= DateTime.Now.Year %> Version 2.1.13</p>--%>
         </ContentTemplate>
     </asp:UpdatePanel>
 

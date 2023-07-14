@@ -129,7 +129,24 @@ namespace Inmobiliaria.Views.Settings
             }
         }
 
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ViewState["oInsertar"] = true;
+
+                lbl_Titulo.Text = "Agregar nuevo";
+                txtDescripcion.Text = string.Empty;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         #endregion
+
 
     }
 }

@@ -51,7 +51,7 @@ footer {
         text-decoration: none;
     }
 
-.default-image {
+.body  {
     background-image: url('../images/logoInicial.jpg');
     background-color: #f4f4f4;
     height: 500px;
