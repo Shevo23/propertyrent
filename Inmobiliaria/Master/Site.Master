@@ -35,7 +35,10 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="color: #ffffff" href="#" id="menuInmuebles" runat="server" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inmuebles</a>
                         <div class="dropdown-menu" style="background-color: #990f26;" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Inmobiliaria/Arrendadores.aspx")%>">Registro de Arrendadores</a>
+                            <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Inmobiliaria/Arrendatario.aspx")%>">Registro de Arrendatarios</a>
                             <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Inmobiliaria/Inmuebles.aspx")%>">Registro de inmuebles</a>
+                            
                         </div>
                     </li>
                     <li class="nav-item" id="menuReportes" runat="server">

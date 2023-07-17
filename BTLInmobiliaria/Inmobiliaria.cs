@@ -19,6 +19,24 @@ namespace BTLInmobiliaria
 
         #region Delete
 
+        public void DeleteArchivosArrendatario(int idArchivoArrendatario)
+        {
+            context.Connection.Open();
+
+            context.sp_DeleteArchivosArrendatario(idArchivoArrendatario);
+
+            context.Connection.Close();
+        }
+
+        public void DeleteArchivosArrendador(int idArchivoArrendador)
+        {
+            context.Connection.Open();
+
+            context.sp_DeleteArchivosArrendador(idArchivoArrendador);
+
+            context.Connection.Close();
+        }
+
         public void DeleteArchivosInmueble(int idArchivoInmueble)
         {
             context.Connection.Open();
@@ -40,6 +58,24 @@ namespace BTLInmobiliaria
         #endregion
 
         #region Update
+
+        public void UpdateArrendatario(int idArrendador, string nombres, string paterno, string materno, string email, string movil, string fijo, DateTime fechaBaja, int activo, int idTipoIdentificacion)
+        {
+            context.Connection.Open();
+
+            context.sp_UpdateArrendatarios(idArrendador, nombres, paterno, materno, email, movil, fijo, fechaBaja, activo, idTipoIdentificacion);
+
+            context.Connection.Close();
+        }
+
+        public void UpdateArrendador(int idArrendador, string nombres, string paterno, string materno, string email, string movil, string fijo, DateTime fechaBaja, int activo, int idTipoIdentificacion)
+        {
+            context.Connection.Open();
+
+            context.sp_UpdateArrendador(idArrendador, nombres, paterno, materno, email, movil, fijo, fechaBaja, activo, idTipoIdentificacion);
+
+            context.Connection.Close();
+        }
 
         public void UpdateUsuariosInmuebles(int idUsuarioInmueble, int idUsuario, int idInmueble, DateTime fechaModificacion)
         {
@@ -71,6 +107,51 @@ namespace BTLInmobiliaria
         #endregion
 
         #region Insert
+
+        public void InsertArchivosArrendador(string nombreImagen, string ubicacionImagen, int idArrendador)
+        {
+            context.Connection.Open();
+
+            context.sp_InsertArchivosArrendador(nombreImagen, ubicacionImagen, idArrendador);
+
+            context.Connection.Close();
+        }
+
+        public void InsertArchivosArrendatario(string nombreImagen, string ubicacionImagen, int idArrendador)
+        {
+            context.Connection.Open();
+
+            context.sp_InsertArchivosArrendatario(nombreImagen, ubicacionImagen, idArrendador);
+
+            context.Connection.Close();
+        }
+
+        public void InsertArchivosArchivos(string nombreImagen, string ubicacionImagen, int idArrendador)
+        {
+            context.Connection.Open();
+
+            context.sp_InsertArchivosArrendador(nombreImagen, ubicacionImagen, idArrendador);
+
+            context.Connection.Close();
+        }
+
+        public void InsertArrendatario(string nombres, string paterno, string materno, string email, string movil, string fijo, DateTime fechaAlta, int activo, int idTipoIdentificacion)
+        {
+            context.Connection.Open();
+
+            context.sp_InsertArrendatarios(nombres, paterno, materno, email, movil, fijo, fechaAlta, activo, idTipoIdentificacion);
+
+            context.Connection.Close();
+        }
+
+        public void InsertArrendador(string nombres, string paterno, string materno, string email, string movil, string fijo, DateTime fechaAlta, int activo, int idTipoIdentificacion)
+        {
+            context.Connection.Open();
+
+            context.sp_InsertArrendador(nombres, paterno, materno, email, movil, fijo, fechaAlta, activo, idTipoIdentificacion);
+
+            context.Connection.Close();
+        }
 
         public void InsertArchivosInmueble(string nombreImagen, string ubicacionImagen, int idInmueble)
         {
@@ -124,6 +205,82 @@ namespace BTLInmobiliaria
         #endregion
 
         #region Select
+
+        public DataSet GetArchivosArrendatario(int idArrendatario)
+        {
+            DataTable data;
+
+            context.Connection.Open();
+
+            var dsResult = context.sp_GetArchivosArrendatario(idArrendatario);
+
+            data = dsResult.CopyToDataTable();
+
+            context.Connection.Close();
+
+            DataSet resultDataSet = new DataSet();
+
+            resultDataSet.Tables.Add(data);
+
+            return resultDataSet;
+        }
+
+        public DataSet GetArchivosArrendador(int idArrendador)
+        {
+            DataTable data;
+
+            context.Connection.Open();
+
+            var dsResult = context.sp_GetArchivosArrendador(idArrendador);
+
+            data = dsResult.CopyToDataTable();
+
+            context.Connection.Close();
+
+            DataSet resultDataSet = new DataSet();
+
+            resultDataSet.Tables.Add(data);
+
+            return resultDataSet;
+        }
+
+        public DataSet GetArrendatarios(int idArrendatario)
+        {
+            DataTable data;
+
+            context.Connection.Open();
+
+            var dsResult = context.sp_GetArrendatarios(idArrendatario);
+
+            data = dsResult.CopyToDataTable();
+
+            context.Connection.Close();
+
+            DataSet resultDataSet = new DataSet();
+
+            resultDataSet.Tables.Add(data);
+
+            return resultDataSet;
+        }
+
+        public DataSet GetArrendadores(int idArrendador)
+        {
+            DataTable data;
+
+            context.Connection.Open();
+
+            var dsResult = context.sp_GetArrendadores(idArrendador);
+
+            data = dsResult.CopyToDataTable();
+
+            context.Connection.Close();
+
+            DataSet resultDataSet = new DataSet();
+
+            resultDataSet.Tables.Add(data);
+
+            return resultDataSet;
+        }
 
         public DataSet GetArchivosInmueble(int idInmueble)
         {

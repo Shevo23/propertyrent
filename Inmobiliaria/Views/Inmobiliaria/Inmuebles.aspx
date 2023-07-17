@@ -40,7 +40,7 @@
                                         <asp:UpdatePanel runat="server">
                                             <ContentTemplate>
                                                 <asp:GridView ID="grdArchivos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered"
-                                                    OnRowDataBound="grdArchivos_RowDataBound" DataKeyNames="IdArchivoInmueble,NombreArchivo">
+                                                    OnRowDataBound="grdArchivos_RowDataBound" DataKeyNames="IdArchivoInmueble,NombreArchivo,IdInmueble">
                                                     <Columns>
                                                         <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
                                                             <ItemTemplate>
@@ -365,7 +365,7 @@
                                         <Columns>
                                             <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton runat="server" ID="ibtnEditar" ToolTip="Editar" ImageUrl="~/Images/editar.png" Width="25px" data-toggle="modal" data-target="#divAgregar" OnClick="ibtnEditar_Click" />
+                                                    <asp:ImageButton runat="server" ID="ibtnEditar" ToolTip="Editar" ImageUrl="~/Images/editar.png" Width="20px" data-toggle="modal" data-target="#divAgregar" OnClick="ibtnEditar_Click" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">

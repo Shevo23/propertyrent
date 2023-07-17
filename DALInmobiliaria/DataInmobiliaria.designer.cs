@@ -314,6 +314,90 @@ namespace DALInmobiliaria
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idInmueble);
 			return ((ISingleResult<sp_GetArchivosInmuebleResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertArrendador")]
+		public int sp_InsertArrendador([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombres", DbType="VarChar(100)")] string nombres, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Paterno", DbType="VarChar(50)")] string paterno, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Materno", DbType="VarChar(50)")] string materno, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="VarChar(100)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Movil", DbType="VarChar(10)")] string movil, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fijo", DbType="VarChar(10)")] string fijo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaAlta", DbType="DateTime")] System.Nullable<System.DateTime> fechaAlta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Activo", DbType="Int")] System.Nullable<int> activo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoIdentificacion", DbType="Int")] System.Nullable<int> idTipoIdentificacion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombres, paterno, materno, email, movil, fijo, fechaAlta, activo, idTipoIdentificacion);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertArrendatarios")]
+		public int sp_InsertArrendatarios([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombres", DbType="VarChar(100)")] string nombres, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Paterno", DbType="VarChar(50)")] string paterno, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Materno", DbType="VarChar(50)")] string materno, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="VarChar(100)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Movil", DbType="VarChar(10)")] string movil, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fijo", DbType="VarChar(10)")] string fijo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaAlta", DbType="DateTime")] System.Nullable<System.DateTime> fechaAlta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Activo", DbType="Int")] System.Nullable<int> activo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoIdentificacion", DbType="Int")] System.Nullable<int> idTipoIdentificacion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombres, paterno, materno, email, movil, fijo, fechaAlta, activo, idTipoIdentificacion);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateArrendatarios")]
+		public int sp_UpdateArrendatarios([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArrendatario", DbType="Int")] System.Nullable<int> idArrendatario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombres", DbType="VarChar(100)")] string nombres, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Paterno", DbType="VarChar(50)")] string paterno, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Materno", DbType="VarChar(50)")] string materno, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="VarChar(100)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Movil", DbType="VarChar(10)")] string movil, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fijo", DbType="VarChar(10)")] string fijo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaBaja", DbType="DateTime")] System.Nullable<System.DateTime> fechaBaja, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Activo", DbType="Int")] System.Nullable<int> activo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoIdentificacion", DbType="Int")] System.Nullable<int> idTipoIdentificacion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idArrendatario, nombres, paterno, materno, email, movil, fijo, fechaBaja, activo, idTipoIdentificacion);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateArrendador")]
+		public int sp_UpdateArrendador([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArrendador", DbType="Int")] System.Nullable<int> idArrendador, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombres", DbType="VarChar(100)")] string nombres, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Paterno", DbType="VarChar(50)")] string paterno, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Materno", DbType="VarChar(50)")] string materno, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="VarChar(100)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Movil", DbType="VarChar(10)")] string movil, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fijo", DbType="VarChar(10)")] string fijo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaBaja", DbType="DateTime")] System.Nullable<System.DateTime> fechaBaja, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Activo", DbType="Int")] System.Nullable<int> activo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoIdentificacion", DbType="Int")] System.Nullable<int> idTipoIdentificacion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idArrendador, nombres, paterno, materno, email, movil, fijo, fechaBaja, activo, idTipoIdentificacion);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetArrendadores")]
+		public ISingleResult<sp_GetArrendadoresResult> sp_GetArrendadores([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArrendador", DbType="Int")] System.Nullable<int> idArrendador)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idArrendador);
+			return ((ISingleResult<sp_GetArrendadoresResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertArchivosArrendador")]
+		public int sp_InsertArchivosArrendador([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NombreArchivo", DbType="VarChar(100)")] string nombreArchivo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UbicacionArchivo", DbType="VarChar(MAX)")] string ubicacionArchivo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArrendador", DbType="Int")] System.Nullable<int> idArrendador)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreArchivo, ubicacionArchivo, idArrendador);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertArchivosArrendatario")]
+		public int sp_InsertArchivosArrendatario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NombreArchivo", DbType="VarChar(100)")] string nombreArchivo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UbicacionArchivo", DbType="VarChar(MAX)")] string ubicacionArchivo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArrendatario", DbType="Int")] System.Nullable<int> idArrendatario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreArchivo, ubicacionArchivo, idArrendatario);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteArchivosArrendador")]
+		public int sp_DeleteArchivosArrendador([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArchivoArrendador", DbType="Int")] System.Nullable<int> idArchivoArrendador)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idArchivoArrendador);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteArchivosArrendatario")]
+		public int sp_DeleteArchivosArrendatario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArchivoArrendatario", DbType="Int")] System.Nullable<int> idArchivoArrendatario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idArchivoArrendatario);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetArrendatarios")]
+		public ISingleResult<sp_GetArrendatariosResult> sp_GetArrendatarios([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArrendatario", DbType="Int")] System.Nullable<int> idArrendatario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idArrendatario);
+			return ((ISingleResult<sp_GetArrendatariosResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetArchivosArrendatario")]
+		public ISingleResult<sp_GetArchivosArrendatarioResult> sp_GetArchivosArrendatario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArrendatario", DbType="Int")] System.Nullable<int> idArrendatario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idArrendatario);
+			return ((ISingleResult<sp_GetArchivosArrendatarioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetArchivosArrendador")]
+		public ISingleResult<sp_GetArchivosArrendadorResult> sp_GetArchivosArrendador([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArrendador", DbType="Int")] System.Nullable<int> idArrendador)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idArrendador);
+			return ((ISingleResult<sp_GetArchivosArrendadorResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class sp_GetRolesResult
@@ -2033,6 +2117,596 @@ namespace DALInmobiliaria
 				if ((this._IdInmueble != value))
 				{
 					this._IdInmueble = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetArrendadoresResult
+	{
+		
+		private int _IdArrendador;
+		
+		private string _Nombres;
+		
+		private string _Paterno;
+		
+		private string _Materno;
+		
+		private string _Email;
+		
+		private string _Movil;
+		
+		private string _Fijo;
+		
+		private System.Nullable<System.DateTime> _FechaAlta;
+		
+		private System.Nullable<System.DateTime> _FechaBaja;
+		
+		private System.Nullable<int> _Activo;
+		
+		private int _IdTipoIdentificacion;
+		
+		private string _Descripcion;
+		
+		public sp_GetArrendadoresResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdArrendador", DbType="Int NOT NULL")]
+		public int IdArrendador
+		{
+			get
+			{
+				return this._IdArrendador;
+			}
+			set
+			{
+				if ((this._IdArrendador != value))
+				{
+					this._IdArrendador = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombres", DbType="VarChar(100)")]
+		public string Nombres
+		{
+			get
+			{
+				return this._Nombres;
+			}
+			set
+			{
+				if ((this._Nombres != value))
+				{
+					this._Nombres = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paterno", DbType="VarChar(50)")]
+		public string Paterno
+		{
+			get
+			{
+				return this._Paterno;
+			}
+			set
+			{
+				if ((this._Paterno != value))
+				{
+					this._Paterno = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Materno", DbType="VarChar(50)")]
+		public string Materno
+		{
+			get
+			{
+				return this._Materno;
+			}
+			set
+			{
+				if ((this._Materno != value))
+				{
+					this._Materno = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Movil", DbType="VarChar(10)")]
+		public string Movil
+		{
+			get
+			{
+				return this._Movil;
+			}
+			set
+			{
+				if ((this._Movil != value))
+				{
+					this._Movil = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fijo", DbType="VarChar(10)")]
+		public string Fijo
+		{
+			get
+			{
+				return this._Fijo;
+			}
+			set
+			{
+				if ((this._Fijo != value))
+				{
+					this._Fijo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaAlta", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaAlta
+		{
+			get
+			{
+				return this._FechaAlta;
+			}
+			set
+			{
+				if ((this._FechaAlta != value))
+				{
+					this._FechaAlta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaBaja", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaBaja
+		{
+			get
+			{
+				return this._FechaBaja;
+			}
+			set
+			{
+				if ((this._FechaBaja != value))
+				{
+					this._FechaBaja = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activo", DbType="Int")]
+		public System.Nullable<int> Activo
+		{
+			get
+			{
+				return this._Activo;
+			}
+			set
+			{
+				if ((this._Activo != value))
+				{
+					this._Activo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTipoIdentificacion", DbType="Int NOT NULL")]
+		public int IdTipoIdentificacion
+		{
+			get
+			{
+				return this._IdTipoIdentificacion;
+			}
+			set
+			{
+				if ((this._IdTipoIdentificacion != value))
+				{
+					this._IdTipoIdentificacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(50)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetArrendatariosResult
+	{
+		
+		private int _IdArrendatario;
+		
+		private string _Nombres;
+		
+		private string _Paterno;
+		
+		private string _Materno;
+		
+		private string _Email;
+		
+		private string _Movil;
+		
+		private string _Fijo;
+		
+		private System.Nullable<System.DateTime> _FechaAlta;
+		
+		private System.Nullable<System.DateTime> _FechaBaja;
+		
+		private System.Nullable<int> _Activo;
+		
+		private int _IdTipoIdentificacion;
+		
+		public sp_GetArrendatariosResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdArrendatario", DbType="Int NOT NULL")]
+		public int IdArrendatario
+		{
+			get
+			{
+				return this._IdArrendatario;
+			}
+			set
+			{
+				if ((this._IdArrendatario != value))
+				{
+					this._IdArrendatario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombres", DbType="VarChar(100)")]
+		public string Nombres
+		{
+			get
+			{
+				return this._Nombres;
+			}
+			set
+			{
+				if ((this._Nombres != value))
+				{
+					this._Nombres = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paterno", DbType="VarChar(50)")]
+		public string Paterno
+		{
+			get
+			{
+				return this._Paterno;
+			}
+			set
+			{
+				if ((this._Paterno != value))
+				{
+					this._Paterno = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Materno", DbType="VarChar(50)")]
+		public string Materno
+		{
+			get
+			{
+				return this._Materno;
+			}
+			set
+			{
+				if ((this._Materno != value))
+				{
+					this._Materno = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Movil", DbType="VarChar(10)")]
+		public string Movil
+		{
+			get
+			{
+				return this._Movil;
+			}
+			set
+			{
+				if ((this._Movil != value))
+				{
+					this._Movil = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fijo", DbType="VarChar(10)")]
+		public string Fijo
+		{
+			get
+			{
+				return this._Fijo;
+			}
+			set
+			{
+				if ((this._Fijo != value))
+				{
+					this._Fijo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaAlta", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaAlta
+		{
+			get
+			{
+				return this._FechaAlta;
+			}
+			set
+			{
+				if ((this._FechaAlta != value))
+				{
+					this._FechaAlta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaBaja", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaBaja
+		{
+			get
+			{
+				return this._FechaBaja;
+			}
+			set
+			{
+				if ((this._FechaBaja != value))
+				{
+					this._FechaBaja = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activo", DbType="Int")]
+		public System.Nullable<int> Activo
+		{
+			get
+			{
+				return this._Activo;
+			}
+			set
+			{
+				if ((this._Activo != value))
+				{
+					this._Activo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTipoIdentificacion", DbType="Int NOT NULL")]
+		public int IdTipoIdentificacion
+		{
+			get
+			{
+				return this._IdTipoIdentificacion;
+			}
+			set
+			{
+				if ((this._IdTipoIdentificacion != value))
+				{
+					this._IdTipoIdentificacion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetArchivosArrendatarioResult
+	{
+		
+		private int _IdArchivoArrendatario;
+		
+		private string _NombreArchivo;
+		
+		private string _UbicacionArchivo;
+		
+		private System.Nullable<int> _IdArrendatario;
+		
+		public sp_GetArchivosArrendatarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdArchivoArrendatario", DbType="Int NOT NULL")]
+		public int IdArchivoArrendatario
+		{
+			get
+			{
+				return this._IdArchivoArrendatario;
+			}
+			set
+			{
+				if ((this._IdArchivoArrendatario != value))
+				{
+					this._IdArchivoArrendatario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreArchivo", DbType="VarChar(100)")]
+		public string NombreArchivo
+		{
+			get
+			{
+				return this._NombreArchivo;
+			}
+			set
+			{
+				if ((this._NombreArchivo != value))
+				{
+					this._NombreArchivo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UbicacionArchivo", DbType="VarChar(MAX)")]
+		public string UbicacionArchivo
+		{
+			get
+			{
+				return this._UbicacionArchivo;
+			}
+			set
+			{
+				if ((this._UbicacionArchivo != value))
+				{
+					this._UbicacionArchivo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdArrendatario", DbType="Int")]
+		public System.Nullable<int> IdArrendatario
+		{
+			get
+			{
+				return this._IdArrendatario;
+			}
+			set
+			{
+				if ((this._IdArrendatario != value))
+				{
+					this._IdArrendatario = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetArchivosArrendadorResult
+	{
+		
+		private int _IdArchivoArrendador;
+		
+		private string _NombreArchivo;
+		
+		private string _UbicacionArchivo;
+		
+		private int _IdArrendador;
+		
+		public sp_GetArchivosArrendadorResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdArchivoArrendador", DbType="Int NOT NULL")]
+		public int IdArchivoArrendador
+		{
+			get
+			{
+				return this._IdArchivoArrendador;
+			}
+			set
+			{
+				if ((this._IdArchivoArrendador != value))
+				{
+					this._IdArchivoArrendador = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreArchivo", DbType="VarChar(100)")]
+		public string NombreArchivo
+		{
+			get
+			{
+				return this._NombreArchivo;
+			}
+			set
+			{
+				if ((this._NombreArchivo != value))
+				{
+					this._NombreArchivo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UbicacionArchivo", DbType="VarChar(MAX)")]
+		public string UbicacionArchivo
+		{
+			get
+			{
+				return this._UbicacionArchivo;
+			}
+			set
+			{
+				if ((this._UbicacionArchivo != value))
+				{
+					this._UbicacionArchivo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdArrendador", DbType="Int NOT NULL")]
+		public int IdArrendador
+		{
+			get
+			{
+				return this._IdArrendador;
+			}
+			set
+			{
+				if ((this._IdArrendador != value))
+				{
+					this._IdArrendador = value;
 				}
 			}
 		}
