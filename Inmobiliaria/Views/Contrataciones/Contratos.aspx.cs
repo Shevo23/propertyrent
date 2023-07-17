@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Inmobiliaria.Views.Inmobiliaria
+namespace Inmobiliaria.Views.Contrataciones
 {
     public partial class Contratos : System.Web.UI.Page
     {

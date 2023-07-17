@@ -247,10 +247,10 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Views\Contrataciones\Contratos.aspx" />
     <Content Include="Views\Default.aspx" />
     <Content Include="Views\Inmobiliaria\Arrendadores.aspx" />
     <Content Include="Views\Inmobiliaria\Arrendatario.aspx" />
-    <Content Include="Views\Inmobiliaria\Contratos.aspx" />
     <Content Include="Views\Inmobiliaria\Inmuebles.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\Settings\Roles.aspx" />
@@ -307,6 +307,13 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Contrataciones\Contratos.aspx.cs">
+      <DependentUpon>Contratos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Contrataciones\Contratos.aspx.designer.cs">
+      <DependentUpon>Contratos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -327,13 +334,6 @@
     </Compile>
     <Compile Include="Views\Inmobiliaria\Arrendatario.aspx.designer.cs">
       <DependentUpon>Arrendatario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Inmobiliaria\Contratos.aspx.cs">
-      <DependentUpon>Contratos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Inmobiliaria\Contratos.aspx.designer.cs">
-      <DependentUpon>Contratos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Inmobiliaria\Inmuebles.aspx.cs">
       <DependentUpon>Inmuebles.aspx</DependentUpon>

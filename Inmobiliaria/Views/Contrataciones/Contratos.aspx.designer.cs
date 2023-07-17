@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Inmobiliaria.Views.Inmobiliaria
+namespace Inmobiliaria.Views.Contrataciones
 {
 
 
