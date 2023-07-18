@@ -59,7 +59,7 @@
                         <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                             <ContentTemplate>
                                 <div class="table table-responsive">
-                                    <asp:GridView ID="grdTipoPropiedades" runat="server" AutoGenerateColumns="false" CssClass="table table-striped"
+                                    <asp:GridView ID="grdTipoPropiedades" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered"
                                         DataKeyNames="IdTipoPropiedad">
                                         <Columns>
                                             <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">

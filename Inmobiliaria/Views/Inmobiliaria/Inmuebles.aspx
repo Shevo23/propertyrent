@@ -111,7 +111,7 @@
                                         <asp:UpdatePanel runat="server">
                                             <ContentTemplate>
                                                 <asp:GridView ID="grdImagenes" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered"
-                                                    OnRowDataBound="grdImagenes_RowDataBound" DataKeyNames="IdImagenInmueble,NombreImagen">
+                                                    OnRowDataBound="grdImagenes_RowDataBound" DataKeyNames="IdImagenInmueble,NombreImagen,IdInmueble">
                                                     <Columns>
                                                         <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
                                                             <ItemTemplate>

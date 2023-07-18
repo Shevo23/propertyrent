@@ -647,6 +647,7 @@ namespace Inmobiliaria.Views
                 GridViewRow namingContainer = button.NamingContainer as GridViewRow;
 
                 ViewState["IdImagenInmueble"] = Convert.ToInt32(grdImagenes.DataKeys[namingContainer.RowIndex].Values["IdImagenInmueble"].ToString());
+                ViewState["IdInmueble"] = Convert.ToInt32(grdImagenes.DataKeys[namingContainer.RowIndex].Values["IdInmueble"].ToString());
                 ViewState["NombreImagen"] = grdImagenes.DataKeys[namingContainer.RowIndex].Values["NombreImagen"].ToString();
 
                 string filePath = Server.MapPath("~/Inmuebles/Imagenes") + ViewState["NombreImagen"].ToString();
@@ -655,7 +656,7 @@ namespace Inmobiliaria.Views
 
                 inmobiliaria.DeleteImagenesInmueble(int.Parse(ViewState["IdImagenInmueble"].ToString()));
 
-                GetImagenes(Convert.ToInt32(ViewState["IdImagenInmueble"].ToString()));
+                GetImagenes(Convert.ToInt32(ViewState["IdInmueble"].ToString()));
 
             }
             catch (Exception)
