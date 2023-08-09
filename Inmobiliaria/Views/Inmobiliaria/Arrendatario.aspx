@@ -80,7 +80,7 @@
         </div>
         <br />
         <div id="divAgregar" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-xl" role="document">
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
                         <div class="modal-content">
@@ -93,6 +93,11 @@
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-sm-12">
+                                        <h5>Datos personales</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGroup-sizing-sm">Nombre(s):</span>
@@ -100,9 +105,7 @@
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtNombres" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-4">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGroup-sizing-s">Paterno:</span>
@@ -110,9 +113,7 @@
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtPaterno" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-4">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGroup-sizing-">Materno:</span>
@@ -122,17 +123,60 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-2">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text" id="inputGroup-sizing">Correo electronico:</span>
+                                                <span class="input-group-text" id="inputGroup-sizing">Edad:</span>
                                             </div>
-                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtEdad" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text" for="cmbEstado">Estado:</label>
+                                            </div>
+                                            <asp:DropDownList CssClass="custom-select" runat="server" ID="cmbEstado" AutoPostBack="true" OnSelectedIndexChanged="cmbEstado_SelectedIndexChanged"></asp:DropDownList>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text" for="cmbMunicipio">Municipio:</label>
+                                            </div>
+                                            <asp:DropDownList CssClass="custom-select" runat="server" ID="cmbMunicipio" AutoPostBack="true" OnSelectedIndexChanged="cmbMunicipio_SelectedIndexChanged"></asp:DropDownList>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text" for="cmbAsentamiento">Colonia:</label>
+                                            </div>
+                                            <asp:DropDownList CssClass="custom-select" runat="server" ID="cmbAsentamiento"></asp:DropDownList>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGrp-sizing">Ultimo grado de estudios:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtUltimoGradoEstudio" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inpurp-sizing">Carrera / oficio:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtCarreraOficio" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGrou-sizin">Movil:</span>
@@ -140,19 +184,33 @@
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtMovil" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-4">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text" id="inputGroup-sizin">Teléfono fijo:</span>
+                                                <span class="input-group-text" id="inputGroup-zin">Num personas a habitar:</span>
                                             </div>
-                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtFijo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtNumPersonasHabitar" aria-label="Sizing example input" aria-describedby="inputGroup-zin"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inpuroup-zin">Personas dependan usted:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtNumPersonasDependen" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text" for="cmbAsentamiento">Estado civil:</label>
+                                            </div>
+                                            <asp:DropDownList CssClass="custom-select" runat="server" ID="cmbEstadoCivil"></asp:DropDownList>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="cmbTipoPropiedad">Tipo de indentificación:</label>
@@ -160,10 +218,223 @@
                                             <asp:DropDownList CssClass="custom-select" runat="server" ID="cmbTipoIdentificacion"></asp:DropDownList>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <asp:CheckBox ID="chk_Estatus" runat="server" />
+                                        <asp:Label runat="server" ID="Label2" Text="Activo"></asp:Label>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <asp:CheckBox ID="chk_Estatus" runat="server" />
-                                    <asp:Label runat="server" ID="Label2" Text="Activo"></asp:Label>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h5>Empleo actual</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inpurosup-zin">Empresa:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtEmpresaTrabaja" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inpuroesup-zin">Antigüedad:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtAntiguedad" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inpsuroesup-zin">Horario:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtHorario" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inpsurewoesp-zin">Puesto:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtPuestoEmpleo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizinp">Jefe inmediato:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtNombreJefe" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizi">Salario mensual:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtSalarioMensual" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inpsurewoesup-zin">Dirección:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtDireccionEmpleo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizin">Teléfono fijo:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtFijo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h5>Familiares a habitar</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h5>Datos generales</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Motivo por el que cambia de residencia</span>
+                                            </div>
+                                            <textarea runat="server" id="txtMotivoCambio" class="form-control" aria-label="With textarea" aria-multiline="true"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h5>Datos del fiador</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroupm-sizinp">Relación con el arrendatario:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtRelacionFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroupm-ssizinp">Nombre completo:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtNombreFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGrosupm-ssizinp">Dirección:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtDireccionFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGrosuapm-ssizinp">Teléfono:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtTelefonoFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGrosuapma-ssizinp">Movil:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtMovilFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text" for="cmbAsentamiento">Estado civil:</label>
+                                            </div>
+                                            <asp:DropDownList CssClass="custom-select" runat="server" ID="cmbEstadoCivilFiador"></asp:DropDownList>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGrsuapma-ssizinp">Años matrimonio:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtTiempoMatrimonio" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGrsuapma-sszinp">Edad:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtEdadFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputsuapma-sszinp">Donde trabaja:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtEmpresaTrabajaFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputsuapya-sszinp">Puesto:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtPuestoEmpleoFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputuapya-sszinp">Salario:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtSalarioMensualFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputpya-sszinp">Dirección:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtDireccionEmpleoFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -214,7 +485,7 @@
                                             <asp:BoundField DataField="Movil" HeaderText="Movil" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
                                             <asp:BoundField DataField="Fijo" HeaderText="Fijo" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
                                             <asp:BoundField DataField="IdTipoIdentificacion" HeaderText="IdTipoIdentificacion" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" Visible="false" />
-                                            <asp:BoundField DataField="FechaAlta" HeaderText="Fecha registro"  DataFormatString="{0:dd/MM/yyyy}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="FechaAlta" HeaderText="Fecha registro" DataFormatString="{0:dd/MM/yyyy}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
                                             <asp:TemplateField HeaderText="Usado / Nuevo" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White">
                                                 <ItemTemplate>
                                                     <asp:CheckBox ID="chkActivo" runat="server" CssClass="pull-left" Checked='<%#Convert.ToBoolean(Eval("Activo")) %>' Enabled="false" />

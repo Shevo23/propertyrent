@@ -59,11 +59,15 @@ namespace BTLInmobiliaria
 
         #region Update
 
-        public void UpdateArrendatario(int idArrendador, string nombres, string paterno, string materno, string email, string movil, string fijo, DateTime fechaBaja, int activo, int idTipoIdentificacion)
+        public void UpdateArrendatario(int idArrendador, string nombres, string paterno, string materno, int edad, string ultimoGradoEstudio, string carreraOficio, int idAsentamiento, int numPersonasHabitar, int numPersonasDependen, int idEstadoCivil, string movil, string empresaTrabaja, int antiguedad, string horario, string direccionEmpleo,
+                                      string fijo, string nombreJefe, string puestoEmpleo, decimal salarioMensual, string motivoCambio, string relacionFiador, string nombreFiador, string direccionFiador, string telefonoFiador, string movilFiador, int idEstadoCivilFiador, int tiempoMatrimonio,
+                                      int edadFiador, string empresaTrabajaFiador, string direccionEmpleoFiador, string puestoEmpleoFiador, decimal salarioMensualFiador, int activo, int idTipoIdentificacion)
         {
             context.Connection.Open();
 
-            context.sp_UpdateArrendatarios(idArrendador, nombres, paterno, materno, email, movil, fijo, fechaBaja, activo, idTipoIdentificacion);
+            context.sp_UpdateArrendatarios(idArrendador, nombres, paterno, materno, edad, ultimoGradoEstudio, carreraOficio, idAsentamiento, numPersonasHabitar, numPersonasDependen, idEstadoCivil, movil, empresaTrabaja, antiguedad, horario, direccionEmpleo,
+                                        fijo, nombreJefe, puestoEmpleo, salarioMensual, motivoCambio, relacionFiador, nombreFiador, direccionFiador, telefonoFiador, movilFiador, idEstadoCivilFiador, tiempoMatrimonio,
+                                        edadFiador, empresaTrabajaFiador, direccionEmpleoFiador, puestoEmpleoFiador, salarioMensualFiador, activo, idTipoIdentificacion);
 
             context.Connection.Close();
         }
@@ -135,11 +139,15 @@ namespace BTLInmobiliaria
             context.Connection.Close();
         }
 
-        public void InsertArrendatario(string nombres, string paterno, string materno, string email, string movil, string fijo, DateTime fechaAlta, int activo, int idTipoIdentificacion)
+        public void InsertArrendatario(string nombres, string paterno, string materno, int edad, string ultimoGradoEstudio, string carreraOficio, int idAsentamiento, int numPersonasHabitar, int numPersonasDependen, int idEstadoCivil, string movil, string empresaTrabaja, int antiguedad, string horario, string direccionEmpleo,
+                                      string fijo, string nombreJefe, string puestoEmpleo, decimal salarioMensual, string motivoCambio, string relacionFiador, string nombreFiador, string direccionFiador, string telefonoFiador, string movilFiador, int idEstadoCivilFiador, int tiempoMatrimonio,
+                                      int edadFiador, string empresaTrabajaFiador, string direccionEmpleoFiador, string puestoEmpleoFiador, decimal salarioMensualFiador, int activo, int idTipoIdentificacion)
         {
             context.Connection.Open();
 
-            context.sp_InsertArrendatarios(nombres, paterno, materno, email, movil, fijo, fechaAlta, activo, idTipoIdentificacion);
+            context.sp_InsertArrendatarios(nombres, paterno, materno, edad, ultimoGradoEstudio, carreraOficio, idAsentamiento, numPersonasHabitar, numPersonasDependen, idEstadoCivil, movil, empresaTrabaja, antiguedad, horario, direccionEmpleo,
+                                        fijo, nombreJefe, puestoEmpleo, salarioMensual, motivoCambio, relacionFiador, nombreFiador, direccionFiador, telefonoFiador, movilFiador, idEstadoCivilFiador, tiempoMatrimonio,
+                                        edadFiador, empresaTrabajaFiador, direccionEmpleoFiador, puestoEmpleoFiador, salarioMensualFiador, activo, idTipoIdentificacion);
 
             context.Connection.Close();
         }
@@ -205,6 +213,25 @@ namespace BTLInmobiliaria
         #endregion
 
         #region Select
+
+        public DataSet GetEstadoCivil()
+        {
+            DataTable data;
+
+            context.Connection.Open();
+
+            var dsResult = context.sp_GetEstadoCivil();
+
+            data = dsResult.CopyToDataTable();
+
+            context.Connection.Close();
+
+            DataSet resultDataSet = new DataSet();
+
+            resultDataSet.Tables.Add(data);
+
+            return resultDataSet;
+        }
 
         public DataSet GetArchivosArrendatario(int idArrendatario)
         {

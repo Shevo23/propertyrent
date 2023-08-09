@@ -14,6 +14,117 @@ namespace Inmobiliaria.Views.Inmobiliaria
     {
         #region Methods
 
+        private void GetEstadoCivil()
+        {
+            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            DataSet dsCivil = new DataSet();
+
+            try
+            {
+                dsCivil = inmobiliaria.GetEstadoCivil();
+
+                if (dsCivil.Tables[0].Rows.Count > 0)
+                {
+                    cmbEstadoCivil.DataSource = dsCivil;
+                    cmbEstadoCivil.DataValueField = "IdEstadoCivil";
+                    cmbEstadoCivil.DataTextField = "Descripcion";
+                    cmbEstadoCivil.DataBind();
+
+                    cmbEstadoCivil.Items.Insert(0, new ListItem("Seleccione..."));
+
+                    cmbEstadoCivilFiador.DataSource = dsCivil;
+                    cmbEstadoCivilFiador.DataValueField = "IdEstadoCivil";
+                    cmbEstadoCivilFiador.DataTextField = "Descripcion";
+                    cmbEstadoCivilFiador.DataBind();
+
+                    cmbEstadoCivilFiador.Items.Insert(0, new ListItem("Seleccione..."));
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+    }
+
+        private void GetAsentamientos(int idMunicipio)
+        {
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            DataSet dsAsentamiento = new DataSet();
+
+            try
+            {
+                dsAsentamiento = catalogos.GetAsentamientos(idMunicipio);
+
+                if (dsAsentamiento.Tables[0].Rows.Count > 0)
+                {
+                    cmbAsentamiento.DataSource = dsAsentamiento;
+                    cmbAsentamiento.DataValueField = "IdAsentamiento";
+                    cmbAsentamiento.DataTextField = "Descripcion";
+                    cmbAsentamiento.DataBind();
+
+                    cmbAsentamiento.Items.Insert(0, new ListItem("Seleccione..."));
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void GetMunicipios(int idEstado)
+        {
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            DataSet dsMunicipio = new DataSet();
+
+            try
+            {
+                dsMunicipio = catalogos.GetMunicipios(idEstado);
+
+                if (dsMunicipio.Tables[0].Rows.Count > 0)
+                {
+                    cmbMunicipio.DataSource = dsMunicipio;
+                    cmbMunicipio.DataValueField = "IdMunicipio";
+                    cmbMunicipio.DataTextField = "Descripcion";
+                    cmbMunicipio.DataBind();
+
+                    cmbMunicipio.Items.Insert(0, new ListItem("Seleccione..."));
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void GetEstados()
+        {
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            DataSet dsEstados = new DataSet();
+
+            try
+            {
+                dsEstados = catalogos.GetEstados();
+
+                if (dsEstados.Tables[0].Rows.Count > 0)
+                {
+                    cmbEstado.DataSource = dsEstados;
+                    cmbEstado.DataValueField = "IdEstado";
+                    cmbEstado.DataTextField = "Descripcion";
+                    cmbEstado.DataBind();
+
+                    cmbEstado.Items.Insert(0, new ListItem("Seleccione..."));
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         private void GetTipoIdentificacion(int busqueda, int idTipoIdentificacion)
         {
             BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
@@ -80,9 +191,39 @@ namespace Inmobiliaria.Views.Inmobiliaria
                         txtNombres.Text = dsTipoIdentificacion.Tables[0].Rows[0]["Nombres"].ToString();
                         txtPaterno.Text = dsTipoIdentificacion.Tables[0].Rows[0]["Paterno"].ToString();
                         txtMaterno.Text = dsTipoIdentificacion.Tables[0].Rows[0]["Materno"].ToString();
-                        txtEmail.Text = dsTipoIdentificacion.Tables[0].Rows[0]["Email"].ToString();
+                        txtEdad.Text = dsTipoIdentificacion.Tables[0].Rows[0]["Edad"].ToString();
+                        txtUltimoGradoEstudio.Text = dsTipoIdentificacion.Tables[0].Rows[0]["UltimoGradoEstudio"].ToString();
+                        txtCarreraOficio.Text = dsTipoIdentificacion.Tables[0].Rows[0]["CarreraOficio"].ToString();
+                        cmbEstado.SelectedValue = dsTipoIdentificacion.Tables[0].Rows[0]["IdEstado"].ToString();
+                        GetMunicipios(int.Parse(cmbEstado.SelectedValue));
+                        cmbMunicipio.SelectedValue = dsTipoIdentificacion.Tables[0].Rows[0]["IdMunicipio"].ToString();
+                        GetAsentamientos(int.Parse(cmbMunicipio.SelectedValue));
+                        cmbAsentamiento.SelectedValue = dsTipoIdentificacion.Tables[0].Rows[0]["IdAsentamiento"].ToString();
+                        txtNumPersonasHabitar.Text = dsTipoIdentificacion.Tables[0].Rows[0]["NumPersonasHabitar"].ToString();
+                        txtNumPersonasDependen.Text = dsTipoIdentificacion.Tables[0].Rows[0]["NumPersonasDependen"].ToString();
+                        cmbEstadoCivil.SelectedValue = dsTipoIdentificacion.Tables[0].Rows[0]["IdEstadoCivil"].ToString();
                         txtMovil.Text = dsTipoIdentificacion.Tables[0].Rows[0]["Movil"].ToString();
+                        txtEmpresaTrabaja.Text = dsTipoIdentificacion.Tables[0].Rows[0]["EmpresaTrabaja"].ToString();
+                        txtAntiguedad.Text = dsTipoIdentificacion.Tables[0].Rows[0]["Antiguedad"].ToString();
+                        txtHorario.Text = dsTipoIdentificacion.Tables[0].Rows[0]["Horario"].ToString();
+                        txtDireccionEmpleo.Text = dsTipoIdentificacion.Tables[0].Rows[0]["DireccionEmpleo"].ToString();
                         txtFijo.Text = dsTipoIdentificacion.Tables[0].Rows[0]["Fijo"].ToString();
+                        txtNombreJefe.Text = dsTipoIdentificacion.Tables[0].Rows[0]["NombreJefe"].ToString();
+                        txtPuestoEmpleo.Text = dsTipoIdentificacion.Tables[0].Rows[0]["PuestoEmpleo"].ToString();
+                        txtSalarioMensual.Text = dsTipoIdentificacion.Tables[0].Rows[0]["SalarioMensual"].ToString();
+                        txtMotivoCambio.InnerText = dsTipoIdentificacion.Tables[0].Rows[0]["MotivoCambio"].ToString();
+                        txtRelacionFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["RelacionFiador"].ToString();
+                        txtNombreFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["NombreFiador"].ToString();
+                        txtDireccionFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["DireccionFiador"].ToString();
+                        txtTelefonoFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["TelefonoFiador"].ToString();
+                        txtMovilFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["MovilFiador"].ToString();
+                        cmbEstadoCivilFiador.SelectedValue = dsTipoIdentificacion.Tables[0].Rows[0]["IdEstadoCivil"].ToString();
+                        txtTiempoMatrimonio.Text = dsTipoIdentificacion.Tables[0].Rows[0]["TiempoMatrimonio"].ToString();
+                        txtEdadFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["EdadFiador"].ToString();
+                        txtEmpresaTrabajaFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["EmpresaTrabajaFiador"].ToString();
+                        txtDireccionEmpleoFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["DireccionEmpleoFiador"].ToString();
+                        txtPuestoEmpleoFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["PuestoEmpleoFiador"].ToString();
+                        txtSalarioMensualFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["SalarioMensualFiador"].ToString();
                         chk_Estatus.Checked = Convert.ToBoolean(dsTipoIdentificacion.Tables[0].Rows[0]["Activo"]);
                         cmbTipoIdentificacion.SelectedValue = dsTipoIdentificacion.Tables[0].Rows[0]["IdTipoIdentificacion"].ToString();
                     }
@@ -128,8 +269,13 @@ namespace Inmobiliaria.Views.Inmobiliaria
             {
                 if (!IsPostBack)
                 {
+                    cmbMunicipio.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbAsentamiento.Items.Insert(0, new ListItem("Seleccione..."));
+
                     GetTipoIdentificacion(0, 0);
                     GetArrendatarios(0, 0);
+                    GetEstados();
+                    GetEstadoCivil();
                 }
             }
             catch (Exception)
@@ -145,11 +291,11 @@ namespace Inmobiliaria.Views.Inmobiliaria
             {
                 ViewState["oInsertar"] = true;
 
-                lbl_Titulo.Text = "Agregar nuevo";
+                lbl_Titulo.Text = "Solicitud de arrendamiento";
                 txtNombres.Text = string.Empty;
                 txtPaterno.Text = string.Empty;
                 txtMaterno.Text = string.Empty;
-                txtEmail.Text = string.Empty;
+                //txtEmail.Text = string.Empty;
                 txtMovil.Text = string.Empty;
                 txtFijo.Text = string.Empty;
                 cmbTipoIdentificacion.SelectedIndex = 0;
@@ -215,16 +361,25 @@ namespace Inmobiliaria.Views.Inmobiliaria
             BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
 
             var idTipo = int.Parse(cmbTipoIdentificacion.SelectedValue);
-
+            var idAsentamiento = int.Parse(cmbAsentamiento.SelectedValue);
+            var idEstadoCivil = int.Parse(cmbEstadoCivil.SelectedValue);
+            var idEstadoCivilFia = int.Parse(cmbEstadoCivilFiador.SelectedValue);
 
             try
             {
                 if (bool.Parse(ViewState["oInsertar"].ToString()))
                 {
+                    
 
-
-                    inmobiliaria.InsertArrendatario(txtNombres.Text.Trim(), txtPaterno.Text.Trim(), txtMaterno.Text.Trim(), txtEmail.Text.Trim()
-                        , txtMovil.Text.Trim(), txtFijo.Text.Trim(), DateTime.Now, Convert.ToInt32(chk_Estatus.Checked), idTipo);
+                    inmobiliaria.InsertArrendatario(txtNombres.Text.Trim(), txtPaterno.Text.Trim(), txtMaterno.Text.Trim(), int.Parse(txtEdad.Text.Trim())
+                        , txtUltimoGradoEstudio.Text.Trim(), txtCarreraOficio.Text.Trim(),idAsentamiento, int.Parse(txtNumPersonasHabitar.Text.Trim()),
+                        int.Parse(txtNumPersonasDependen.Text.Trim()),idEstadoCivil, txtMovil.Text.Trim(), txtEmpresaTrabaja.Text.Trim(),
+                        int.Parse(txtAntiguedad.Text.Trim()), txtHorario.Text.Trim(),txtDireccionEmpleo.Text.Trim(),txtFijo.Text.Trim(),
+                        txtNombreJefe.Text.Trim(),txtPuestoEmpleo.Text.Trim(), decimal.Parse(txtSalarioMensual.Text.Trim()),txtMotivoCambio.InnerText.Trim(),
+                        txtRelacionFiador.Text.Trim(),txtNombreFiador.Text.Trim(),txtDireccionFiador.Text.Trim(),txtTelefonoFiador.Text.Trim(),
+                        txtMovilFiador.Text.Trim(), idEstadoCivilFia, int.Parse(txtTiempoMatrimonio.Text.Trim()), int.Parse(txtEdadFiador.Text.Trim()),
+                        txtEmpresaTrabajaFiador.Text.Trim(),txtDireccionEmpleoFiador.Text.Trim(),txtPuestoEmpleoFiador.Text.Trim(),
+                        decimal.Parse(txtSalarioMensualFiador.Text.Trim()), Convert.ToInt32(chk_Estatus.Checked), idTipo);
 
                     // ShowMessage("El registro ha sido guardado exitosamente.", MessageType.Exito);
 
@@ -233,7 +388,15 @@ namespace Inmobiliaria.Views.Inmobiliaria
                 }
                 else
                 {
-                    //catalogos.UpdateUsuariosRoles(int.Parse(ViewState["IdUsuarioRol"].ToString()), idUsuario, idRol);
+                    inmobiliaria.UpdateArrendatario(int.Parse(ViewState["IdArrendatario"].ToString()), txtNombres.Text.Trim(), txtPaterno.Text.Trim(), txtMaterno.Text.Trim(), int.Parse(txtEdad.Text.Trim())
+                        , txtUltimoGradoEstudio.Text.Trim(), txtCarreraOficio.Text.Trim(), idAsentamiento, int.Parse(txtNumPersonasHabitar.Text.Trim()),
+                        int.Parse(txtNumPersonasDependen.Text.Trim()), idEstadoCivil, txtMovil.Text.Trim(), txtEmpresaTrabaja.Text.Trim(),
+                        int.Parse(txtAntiguedad.Text.Trim()), txtHorario.Text.Trim(), txtDireccionEmpleo.Text.Trim(), txtFijo.Text.Trim(),
+                        txtNombreJefe.Text.Trim(), txtPuestoEmpleo.Text.Trim(), decimal.Parse(txtSalarioMensual.Text.Trim()), txtMotivoCambio.InnerText.Trim(),
+                        txtRelacionFiador.Text.Trim(), txtNombreFiador.Text.Trim(), txtDireccionFiador.Text.Trim(), txtTelefonoFiador.Text.Trim(),
+                        txtMovilFiador.Text.Trim(), idEstadoCivilFia, int.Parse(txtTiempoMatrimonio.Text.Trim()), int.Parse(txtEdadFiador.Text.Trim()),
+                        txtEmpresaTrabajaFiador.Text.Trim(), txtDireccionEmpleoFiador.Text.Trim(), txtPuestoEmpleoFiador.Text.Trim(),
+                        decimal.Parse(txtSalarioMensualFiador.Text.Trim()), Convert.ToInt32(chk_Estatus.Checked), idTipo);
 
                     ////ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
 
@@ -368,6 +531,32 @@ namespace Inmobiliaria.Views.Inmobiliaria
 
                 GetArchivos(Convert.ToInt32(ViewState["IdArrendatario"].ToString()));
 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                GetMunicipios(int.Parse(cmbEstado.SelectedValue));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void cmbMunicipio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                GetAsentamientos(int.Parse(cmbMunicipio.SelectedValue));
             }
             catch (Exception)
             {

@@ -90,7 +90,7 @@ namespace Inmobiliaria.Master
 
                 Response.Redirect("~/Views/Login.aspx");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;

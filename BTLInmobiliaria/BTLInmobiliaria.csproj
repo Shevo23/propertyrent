@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Catalogos.cs" />
+    <Compile Include="Contratos.cs" />
     <Compile Include="Inmobiliaria.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
