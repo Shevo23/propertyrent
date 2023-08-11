@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BTLInmobiliaria
 {
-    class Contratos
+    public class Contratos
     {
         DataInmobiliariaDataContext context = null;
 

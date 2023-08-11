@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTLInmobiliaria;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -569,5 +570,27 @@ namespace Inmobiliaria.Views.Contrataciones
 
         #endregion
 
+        protected void btn_GenerarContrato_Click(object sender, EventArgs e)
+        {
+            BTLInmobiliaria.DatosContrato datosContrato = new DatosContrato();
+
+            try
+            {
+                datosContrato.DireccionInmueble = cmbAsentamiento.SelectedItem.Text + " " + cmbMunicipio.SelectedItem.Text + " " + cmbEstado.SelectedItem.Text;
+                datosContrato.NombreArrendador = cmbArrendador.SelectedItem.Text;
+                datosContrato.NombreArrendatario = cmbArrendatario.SelectedItem.Text;
+                datosContrato.NombreFiador = txtNombreFiador.Text;
+                datosContrato.DireccionFiador = txtDireccionFiador.Text;
+                datosContrato.CantidadMensual = txtCostoMensual.Text;
+                datosContrato.Fecha = DateTime.Now.ToLongDateString();
+
+                PDF.GenerarContrato(datosContrato);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

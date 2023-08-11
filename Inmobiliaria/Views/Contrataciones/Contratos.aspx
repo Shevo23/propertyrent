@@ -595,7 +595,7 @@
                             </div>
                             <div class="modal-footer">
                                 <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-danger" Text="Cancelar" data-dismiss="modal" />
-                                <asp:Button ID="btn_Guardar" runat="server" CssClass="btn btn-success" Text="Guardar" ValidationGroup="Global" data-dismiss="modal" UseSubmitBehavior="false" />
+                                <asp:Button ID="btn_GenerarContrato" runat="server" CssClass="btn btn-info" Text="Generar contrato" ValidationGroup="Global" data-dismiss="modal" UseSubmitBehavior="false" OnClick="btn_GenerarContrato_Click" />
                             </div>
                         </div>
                     </ContentTemplate>
