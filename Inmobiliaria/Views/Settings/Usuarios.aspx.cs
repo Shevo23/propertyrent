@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -11,24 +13,23 @@ namespace Inmobiliaria.Views.Settings
 {
     public partial class Usuarios : System.Web.UI.Page
     {
-        
+        #region Variables
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            
+        public enum MessageType { Exito, Error, Importante, Advertencia };
 
-            if (!IsPostBack)
-            {
-                GetUsuarios(0, 0);
-            }
-        }
+        #endregion
 
         #region Methods
+        protected void ShowMessage(string Message, MessageType type)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
+        }
 
         private void GetUsuarios(int busqueda, int idUsuario)
         {
             BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
             DataSet dtUsuario = new DataSet();
+            Cifrados cifrados = new Cifrados();
 
             try
             {
@@ -54,21 +55,37 @@ namespace Inmobiliaria.Views.Settings
                         txtEmail.Text = dtUsuario.Tables[0].Rows[0]["Email"].ToString();
                         txtNombreUsuario.Text = dtUsuario.Tables[0].Rows[0]["NombreUsuario"].ToString();
                         txtMovil.Text = dtUsuario.Tables[0].Rows[0]["Movil"].ToString();
-                        txtPassword.Text = dtUsuario.Tables[0].Rows[0]["Password"].ToString();
+                        txtPassword.Text = cifrados.Decrypt(dtUsuario.Tables[0].Rows[0]["Password"].ToString());
                         chk_Estatus.Checked = Convert.ToBoolean(dtUsuario.Tables[0].Rows[0]["Activo"]);
                     }
                 }
 
-                
-            }
-            catch (Exception)
-            {
 
-                throw;
+            }
+            catch (Exception ex)
+            {
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
         #endregion
+
+        #region Events
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!IsPostBack)
+                {
+                    GetUsuarios(0, 0);
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowMessage(ex.Message, MessageType.Error);
+            }
+        }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -88,41 +105,46 @@ namespace Inmobiliaria.Views.Settings
                 chk_Estatus.Checked = true;
                 chk_Estatus.Enabled = false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            Cifrados cifrados = new Cifrados();
+            string pass = string.Empty;
 
             try
             {
                 if (bool.Parse(ViewState["oInsertar"].ToString()))
                 {
-                    catalogos.InsertUsuario(txtNombre.Text.Trim(), txtPaterno.Text.Trim(), txtMaterno.Text.Trim(), txtEmail.Text.Trim(),txtNombreUsuario.Text.Trim(),txtPassword.Text.Trim(), txtMovil.Text.Trim());
 
-                    //ShowMessage("El registro ha sido guardado exitosamente.", MessageType.Exito);
+                    pass = cifrados.Encrypt(txtPassword.Text.Trim());
+
+                    catalogos.InsertUsuario(txtNombre.Text.Trim(), txtPaterno.Text.Trim(), txtMaterno.Text.Trim(), txtEmail.Text.Trim(), txtNombreUsuario.Text.Trim(), pass, txtMovil.Text.Trim());
+
+                    ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
 
                     GetUsuarios(0, 0);
 
                 }
                 else
                 {
-                    catalogos.UpdateUsuario(int.Parse(ViewState["IdUsuario"].ToString()), txtNombre.Text.Trim(), txtPaterno.Text.Trim(), txtMaterno.Text.Trim(), txtEmail.Text.Trim(), txtNombreUsuario.Text.Trim(), txtPassword.Text.Trim(), txtMovil.Text.Trim(), Convert.ToInt32(chk_Estatus.Checked));
+                    pass = cifrados.Encrypt(txtPassword.Text.Trim());
 
-                    //ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
+                    catalogos.UpdateUsuario(int.Parse(ViewState["IdUsuario"].ToString()), txtNombre.Text.Trim(), txtPaterno.Text.Trim(), txtMaterno.Text.Trim(), txtEmail.Text.Trim(), txtNombreUsuario.Text.Trim(), pass, txtMovil.Text.Trim(), Convert.ToInt32(chk_Estatus.Checked));
+
+                    ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
 
                     GetUsuarios(0, 0);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -142,10 +164,9 @@ namespace Inmobiliaria.Views.Settings
 
                 GetUsuarios(1, int.Parse(ViewState["IdUsuario"].ToString()));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -167,11 +188,13 @@ namespace Inmobiliaria.Views.Settings
                 chk_Estatus.Checked = true;
                 chk_Estatus.Enabled = false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
+
+        #endregion
+
     }
 }

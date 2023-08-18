@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -501,6 +503,77 @@ namespace Inmobiliaria.Views.Contrataciones
             }
         }
 
+        public string GenerarContrato(DatosContrato datosContrato)
+        {
+            var renderer = new IronPdf.HtmlToPdf();
+
+            string s1, s2;
+
+            //string pathPhsy = HostingEnvironment.ApplicationPhysicalPath.ToString();
+            //string completePath = pathPhsy + @"\Contratos\";
+
+            s1 = File.ReadAllText(Server.MapPath("~/Contratos/") + "Contrato.html", Encoding.UTF8);
+
+
+            s1 = s1.Replace("#DireccionInmueble#", datosContrato.DireccionInmueble);
+            s1 = s1.Replace("#NombreArrendador#", datosContrato.NombreArrendador);
+            s1 = s1.Replace("#NombreFiador#", datosContrato.NombreFiador);
+            s1 = s1.Replace("#CantidadMensual#", datosContrato.CantidadMensual);
+            s1 = s1.Replace("#NombreArrendatario#", datosContrato.NombreArrendatario);
+            s1 = s1.Replace("#DireccionFiador#", datosContrato.DireccionFiador);
+            s1 = s1.Replace("#Fecha#", datosContrato.Fecha);
+
+
+            s2 = File.ReadAllText(Server.MapPath("~/Contratos/") + "CartaResicion.html", Encoding.UTF8);
+
+            s2 = s2.Replace("#NombreArrendatario#", datosContrato.NombreArrendatario);
+            s2 = s2.Replace("#DireccionInmueble#", datosContrato.DireccionInmueble);
+            s2 = s2.Replace("#NombreArrendatario#", datosContrato.NombreArrendatario);
+            
+
+            var n = Guid.NewGuid().ToString().ToUpper().Replace("-", "");
+
+            //StringReader stringReader = new StringReader(s1);
+
+            //iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4);
+
+            //HTMLWorker htmlParser = new HTMLWorker(pdfDoc);
+
+            //using (MemoryStream memoryStream = new MemoryStream())
+            //{
+            //    PdfWriter writer = PdfWriter.GetInstance(pdfDoc, memoryStream);
+
+            //    pdfDoc.Open();
+
+            //    htmlParser.Parse(stringReader);
+            //    pdfDoc.Close();
+
+            //    byte[] bytes = memoryStream.ToArray();
+            //    memoryStream.Close();
+
+            //    Response.Clear();
+            //    Response.ContentType = "application/force-download";
+            //    Response.AddHeader("content-disposition", "attachment; filename=" + n + "Contrato.pdf");
+            //    Response.BufferOutput = false;
+            //    Response.BinaryWrite(bytes);
+            //    Response.Flush();
+            //    Response.Close();
+            //}
+
+
+
+
+            renderer.RenderHtmlAsPdf(s1).SaveAs(Server.MapPath("~/Inmuebles/Tmp/") + n + "Contrato.pdf");
+
+            renderer.RenderHtmlAsPdf(s2).SaveAs(Server.MapPath("~/Inmuebles/Tmp/") + n + "CartaResicion.pdf");
+
+            System.Diagnostics.Process.Start(Server.MapPath("~/Inmuebles/Tmp/") + n + "Contrato.pdf");
+            System.Diagnostics.Process.Start(Server.MapPath("~/Inmuebles/Tmp/") + n + "CartaResicion.pdf");
+
+            return "Contrato.pdf";
+
+        }
+
         #endregion
 
         #region Events
@@ -568,8 +641,6 @@ namespace Inmobiliaria.Views.Contrataciones
             }
         }
 
-        #endregion
-
         protected void btn_GenerarContrato_Click(object sender, EventArgs e)
         {
             BTLInmobiliaria.DatosContrato datosContrato = new DatosContrato();
@@ -584,7 +655,7 @@ namespace Inmobiliaria.Views.Contrataciones
                 datosContrato.CantidadMensual = txtCostoMensual.Text;
                 datosContrato.Fecha = DateTime.Now.ToLongDateString();
 
-                PDF.GenerarContrato(datosContrato);
+                GenerarContrato(datosContrato);
             }
             catch (Exception)
             {
@@ -592,5 +663,8 @@ namespace Inmobiliaria.Views.Contrataciones
                 throw;
             }
         }
+
+        #endregion
+
     }
 }

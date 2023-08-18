@@ -20,6 +20,10 @@
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-sm-12">
+                                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="cmbUsuarios"
+                                                ValidationGroup="Roles" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                                Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic">
+                                            </asp:CompareValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="cmbUsuarios">Usuarios:</label>
@@ -30,6 +34,10 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12">
+                                         <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToValidate="cmbRoles"
+                                                ValidationGroup="Roles" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                                Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic">
+                                            </asp:CompareValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="cmbRoles">Roles:</label>
@@ -41,7 +49,7 @@
                             </div>
                             <div class="modal-footer">
                                 <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-default btn-danger" Text="Cancelar" data-dismiss="modal" OnClick="btnCancelar_Click" />
-                                <asp:Button ID="btn_Guardar" runat="server" CssClass="btn btn-default btn-save" Text="Guardar" ValidationGroup="Global" data-dismiss="modal" UseSubmitBehavior="false" OnClick="btn_Guardar_Click" />
+                                <asp:Button ID="btn_Guardar" runat="server" CssClass="btn btn-default btn-save" Text="Guardar" ValidationGroup="Roles" data-dismiss="modal" UseSubmitBehavior="false" OnClick="btn_Guardar_Click" />
                             </div>
                         </div>
                     </ContentTemplate>
@@ -75,11 +83,11 @@
                                                     <asp:ImageButton runat="server" ID="ibtnEditar" ToolTip="Editar" ImageUrl="~/Images/editar.png" Width="25px" data-toggle="modal" data-target="#divAgregar" OnClick="ibtnEditar_Click" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField DataField="IdUsuarioRol" HeaderText="Id" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White"/>
-                                            <asp:BoundField DataField="IdUsuario" HeaderText="IdUsuario" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White"/>
-                                            <asp:BoundField DataField="Nombre" HeaderText="Nombre" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White"/>
-                                            <asp:BoundField DataField="IdRol" HeaderText="IdRol" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White"/>
-                                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White"/>
+                                            <asp:BoundField DataField="IdUsuarioRol" HeaderText="Id" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="IdUsuario" HeaderText="IdUsuario" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="Nombre" HeaderText="Nombre" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="IdRol" HeaderText="IdRol" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
                                         </Columns>
                                     </asp:GridView>
                                 </div>

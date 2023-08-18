@@ -11,7 +11,17 @@ namespace Inmobiliaria.Views.Settings
 {
     public partial class Roles : System.Web.UI.Page
     {
+        #region Variables
+
+        public enum MessageType { Exito, Error, Importante, Advertencia };
+
+        #endregion
+
         #region Methods
+        protected void ShowMessage(string Message, MessageType type)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
+        }
 
         private void GetRoles(int busqueda, int idRol)
         {
@@ -40,10 +50,9 @@ namespace Inmobiliaria.Views.Settings
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -53,9 +62,16 @@ namespace Inmobiliaria.Views.Settings
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            try
             {
-                GetRoles(0, 0);
+                if (!IsPostBack)
+                {
+                    GetRoles(0, 0);
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -67,12 +83,11 @@ namespace Inmobiliaria.Views.Settings
 
                 lbl_Titulo.Text = "Agregar nuevo";
                 txtDescripcion.Text = string.Empty;
-                
-            }
-            catch (Exception)
-            {
 
-                throw;
+            }
+            catch (Exception ex)
+            {
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -83,18 +98,18 @@ namespace Inmobiliaria.Views.Settings
                 ViewState["oInsertar"] = false;
 
                 lbl_Titulo.Text = "Editar";
-                
+
                 ImageButton button = (ImageButton)sender;
                 GridViewRow namingContainer = button.NamingContainer as GridViewRow;
 
                 ViewState["IdRol"] = Convert.ToInt32(grdRoles.DataKeys[namingContainer.RowIndex].Values["IdRol"].ToString());
 
                 GetRoles(1, int.Parse(ViewState["IdRol"].ToString()));
-            }
-            catch (Exception)
-            {
 
-                throw;
+            }
+            catch (Exception ex)
+            {
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -108,7 +123,7 @@ namespace Inmobiliaria.Views.Settings
                 {
                     catalogos.InsertRol(txtDescripcion.Text.Trim());
 
-                    // ShowMessage("El registro ha sido guardado exitosamente.", MessageType.Exito);
+                    ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
 
                     GetRoles(0, 0);
 
@@ -117,15 +132,14 @@ namespace Inmobiliaria.Views.Settings
                 {
                     catalogos.UpdateRol(int.Parse(ViewState["IdRol"].ToString()), txtDescripcion.Text.Trim());
 
-                    //ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
+                    ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
 
                     GetRoles(0, 0);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -138,10 +152,9 @@ namespace Inmobiliaria.Views.Settings
                 lbl_Titulo.Text = "Agregar nuevo";
                 txtDescripcion.Text = string.Empty;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 

@@ -211,7 +211,7 @@ namespace Inmobiliaria.Views.Inmobiliaria
                         txtNombreJefe.Text = dsTipoIdentificacion.Tables[0].Rows[0]["NombreJefe"].ToString();
                         txtPuestoEmpleo.Text = dsTipoIdentificacion.Tables[0].Rows[0]["PuestoEmpleo"].ToString();
                         txtSalarioMensual.Text = dsTipoIdentificacion.Tables[0].Rows[0]["SalarioMensual"].ToString();
-                        txtMotivoCambio.InnerText = dsTipoIdentificacion.Tables[0].Rows[0]["MotivoCambio"].ToString();
+                        txtMotivoCambio.Text = dsTipoIdentificacion.Tables[0].Rows[0]["MotivoCambio"].ToString();
                         txtRelacionFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["RelacionFiador"].ToString();
                         txtNombreFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["NombreFiador"].ToString();
                         txtDireccionFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["DireccionFiador"].ToString();
@@ -375,7 +375,7 @@ namespace Inmobiliaria.Views.Inmobiliaria
                         , txtUltimoGradoEstudio.Text.Trim(), txtCarreraOficio.Text.Trim(),idAsentamiento, int.Parse(txtNumPersonasHabitar.Text.Trim()),
                         int.Parse(txtNumPersonasDependen.Text.Trim()),idEstadoCivil, txtMovil.Text.Trim(), txtEmpresaTrabaja.Text.Trim(),
                         int.Parse(txtAntiguedad.Text.Trim()), txtHorario.Text.Trim(),txtDireccionEmpleo.Text.Trim(),txtFijo.Text.Trim(),
-                        txtNombreJefe.Text.Trim(),txtPuestoEmpleo.Text.Trim(), decimal.Parse(txtSalarioMensual.Text.Trim()),txtMotivoCambio.InnerText.Trim(),
+                        txtNombreJefe.Text.Trim(),txtPuestoEmpleo.Text.Trim(), decimal.Parse(txtSalarioMensual.Text.Trim()),txtMotivoCambio.Text.Trim(),
                         txtRelacionFiador.Text.Trim(),txtNombreFiador.Text.Trim(),txtDireccionFiador.Text.Trim(),txtTelefonoFiador.Text.Trim(),
                         txtMovilFiador.Text.Trim(), idEstadoCivilFia, int.Parse(txtTiempoMatrimonio.Text.Trim()), int.Parse(txtEdadFiador.Text.Trim()),
                         txtEmpresaTrabajaFiador.Text.Trim(),txtDireccionEmpleoFiador.Text.Trim(),txtPuestoEmpleoFiador.Text.Trim(),
@@ -392,7 +392,7 @@ namespace Inmobiliaria.Views.Inmobiliaria
                         , txtUltimoGradoEstudio.Text.Trim(), txtCarreraOficio.Text.Trim(), idAsentamiento, int.Parse(txtNumPersonasHabitar.Text.Trim()),
                         int.Parse(txtNumPersonasDependen.Text.Trim()), idEstadoCivil, txtMovil.Text.Trim(), txtEmpresaTrabaja.Text.Trim(),
                         int.Parse(txtAntiguedad.Text.Trim()), txtHorario.Text.Trim(), txtDireccionEmpleo.Text.Trim(), txtFijo.Text.Trim(),
-                        txtNombreJefe.Text.Trim(), txtPuestoEmpleo.Text.Trim(), decimal.Parse(txtSalarioMensual.Text.Trim()), txtMotivoCambio.InnerText.Trim(),
+                        txtNombreJefe.Text.Trim(), txtPuestoEmpleo.Text.Trim(), decimal.Parse(txtSalarioMensual.Text.Trim()), txtMotivoCambio.Text.Trim(),
                         txtRelacionFiador.Text.Trim(), txtNombreFiador.Text.Trim(), txtDireccionFiador.Text.Trim(), txtTelefonoFiador.Text.Trim(),
                         txtMovilFiador.Text.Trim(), idEstadoCivilFia, int.Parse(txtTiempoMatrimonio.Text.Trim()), int.Parse(txtEdadFiador.Text.Trim()),
                         txtEmpresaTrabajaFiador.Text.Trim(), txtDireccionEmpleoFiador.Text.Trim(), txtPuestoEmpleoFiador.Text.Trim(),

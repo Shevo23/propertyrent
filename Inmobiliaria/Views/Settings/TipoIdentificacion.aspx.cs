@@ -11,7 +11,16 @@ namespace Inmobiliaria.Views.Settings
 {
     public partial class TipoIdentificacion : System.Web.UI.Page
     {
+        #region Variables
+        public enum MessageType { Exito, Error, Importante, Advertencia };
+
+        #endregion
+
         #region Methods
+        protected void ShowMessage(string Message, MessageType type)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
+        }
 
         private void GetTipoIdentificacion(int busqueda, int idTipoIdentificacion)
         {
@@ -69,10 +78,9 @@ namespace Inmobiliaria.Views.Settings
                 txtDescripcion.Text = string.Empty;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -91,10 +99,9 @@ namespace Inmobiliaria.Views.Settings
 
                 GetTipoIdentificacion(1, int.Parse(ViewState["IdTipoIdentificacion"].ToString()));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -108,7 +115,7 @@ namespace Inmobiliaria.Views.Settings
                 {
                     catalogos.InsertTipoIdentificacion(txtDescripcion.Text.Trim());
 
-                    // ShowMessage("El registro ha sido guardado exitosamente.", MessageType.Exito);
+                    ShowMessage("El registro ha sido guardado exitosamente.", MessageType.Exito);
 
                     GetTipoIdentificacion(0, 0);
 
@@ -117,15 +124,14 @@ namespace Inmobiliaria.Views.Settings
                 {
                     catalogos.UpdateTipoIdentificacion(int.Parse(ViewState["IdTipoIdentificacion"].ToString()), txtDescripcion.Text.Trim());
 
-                    //ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
+                    ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
 
                     GetTipoIdentificacion(0, 0);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -138,10 +144,9 @@ namespace Inmobiliaria.Views.Settings
                 lbl_Titulo.Text = "Agregar nuevo";
                 txtDescripcion.Text = string.Empty;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 

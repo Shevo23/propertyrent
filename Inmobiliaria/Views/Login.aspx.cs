@@ -23,21 +23,6 @@ namespace Inmobiliaria.Views
 
         #region Methods
 
-        public static string ConvertirSha256(string texto)
-        {
-            StringBuilder Sb = new StringBuilder();
-            using (SHA256 hash = SHA256.Create())
-            {
-                Encoding enc = Encoding.UTF8;
-                byte[] result = hash.ComputeHash(enc.GetBytes(texto));
-
-                foreach (byte b in result)
-                    Sb.Append(b.ToString("x2"));
-            }
-
-            return Sb.ToString();
-        }
-
         protected void ShowMessage(string Message, MessageType type)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
@@ -55,10 +40,11 @@ namespace Inmobiliaria.Views
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
             DataSet dsUsuario = new DataSet();
+            Cifrados cifrados = new Cifrados();
 
             try
             {
-                var password = ConvertirSha256(txtPassword.Text.Trim());
+                var password = cifrados.Encrypt(txtPassword.Text.Trim());
 
                 dsUsuario = catalogos.GetValidaUsuario(txtEmail.Text.Trim(), password);
 
@@ -72,7 +58,7 @@ namespace Inmobiliaria.Views
                 }
                 else
                 {
-                    ShowMessage("Nombre de usuario o password incorrecto.", MessageType.Advertencia);
+                    ShowMessage("Nombre de usuario o password incorrecto.", MessageType.Error);
                 }
             }
             catch (Exception ex)

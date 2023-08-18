@@ -599,6 +599,9 @@
                             </div>
                         </div>
                     </ContentTemplate>
+                    <Triggers>
+                        <asp:PostBackTrigger ControlID="btn_GenerarContrato" />
+                    </Triggers>
                 </asp:UpdatePanel>
             </div>
 

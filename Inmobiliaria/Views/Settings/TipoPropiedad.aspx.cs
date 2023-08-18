@@ -11,7 +11,17 @@ namespace Inmobiliaria.Views.Settings
 {
     public partial class TipoPropiedad : System.Web.UI.Page
     {
+        #region Variables
+
+        public enum MessageType { Exito, Error, Importante, Advertencia };
+
+        #endregion
+
         #region Methods
+        protected void ShowMessage(string Message, MessageType type)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
+        }
 
         private void GetTipoPropiedad(int busqueda, int idTipoPropiedad)
         {
@@ -40,10 +50,9 @@ namespace Inmobiliaria.Views.Settings
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -53,9 +62,16 @@ namespace Inmobiliaria.Views.Settings
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            try
             {
-                GetTipoPropiedad(0, 0);
+                if (!IsPostBack)
+                {
+                    GetTipoPropiedad(0, 0);
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -69,10 +85,9 @@ namespace Inmobiliaria.Views.Settings
                 txtDescripcion.Text = string.Empty;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -91,10 +106,9 @@ namespace Inmobiliaria.Views.Settings
 
                 GetTipoPropiedad(1, int.Parse(ViewState["IdTipoPropiedad"].ToString()));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -108,7 +122,7 @@ namespace Inmobiliaria.Views.Settings
                 {
                     catalogos.InsertTipoPropiedad(txtDescripcion.Text.Trim());
 
-                    // ShowMessage("El registro ha sido guardado exitosamente.", MessageType.Exito);
+                    ShowMessage("El registro ha sido guardado exitosamente.", MessageType.Exito);
 
                     GetTipoPropiedad(0, 0);
 
@@ -117,15 +131,14 @@ namespace Inmobiliaria.Views.Settings
                 {
                     catalogos.UpdateTipoPropiedad(int.Parse(ViewState["IdTipoPropiedad"].ToString()), txtDescripcion.Text.Trim());
 
-                    //ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
+                    ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
 
                     GetTipoPropiedad(0, 0);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -139,10 +152,9 @@ namespace Inmobiliaria.Views.Settings
                 txtDescripcion.Text = string.Empty;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
