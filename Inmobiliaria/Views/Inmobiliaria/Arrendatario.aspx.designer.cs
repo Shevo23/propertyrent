@@ -879,15 +879,6 @@ namespace Inmobiliaria.Views.Inmobiliaria
         protected global::System.Web.UI.WebControls.TextBox txtPuestoEmpleoFiador;
 
         /// <summary>
-        /// FilteredTextBoxExtender27 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender27;
-
-        /// <summary>
         /// RequiredFieldValidator24 control.
         /// </summary>
         /// <remarks>

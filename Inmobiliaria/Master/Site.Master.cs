@@ -31,6 +31,7 @@ namespace Inmobiliaria.Master
 
                 lblUsuario.InnerText = dataSet.Tables[0].Rows[0]["Nombre"].ToString();
                 lblRol.InnerText = dataSet.Tables[0].Rows[0]["Descripcion"].ToString();
+                Session["IdUsuario"] = dataSet.Tables[0].Rows[0]["IdUsuario"].ToString();
 
                 switch (perfil)
                 {

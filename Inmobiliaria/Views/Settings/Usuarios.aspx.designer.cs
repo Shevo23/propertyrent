@@ -159,15 +159,6 @@ namespace Inmobiliaria.Views.Settings
         protected global::System.Web.UI.WebControls.TextBox txtMovil;
 
         /// <summary>
-        /// FilteredTextBoxExtender6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender6;
-
-        /// <summary>
         /// RequiredFieldValidator5 control.
         /// </summary>
         /// <remarks>

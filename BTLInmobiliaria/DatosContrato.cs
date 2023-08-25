@@ -8,6 +8,7 @@ namespace BTLInmobiliaria
 {
     public class DatosContrato
     {
+        public string NumContrato { get; set; }
         public string DireccionInmueble { get; set; }
         public string NombreArrendador { get; set; }
         public string NombreArrendatario { get; set; }

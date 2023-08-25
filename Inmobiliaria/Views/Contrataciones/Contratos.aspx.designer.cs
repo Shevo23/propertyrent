@@ -33,13 +33,49 @@ namespace Inmobiliaria.Views.Contrataciones
         protected global::System.Web.UI.WebControls.Label lbl_Titulo;
 
         /// <summary>
-        /// txtNumContraro control.
+        /// txtNumContrato control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumContraro;
+        protected global::System.Web.UI.WebControls.TextBox txtNumContrato;
+
+        /// <summary>
+        /// txtFechaInicioContrato control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFechaInicioContrato;
+
+        /// <summary>
+        /// txtFechaFinContrato control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFechaFinContrato;
+
+        /// <summary>
+        /// txtMesesContrato control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMesesContrato;
+
+        /// <summary>
+        /// txtAnioContrato control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAnioContrato;
 
         /// <summary>
         /// cmbInmueble control.
@@ -609,13 +645,13 @@ namespace Inmobiliaria.Views.Contrataciones
         protected global::System.Web.UI.WebControls.Button btnCancelar;
 
         /// <summary>
-        /// btn_GenerarContrato control.
+        /// btnGuardar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_GenerarContrato;
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
 
         /// <summary>
         /// btn_Agregar control.

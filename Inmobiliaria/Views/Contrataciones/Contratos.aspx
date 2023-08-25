@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contratos.aspx.cs" MasterPageFile="~/Master/Site.Master" Inherits="Inmobiliaria.Views.Contrataciones.Contratos" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -7,9 +9,16 @@
         <br />
         <br />
         <br />
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="messagealert" id="alert_container">
+                </div>
+            </div>
+        </div>
+        <br />
         <div id="divAgregar" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog modal-xl" role="document">
-                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Always">
                     <ContentTemplate>
                         <div class="modal-content">
                             <div class="modal-header">
@@ -18,22 +27,57 @@
                                     <asp:Label runat="server" ID="lbl_Titulo"></asp:Label></h4>
                             </div>
                             <div class="modal-body">
+
                                 <div class="row">
-                                    <div class="col-sm-5">
+                                    <div class="col-sm-4">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGroup-sizing-sm">Numero de contrato:</span>
                                             </div>
-                                            <asp:TextBox runat="server" CssClass="form-control font-weight-bold" ID="txtNumContraro" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" Enabled="false"></asp:TextBox>
+                                            <asp:TextBox runat="server" CssClass="form-control font-weight-bold text-success" ID="txtNumContrato" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" Enabled="false"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGup-siz-sm">Fecha inicio contrato:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control font-weight-bold" ID="txtFechaInicioContrato" aria-label="Sizing example input" TextMode="Date" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inptGup-siz-sm">Fecha fin contrato:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control font-weight-bold" ID="txtFechaFinContrato" aria-label="Sizing example input" TextMode="Date" aria-describedby="inputGroup-sizing-sm" AutoPostBack="True" OnTextChanged="txtFechaFinContrato_TextChanged"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizg-sm">Meses de contrato:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control font-weight-bold" ID="txtMesesContrato" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" Enabled="false"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGup-sizg-sm">Años de contrato:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control font-weight-bold" ID="txtAnioContrato" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" Enabled="false"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
                                 <div class="row">
                                     <div class="container">
                                         <asp:UpdatePanel runat="server" UpdateMode="Conditional">
                                             <ContentTemplate>
-                                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                <ul class="nav nav-tabs nav-pills" id="myTab" role="tablist">
                                                     <li class="nav-item">
                                                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#inmuebles" role="tab" aria-controls="inmuebles" aria-selected="true">Información del Inmueble</a>
                                                     </li>
@@ -45,11 +89,10 @@
                                                     </li>
                                                 </ul>
                                                 <div class="tab-content" id="myTabContent">
-                                                    <%-- Inmueble --%>
                                                     <div class="tab-pane fade show active" id="inmuebles" role="tabpanel" aria-labelledby="home-tab">
                                                         <br />
                                                         <div class="row">
-                                                            <div class="col-sm-4">
+                                                            <div class="col-sm-6">
                                                                 <div class="input-group mb-4">
                                                                     <div class="input-group-prepend">
                                                                         <label class="input-group-text" for="cmbInmueble">Nombre del Inmueble:</label>
@@ -210,7 +253,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <%-- Arrendador --%>
+
                                                     <div class="tab-pane fade" id="arrendador" role="tabpanel" aria-labelledby="profile-tab">
                                                         <br />
                                                         <div class="row">
@@ -290,7 +333,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <%-- Arrendatario --%>
+
                                                     <div class="tab-pane fade" id="arrendatario" role="tabpanel" aria-labelledby="contact-tab">
                                                         <br />
                                                         <div class="row">
@@ -299,7 +342,7 @@
                                                                     <div class="input-group-prepend">
                                                                         <label class="input-group-text" for="cmbArrendatario">Nombre del Arrendatario:</label>
                                                                     </div>
-                                                                    <asp:DropDownList CssClass="custom-select font-weight-bold" runat="server" ID="cmbArrendatario" AutoPostBack="true"  OnSelectedIndexChanged="cmbArrendatario_SelectedIndexChanged"></asp:DropDownList>
+                                                                    <asp:DropDownList CssClass="custom-select font-weight-bold" runat="server" ID="cmbArrendatario" AutoPostBack="true" OnSelectedIndexChanged="cmbArrendatario_SelectedIndexChanged"></asp:DropDownList>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -476,7 +519,7 @@
                                                                     <div class="input-group-prepend">
                                                                         <span class="input-group-text">Motivo por el que cambia de residencia</span>
                                                                     </div>
-                                                                    <textarea runat="server" id="txtMotivoCambio" class="form-control font-weight-bold" aria-label="With textarea" aria-multiline="true" readonly="readonly"  ></textarea>
+                                                                    <textarea runat="server" id="txtMotivoCambio" class="form-control font-weight-bold" aria-label="With textarea" aria-multiline="true" readonly="readonly"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -595,13 +638,11 @@
                             </div>
                             <div class="modal-footer">
                                 <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-danger" Text="Cancelar" data-dismiss="modal" />
-                                <asp:Button ID="btn_GenerarContrato" runat="server" CssClass="btn btn-info" Text="Generar contrato" ValidationGroup="Global" data-dismiss="modal" UseSubmitBehavior="false" OnClick="btn_GenerarContrato_Click" />
+                                <asp:Button ID="btnGuardar" Text="Guardar" runat="server" CssClass="btn btn-success" data-dismiss="modal" UseSubmitBehavior="false" OnClick="btnGuardar_Click" />
+
                             </div>
                         </div>
                     </ContentTemplate>
-                    <Triggers>
-                        <asp:PostBackTrigger ControlID="btn_GenerarContrato" />
-                    </Triggers>
                 </asp:UpdatePanel>
             </div>
 
@@ -616,7 +657,7 @@
                                 <h4 class="card-title">Contratos registrados</h4>
                             </div>
                             <div class="col-sm-2">
-                                <asp:Button ID="btn_Agregar" runat="server" Text="Agregar" CssClass="btn btn-default btn-info" data-toggle="modal" data-target="#divAgregar" />
+                                <asp:Button ID="btn_Agregar" runat="server" Text="Agregar" CssClass="btn btn-default btn-info" data-toggle="modal" data-target="#divAgregar" OnClick="btn_Agregar_Click" />
                             </div>
                         </div>
                     </div>
@@ -625,39 +666,43 @@
                             <ContentTemplate>
                                 <div class="table table-responsive" style="font-size: small">
                                     <asp:GridView ID="grdContratos" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered"
-                                        DataKeyNames="IdContrato">
+                                        DataKeyNames="IdContrato, UbicacionContrato, IdArchivoContrato, UbicacionCarta">
                                         <Columns>
                                             <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton runat="server" ID="ibtnEditar" ToolTip="Editar" ImageUrl="~/Images/editar.png" Width="20px" data-toggle="modal" data-target="#divAgregar" />
+                                                    <asp:ImageButton runat="server" ID="ibtnEliminar" ToolTip="Eliminar contrato" ImageUrl="~/Images/borrar.png" Width="20px" data-toggle="modal" data-target="#divAgregar" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
+                                            <asp:TemplateField HeaderStyle-BackColor="#9c9c9c" HeaderText="Contrato" HeaderStyle-ForeColor="White" ItemStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton runat="server" ID="ibtnImagenes" ToolTip="Ver imagenes" ImageUrl="~/Images/imagenes.png" Width="25px" data-toggle="modal" data-target="#divAgregarImagenes" />
+                                                    <asp:ImageButton runat="server" ID="ibtnContratos" ToolTip="Ver contrato" ImageUrl="~/Images/archivos.png" Width="20px" data-toggle="modal" data-target="#divAgregarImagenes" OnClick="ibtnContratos_Click" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
+                                            <asp:TemplateField HeaderStyle-BackColor="#9c9c9c" HeaderText="Recision" HeaderStyle-ForeColor="White" ItemStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton runat="server" ID="ibtnArchivos" ToolTip="Ver archivos" ImageUrl="~/Images/archivos.png" Width="15px" data-toggle="modal" data-target="#divAgregarArchivos" />
+                                                    <asp:ImageButton runat="server" ID="ibtnCartaRecision" ToolTip="Ver carta" ImageUrl="~/Images/archivos.png" Width="20px" data-toggle="modal" data-target="#divAgregarImagenes" OnClick="ibtnCartaRecision_Click" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField DataField="IdInmueble" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="Nombre" HeaderText="Nombre Inmueble" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:TemplateField HeaderText="Usado / Nuevo" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White">
-                                                <ItemTemplate>
-                                                    <asp:CheckBox ID="chkNuevo" runat="server" CssClass="pull-left" Checked='<%#Convert.ToBoolean(Eval("Nuevo")) %>' Enabled="false" />
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:BoundField DataField="CostoTotal" HeaderText="Costo total" DataFormatString="{0:C}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="CostoMensual" HeaderText="Costo Mensual" DataFormatString="{0:C}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="Propiedad" HeaderText="Tipo Propiedad" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="Asentamiento" HeaderText="Colonia" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="Municipio" HeaderText="Municipio" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="Estado" HeaderText="Estado" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="IdContrato" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" Visible="false" />
+                                            <asp:BoundField DataField="NumContrato" HeaderText="NumContrato" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="FechaVigenciaInicio" HeaderText="Inicio vigencia" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="FechaVigenciaFin" HeaderText="Fin vigencia" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="IdArrendador" HeaderText="IdArrendador" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="NombreArrendador" HeaderText="NombreArrendador" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="IdArrendatario" HeaderText="IdArrendatario" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="NombreArrendatario" HeaderText="NombreArrendatario" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="IdInmueble" HeaderText="IdInmueble" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="NombreInmueble" HeaderText="NombreInmueble" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
                                             <asp:BoundField DataField="FechaAlta" HeaderText="Fecha registro" DataFormatString="{0:dd/MM/yyyy}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="EstatusInmueble" HeaderText="Estatus" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="IdArchivoContrato" HeaderText="IdArchivoContrato" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="UbicacionContrato" HeaderText="UbicacionContrato" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="IdArchivoCarta" HeaderText="IdArchivoCarta" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="UbicacionCarta" HeaderText="UbicacionCarta" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:TemplateField HeaderText="Estatus" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblEstatus" Style="color: white" Text='<%# Eval("Activo").ToString() == "1" ? "Activo" : "Inactivo" %>' runat="server" />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
                                         </Columns>
                                     </asp:GridView>
                                 </div>
@@ -671,4 +716,29 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        function ShowMessage(message, messagetype) {
+            var cssclass;
+            switch (messagetype) {
+                case 'Exito':
+                    cssclass = 'alert alert-success'
+                    break;
+                case 'Error':
+                    cssclass = 'alert alert-danger'
+                    break;
+                case 'Advertencia':
+                    cssclass = 'alert alert-warning'
+                    break;
+                default:
+                    cssclass = 'alert alert-info'
+            }
+            $('#alert_container').append('<div class="' + cssclass + '" role="alert"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>' + messagetype + '!</strong> <p>' + message + '</p></div>');
+            $('#alert_container').fadeTo(2000, 500).slideUp(500, function () {
+                $("#success-alert").slideUp(500);
+            });
+        }
+    </script>
+
 </asp:Content>
+

@@ -384,15 +384,6 @@ namespace Inmobiliaria.Views
         protected global::System.Web.UI.WebControls.TextBox txtNumEstacionamiento;
 
         /// <summary>
-        /// FilteredTextBoxExtender9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender9;
-
-        /// <summary>
         /// txtNumM2 control.
         /// </summary>
         /// <remarks>

@@ -379,24 +379,6 @@
       <Column Name="IdArrendador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_GetContratos" Method="sp_GetContratos">
-    <ElementType Name="sp_GetContratosResult">
-      <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NumContrato" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ContratoMeses" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ContratoAnio" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FechaAlta" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="FechaVigenciaInicio" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="FechaVigenciaFin" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="IdArrendador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IdArrendatario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NombreInmueble" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.sp_InsertArrendatarios" Method="sp_InsertArrendatarios">
     <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
@@ -539,6 +521,62 @@
       <Column Name="Activo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="IdTipoIdentificacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetNumeroContrato" Method="sp_GetNumeroContrato">
+    <ElementType Name="sp_GetNumeroContratoResult">
+      <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_InsertArchivosContratos" Method="sp_InsertArchivosContratos">
+    <Parameter Name="NombreArchivo" Parameter="nombreArchivo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="UbicacionArchivo" Parameter="ubicacionArchivo" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdContrato" Parameter="idContrato" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertArchivosCartas" Method="sp_InsertArchivosCartas">
+    <Parameter Name="NombreArchivo" Parameter="nombreArchivo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="UbicacionArchivo" Parameter="ubicacionArchivo" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdContrato" Parameter="idContrato" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertContratos" Method="sp_InsertContratos">
+    <Parameter Name="NumContrato" Parameter="numContrato" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ContratoMeses" Parameter="contratoMeses" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ContratoAnio" Parameter="contratoAnio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaVigenciaInicio" Parameter="fechaVigenciaInicio" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="FechaVigenciaFin" Parameter="fechaVigenciaFin" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="IdArrendador" Parameter="idArrendador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdArrendatario" Parameter="idArrendatario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdContrato" Parameter="idContrato" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GetContratos" Method="sp_GetContratos">
+    <ElementType Name="sp_GetContratosResult">
+      <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumContrato" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContratoMeses" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContratoAnio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaVigenciaInicio" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FechaVigenciaFin" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="IdArrendador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreArrendador" Type="System.String" DbType="VarChar(151)" CanBeNull="true" />
+      <Column Name="IdArrendatario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreArrendatario" Type="System.String" DbType="VarChar(151)" CanBeNull="true" />
+      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreInmueble" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="IdArchivoContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Contrato" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UbicacionContrato" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdArchivoCarta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Carta" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UbicacionCarta" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FechaAlta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

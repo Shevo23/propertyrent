@@ -12,7 +12,17 @@ namespace Inmobiliaria.Views.Inmobiliaria
 {
     public partial class Arrendatario : System.Web.UI.Page
     {
+        #region Variables
+
+        public enum MessageType { Exito, Error, Importante, Advertencia };
+
+        #endregion
+
         #region Methods
+        protected void ShowMessage(string Message, MessageType type)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
+        }
 
         private void GetEstadoCivil()
         {
@@ -40,12 +50,11 @@ namespace Inmobiliaria.Views.Inmobiliaria
                     cmbEstadoCivilFiador.Items.Insert(0, new ListItem("Seleccione..."));
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
-    }
+        }
 
         private void GetAsentamientos(int idMunicipio)
         {
@@ -66,10 +75,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
                     cmbAsentamiento.Items.Insert(0, new ListItem("Seleccione..."));
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -92,10 +100,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
                     cmbMunicipio.Items.Insert(0, new ListItem("Seleccione..."));
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -118,10 +125,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
                     cmbEstado.Items.Insert(0, new ListItem("Seleccione..."));
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -157,10 +163,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -229,10 +234,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -252,10 +256,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
                     grdArchivos.DataBind();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -278,10 +281,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
                     GetEstadoCivil();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -303,10 +305,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
                 chk_Estatus.Enabled = false;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -325,10 +326,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
 
                 GetArrendatarios(1, int.Parse(ViewState["IdArrendatario"].ToString()));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -344,10 +344,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
                 GetArchivos(int.Parse(ViewState["IdArrendatario"].ToString()));
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -381,7 +380,7 @@ namespace Inmobiliaria.Views.Inmobiliaria
                         txtEmpresaTrabajaFiador.Text.Trim(),txtDireccionEmpleoFiador.Text.Trim(),txtPuestoEmpleoFiador.Text.Trim(),
                         decimal.Parse(txtSalarioMensualFiador.Text.Trim()), Convert.ToInt32(chk_Estatus.Checked), idTipo);
 
-                    // ShowMessage("El registro ha sido guardado exitosamente.", MessageType.Exito);
+                    ShowMessage("El registro ha sido guardado exitosamente.", MessageType.Exito);
 
                     GetArrendatarios(0, 0);
 
@@ -398,15 +397,14 @@ namespace Inmobiliaria.Views.Inmobiliaria
                         txtEmpresaTrabajaFiador.Text.Trim(), txtDireccionEmpleoFiador.Text.Trim(), txtPuestoEmpleoFiador.Text.Trim(),
                         decimal.Parse(txtSalarioMensualFiador.Text.Trim()), Convert.ToInt32(chk_Estatus.Checked), idTipo);
 
-                    ////ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
+                    ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
 
-                    //GetUsuariosRoles(0, 0);
+                    GetArrendatarios(0, 0);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -479,10 +477,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -501,10 +498,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -532,10 +528,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
                 GetArchivos(Convert.ToInt32(ViewState["IdArrendatario"].ToString()));
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -545,10 +540,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
             {
                 GetMunicipios(int.Parse(cmbEstado.SelectedValue));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -558,10 +552,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
             {
                 GetAsentamientos(int.Parse(cmbMunicipio.SelectedValue));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 

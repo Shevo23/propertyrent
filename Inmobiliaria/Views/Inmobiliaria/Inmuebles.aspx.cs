@@ -13,7 +13,17 @@ namespace Inmobiliaria.Views
 {
     public partial class Inmuebles : System.Web.UI.Page
     {
+        #region Variables
+
+        public enum MessageType { Exito, Error, Importante, Advertencia };
+
+        #endregion
+
         #region Methods
+        protected void ShowMessage(string Message, MessageType type)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
+        }
 
         private void GetAsentamientos(int idMunicipio)
         {
@@ -321,11 +331,13 @@ namespace Inmobiliaria.Views
                     flpFotosInmueble.Enabled = true;
                     btn_Guardar.Enabled = false;
 
+                    ShowMessage("El registro ha sido guardado exitosamente.", MessageType.Exito);
+
                     GetInmuebles(0);
                 }
                 else
                 {
-
+                    
                 }
             }
             catch (Exception)

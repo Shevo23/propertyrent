@@ -9,6 +9,13 @@
         <br />
         <br />
         <br />
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="messagealert" id="alert_container">
+                </div>
+            </div>
+        </div>
+        <br />
         <div id="divAgregarArchivos" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog modal-xl" role="document">
                 <asp:UpdatePanel runat="server">
@@ -631,4 +638,27 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        function ShowMessage(message, messagetype) {
+            var cssclass;
+            switch (messagetype) {
+                case 'Exito':
+                    cssclass = 'alert alert-success'
+                    break;
+                case 'Error':
+                    cssclass = 'alert alert-danger'
+                    break;
+                case 'Advertencia':
+                    cssclass = 'alert alert-warning'
+                    break;
+                default:
+                    cssclass = 'alert alert-info'
+            }
+            $('#alert_container').append('<div class="' + cssclass + '" role="alert"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>' + messagetype + '!</strong> <p>' + message + '</p></div>');
+            $('#alert_container').fadeTo(2000, 500).slideUp(500, function () {
+                $("#success-alert").slideUp(500);
+            });
+        }
+    </script>
 </asp:Content>
