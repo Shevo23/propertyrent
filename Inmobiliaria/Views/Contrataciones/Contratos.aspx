@@ -637,7 +637,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-danger" Text="Cancelar" data-dismiss="modal" />
+                                <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-danger" Text="Cancelar" data-dismiss="modal" OnClick="btnCancelar_Click" />
                                 <asp:Button ID="btnGuardar" Text="Guardar" runat="server" CssClass="btn btn-success" data-dismiss="modal" UseSubmitBehavior="false" OnClick="btnGuardar_Click" />
 
                             </div>
@@ -670,35 +670,35 @@
                                         <Columns>
                                             <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton runat="server" ID="ibtnEliminar" ToolTip="Eliminar contrato" ImageUrl="~/Images/borrar.png" Width="20px" data-toggle="modal" data-target="#divAgregar" />
+                                                    <asp:ImageButton runat="server" ID="ibtnEliminar" ToolTip="Eliminar contrato" ImageUrl="~/Images/borrar.png" Width="15px" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderStyle-BackColor="#9c9c9c" HeaderText="Contrato" HeaderStyle-ForeColor="White" ItemStyle-HorizontalAlign="Center">
+                                            <asp:TemplateField HeaderStyle-BackColor="#9c9c9c" HeaderText="Contrato" HeaderStyle-ForeColor="White" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton runat="server" ID="ibtnContratos" ToolTip="Ver contrato" ImageUrl="~/Images/archivos.png" Width="20px" data-toggle="modal" data-target="#divAgregarImagenes" OnClick="ibtnContratos_Click" />
+                                                    <asp:ImageButton runat="server" ID="ibtnContratos" ToolTip="Ver contrato" ImageUrl="~/Images/archivos.png" Width="15px" data-toggle="modal" data-target="#divAgregarImagenes" OnClick="ibtnContratos_Click" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderStyle-BackColor="#9c9c9c" HeaderText="Recision" HeaderStyle-ForeColor="White" ItemStyle-HorizontalAlign="Center">
+                                            <asp:TemplateField HeaderStyle-BackColor="#9c9c9c" HeaderText="Recision" HeaderStyle-ForeColor="White" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton runat="server" ID="ibtnCartaRecision" ToolTip="Ver carta" ImageUrl="~/Images/archivos.png" Width="20px" data-toggle="modal" data-target="#divAgregarImagenes" OnClick="ibtnCartaRecision_Click" />
+                                                    <asp:ImageButton runat="server" ID="ibtnCartaRecision" ToolTip="Ver carta" ImageUrl="~/Images/archivos.png" Width="15px" data-toggle="modal" data-target="#divAgregarImagenes" OnClick="ibtnCartaRecision_Click" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField DataField="IdContrato" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" Visible="false" />
-                                            <asp:BoundField DataField="NumContrato" HeaderText="NumContrato" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="FechaVigenciaInicio" HeaderText="Inicio vigencia" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="FechaVigenciaFin" HeaderText="Fin vigencia" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="IdArrendador" HeaderText="IdArrendador" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="NombreArrendador" HeaderText="NombreArrendador" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="IdArrendatario" HeaderText="IdArrendatario" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="NombreArrendatario" HeaderText="NombreArrendatario" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="IdInmueble" HeaderText="IdInmueble" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="NombreInmueble" HeaderText="NombreInmueble" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="FechaAlta" HeaderText="Fecha registro" DataFormatString="{0:dd/MM/yyyy}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="IdArchivoContrato" HeaderText="IdArchivoContrato" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="UbicacionContrato" HeaderText="UbicacionContrato" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="IdArchivoCarta" HeaderText="IdArchivoCarta" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="UbicacionCarta" HeaderText="UbicacionCarta" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:TemplateField HeaderText="Estatus" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle">
+                                            <asp:BoundField DataField="IdContrato" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" Visible="false" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="NumContrato" HeaderText="NumContrato" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="FechaVigenciaInicio" HeaderText="Inicio vigencia" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="FechaVigenciaFin" HeaderText="Fin vigencia" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="IdArrendador" HeaderText="IdArrendador" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="NombreArrendador" HeaderText="NombreArrendador" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="IdArrendatario" HeaderText="IdArrendatario" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="NombreArrendatario" HeaderText="NombreArrendatario" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="IdInmueble" HeaderText="IdInmueble" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="NombreInmueble" HeaderText="NombreInmueble" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="FechaAlta" HeaderText="Fecha registro" DataFormatString="{0:dd/MM/yyyy}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="IdArchivoContrato" HeaderText="IdArchivoContrato" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="UbicacionContrato" HeaderText="UbicacionContrato" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="IdArchivoCarta" HeaderText="IdArchivoCarta" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="UbicacionCarta" HeaderText="UbicacionCarta" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:TemplateField HeaderText="Estatus" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle" HeaderStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
                                                     <asp:Label ID="lblEstatus" Style="color: white" Text='<%# Eval("Activo").ToString() == "1" ? "Activo" : "Inactivo" %>' runat="server" />
                                                 </ItemTemplate>

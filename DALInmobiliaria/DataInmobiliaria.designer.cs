@@ -216,24 +216,10 @@ namespace DALInmobiliaria
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateDetalleInmuebles")]
-		public int sp_UpdateDetalleInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdDetalleInmueble", DbType="Int")] System.Nullable<int> idDetalleInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumRecamaras", DbType="Int")] System.Nullable<int> numRecamaras, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumBanos", DbType="Int")] System.Nullable<int> numBanos, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumServicios", DbType="Int")] System.Nullable<int> numServicios, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumEstacionamientos", DbType="Int")] System.Nullable<int> numEstacionamientos, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ConAlberca", DbType="Int")] System.Nullable<int> conAlberca, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumM2", DbType="Int")] System.Nullable<int> numM2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumTotal", DbType="Int")] System.Nullable<int> numTotal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDetalleInmueble, numRecamaras, numBanos, numServicios, numEstacionamientos, conAlberca, numM2, numTotal, idInmueble);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateInmuebles")]
 		public int sp_UpdateInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NombreInmueble", DbType="VarChar(100)")] string nombreInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(250)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Latitud", DbType="Decimal(18,0)")] System.Nullable<decimal> latitud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Longitud", DbType="Decimal(18,0)")] System.Nullable<decimal> longitud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoTotal", DbType="Decimal(18,0)")] System.Nullable<decimal> costoTotal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoMensual", DbType="Decimal(18,0)")] System.Nullable<decimal> costoMensual, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoMto", DbType="Decimal(18,0)")] System.Nullable<decimal> costoMto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo", DbType="Int")] System.Nullable<int> nuevo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Antiguedad", DbType="Int")] System.Nullable<int> antiguedad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoPropiedad", DbType="Int")] System.Nullable<int> idTipoPropiedad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAsentamiento", DbType="Int")] System.Nullable<int> idAsentamiento, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdEstatusInmueble", DbType="Int")] System.Nullable<int> idEstatusInmueble)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idInmueble, nombreInmueble, descripcion, latitud, longitud, costoTotal, costoMensual, costoMto, nuevo, antiguedad, idTipoPropiedad, idAsentamiento, idEstatusInmueble);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateUsuariosInmuebles")]
-		public int sp_UpdateUsuariosInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuarioInmueble", DbType="Int")] System.Nullable<int> idUsuarioInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuario", DbType="Int")] System.Nullable<int> idUsuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaModificacion", DbType="DateTime")] System.Nullable<System.DateTime> fechaModificacion)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idUsuarioInmueble, idUsuario, idInmueble, fechaModificacion);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -257,13 +243,6 @@ namespace DALInmobiliaria
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreInmueble, descripcion, latitud, longitud, costoTotal, costoMensual, costoMto, nuevo, antiguedad, idTipoPropiedad, idAsentamiento, idEstatusInmueble, idInmueble);
 			idInmueble = ((System.Nullable<int>)(result.GetParameterValue(12)));
 			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetInmuebles")]
-		public ISingleResult<sp_GetInmueblesResult> sp_GetInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idInmueble);
-			return ((ISingleResult<sp_GetInmueblesResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetImagenesInmueble")]
@@ -509,6 +488,27 @@ namespace DALInmobiliaria
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<sp_GetContratosResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateDetalleInmuebles")]
+		public int sp_UpdateDetalleInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdDetalleInmueble", DbType="Int")] System.Nullable<int> idDetalleInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumRecamaras", DbType="Int")] System.Nullable<int> numRecamaras, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumBanos", DbType="Int")] System.Nullable<int> numBanos, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumServicios", DbType="Int")] System.Nullable<int> numServicios, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumEstacionamientos", DbType="Int")] System.Nullable<int> numEstacionamientos, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ConAlberca", DbType="Int")] System.Nullable<int> conAlberca, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumM2", DbType="Int")] System.Nullable<int> numM2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumTotal", DbType="Int")] System.Nullable<int> numTotal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDetalleInmueble, numRecamaras, numBanos, numServicios, numEstacionamientos, conAlberca, numM2, numTotal, idInmueble);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateUsuariosInmuebles")]
+		public int sp_UpdateUsuariosInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuarioInmueble", DbType="Int")] System.Nullable<int> idUsuarioInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuario", DbType="Int")] System.Nullable<int> idUsuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idUsuarioInmueble, idUsuario, idInmueble);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetInmuebles")]
+		public ISingleResult<sp_GetInmueblesResult> sp_GetInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idInmueble);
+			return ((ISingleResult<sp_GetInmueblesResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1199,572 +1199,6 @@ namespace DALInmobiliaria
 				if ((this._IdMunicipio != value))
 				{
 					this._IdMunicipio = value;
-				}
-			}
-		}
-	}
-	
-	public partial class sp_GetInmueblesResult
-	{
-		
-		private int _IdInmueble;
-		
-		private string _NombreInmueble;
-		
-		private string _Descripcion;
-		
-		private System.Nullable<decimal> _Latitud;
-		
-		private System.Nullable<decimal> _Longitud;
-		
-		private System.Nullable<decimal> _CostoTotal;
-		
-		private System.Nullable<decimal> _CostoMensual;
-		
-		private System.Nullable<decimal> _CostoMto;
-		
-		private System.Nullable<int> _Nuevo;
-		
-		private System.Nullable<int> _Antiguedad;
-		
-		private int _IdTipoPropiedad;
-		
-		private string _Propiedad;
-		
-		private int _IdAsentamiento;
-		
-		private string _Asentamiento;
-		
-		private int _IdEstatusInmueble;
-		
-		private string _EstatusInmueble;
-		
-		private int _IdMunicipio;
-		
-		private string _Municipio;
-		
-		private int _IdEstado;
-		
-		private string _Estado;
-		
-		private System.Nullable<int> _NumRecamaras;
-		
-		private System.Nullable<int> _NumBanos;
-		
-		private System.Nullable<int> _NumServicios;
-		
-		private System.Nullable<int> _NumEstacionamientos;
-		
-		private System.Nullable<int> _ConAlberca;
-		
-		private System.Nullable<int> _NumM2;
-		
-		private System.Nullable<int> _NumTotal;
-		
-		private System.Nullable<System.DateTime> _FechaAlta;
-		
-		private System.Nullable<System.DateTime> _FechaModificacion;
-		
-		private int _IdUsuario;
-		
-		private string _Nombre;
-		
-		public sp_GetInmueblesResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdInmueble", DbType="Int NOT NULL")]
-		public int IdInmueble
-		{
-			get
-			{
-				return this._IdInmueble;
-			}
-			set
-			{
-				if ((this._IdInmueble != value))
-				{
-					this._IdInmueble = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreInmueble", DbType="VarChar(100)")]
-		public string NombreInmueble
-		{
-			get
-			{
-				return this._NombreInmueble;
-			}
-			set
-			{
-				if ((this._NombreInmueble != value))
-				{
-					this._NombreInmueble = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(250)")]
-		public string Descripcion
-		{
-			get
-			{
-				return this._Descripcion;
-			}
-			set
-			{
-				if ((this._Descripcion != value))
-				{
-					this._Descripcion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Latitud", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> Latitud
-		{
-			get
-			{
-				return this._Latitud;
-			}
-			set
-			{
-				if ((this._Latitud != value))
-				{
-					this._Latitud = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitud", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> Longitud
-		{
-			get
-			{
-				return this._Longitud;
-			}
-			set
-			{
-				if ((this._Longitud != value))
-				{
-					this._Longitud = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CostoTotal", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> CostoTotal
-		{
-			get
-			{
-				return this._CostoTotal;
-			}
-			set
-			{
-				if ((this._CostoTotal != value))
-				{
-					this._CostoTotal = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CostoMensual", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> CostoMensual
-		{
-			get
-			{
-				return this._CostoMensual;
-			}
-			set
-			{
-				if ((this._CostoMensual != value))
-				{
-					this._CostoMensual = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CostoMto", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> CostoMto
-		{
-			get
-			{
-				return this._CostoMto;
-			}
-			set
-			{
-				if ((this._CostoMto != value))
-				{
-					this._CostoMto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nuevo", DbType="Int")]
-		public System.Nullable<int> Nuevo
-		{
-			get
-			{
-				return this._Nuevo;
-			}
-			set
-			{
-				if ((this._Nuevo != value))
-				{
-					this._Nuevo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Antiguedad", DbType="Int")]
-		public System.Nullable<int> Antiguedad
-		{
-			get
-			{
-				return this._Antiguedad;
-			}
-			set
-			{
-				if ((this._Antiguedad != value))
-				{
-					this._Antiguedad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTipoPropiedad", DbType="Int NOT NULL")]
-		public int IdTipoPropiedad
-		{
-			get
-			{
-				return this._IdTipoPropiedad;
-			}
-			set
-			{
-				if ((this._IdTipoPropiedad != value))
-				{
-					this._IdTipoPropiedad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Propiedad", DbType="VarChar(50)")]
-		public string Propiedad
-		{
-			get
-			{
-				return this._Propiedad;
-			}
-			set
-			{
-				if ((this._Propiedad != value))
-				{
-					this._Propiedad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAsentamiento", DbType="Int NOT NULL")]
-		public int IdAsentamiento
-		{
-			get
-			{
-				return this._IdAsentamiento;
-			}
-			set
-			{
-				if ((this._IdAsentamiento != value))
-				{
-					this._IdAsentamiento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Asentamiento", DbType="VarChar(200)")]
-		public string Asentamiento
-		{
-			get
-			{
-				return this._Asentamiento;
-			}
-			set
-			{
-				if ((this._Asentamiento != value))
-				{
-					this._Asentamiento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdEstatusInmueble", DbType="Int NOT NULL")]
-		public int IdEstatusInmueble
-		{
-			get
-			{
-				return this._IdEstatusInmueble;
-			}
-			set
-			{
-				if ((this._IdEstatusInmueble != value))
-				{
-					this._IdEstatusInmueble = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstatusInmueble", DbType="VarChar(50)")]
-		public string EstatusInmueble
-		{
-			get
-			{
-				return this._EstatusInmueble;
-			}
-			set
-			{
-				if ((this._EstatusInmueble != value))
-				{
-					this._EstatusInmueble = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdMunicipio", DbType="Int NOT NULL")]
-		public int IdMunicipio
-		{
-			get
-			{
-				return this._IdMunicipio;
-			}
-			set
-			{
-				if ((this._IdMunicipio != value))
-				{
-					this._IdMunicipio = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Municipio", DbType="VarChar(100)")]
-		public string Municipio
-		{
-			get
-			{
-				return this._Municipio;
-			}
-			set
-			{
-				if ((this._Municipio != value))
-				{
-					this._Municipio = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdEstado", DbType="Int NOT NULL")]
-		public int IdEstado
-		{
-			get
-			{
-				return this._IdEstado;
-			}
-			set
-			{
-				if ((this._IdEstado != value))
-				{
-					this._IdEstado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(50)")]
-		public string Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this._Estado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumRecamaras", DbType="Int")]
-		public System.Nullable<int> NumRecamaras
-		{
-			get
-			{
-				return this._NumRecamaras;
-			}
-			set
-			{
-				if ((this._NumRecamaras != value))
-				{
-					this._NumRecamaras = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumBanos", DbType="Int")]
-		public System.Nullable<int> NumBanos
-		{
-			get
-			{
-				return this._NumBanos;
-			}
-			set
-			{
-				if ((this._NumBanos != value))
-				{
-					this._NumBanos = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumServicios", DbType="Int")]
-		public System.Nullable<int> NumServicios
-		{
-			get
-			{
-				return this._NumServicios;
-			}
-			set
-			{
-				if ((this._NumServicios != value))
-				{
-					this._NumServicios = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumEstacionamientos", DbType="Int")]
-		public System.Nullable<int> NumEstacionamientos
-		{
-			get
-			{
-				return this._NumEstacionamientos;
-			}
-			set
-			{
-				if ((this._NumEstacionamientos != value))
-				{
-					this._NumEstacionamientos = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConAlberca", DbType="Int")]
-		public System.Nullable<int> ConAlberca
-		{
-			get
-			{
-				return this._ConAlberca;
-			}
-			set
-			{
-				if ((this._ConAlberca != value))
-				{
-					this._ConAlberca = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumM2", DbType="Int")]
-		public System.Nullable<int> NumM2
-		{
-			get
-			{
-				return this._NumM2;
-			}
-			set
-			{
-				if ((this._NumM2 != value))
-				{
-					this._NumM2 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumTotal", DbType="Int")]
-		public System.Nullable<int> NumTotal
-		{
-			get
-			{
-				return this._NumTotal;
-			}
-			set
-			{
-				if ((this._NumTotal != value))
-				{
-					this._NumTotal = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaAlta", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FechaAlta
-		{
-			get
-			{
-				return this._FechaAlta;
-			}
-			set
-			{
-				if ((this._FechaAlta != value))
-				{
-					this._FechaAlta = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaModificacion", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FechaModificacion
-		{
-			get
-			{
-				return this._FechaModificacion;
-			}
-			set
-			{
-				if ((this._FechaModificacion != value))
-				{
-					this._FechaModificacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUsuario", DbType="Int NOT NULL")]
-		public int IdUsuario
-		{
-			get
-			{
-				return this._IdUsuario;
-			}
-			set
-			{
-				if ((this._IdUsuario != value))
-				{
-					this._IdUsuario = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50)")]
-		public string Nombre
-		{
-			get
-			{
-				return this._Nombre;
-			}
-			set
-			{
-				if ((this._Nombre != value))
-				{
-					this._Nombre = value;
 				}
 			}
 		}
@@ -3833,6 +3267,590 @@ namespace DALInmobiliaria
 				if ((this._Activo != value))
 				{
 					this._Activo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetInmueblesResult
+	{
+		
+		private int _IdInmueble;
+		
+		private string _NombreInmueble;
+		
+		private string _Descripcion;
+		
+		private System.Nullable<decimal> _Latitud;
+		
+		private System.Nullable<decimal> _Longitud;
+		
+		private System.Nullable<decimal> _CostoTotal;
+		
+		private System.Nullable<decimal> _CostoMensual;
+		
+		private System.Nullable<decimal> _CostoMto;
+		
+		private System.Nullable<int> _Nuevo;
+		
+		private System.Nullable<int> _Antiguedad;
+		
+		private int _IdTipoPropiedad;
+		
+		private string _Propiedad;
+		
+		private int _IdAsentamiento;
+		
+		private string _Asentamiento;
+		
+		private int _IdEstatusInmueble;
+		
+		private string _EstatusInmueble;
+		
+		private int _IdMunicipio;
+		
+		private string _Municipio;
+		
+		private int _IdEstado;
+		
+		private string _Estado;
+		
+		private int _IdDetalleInmueble;
+		
+		private System.Nullable<int> _NumRecamaras;
+		
+		private System.Nullable<int> _NumBanos;
+		
+		private System.Nullable<int> _NumServicios;
+		
+		private System.Nullable<int> _NumEstacionamientos;
+		
+		private System.Nullable<int> _ConAlberca;
+		
+		private System.Nullable<int> _NumM2;
+		
+		private System.Nullable<int> _NumTotal;
+		
+		private System.Nullable<System.DateTime> _FechaAlta;
+		
+		private System.Nullable<System.DateTime> _FechaModificacion;
+		
+		private int _IdUsuarioInmueble;
+		
+		private string _Nombre;
+		
+		public sp_GetInmueblesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdInmueble", DbType="Int NOT NULL")]
+		public int IdInmueble
+		{
+			get
+			{
+				return this._IdInmueble;
+			}
+			set
+			{
+				if ((this._IdInmueble != value))
+				{
+					this._IdInmueble = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreInmueble", DbType="VarChar(100)")]
+		public string NombreInmueble
+		{
+			get
+			{
+				return this._NombreInmueble;
+			}
+			set
+			{
+				if ((this._NombreInmueble != value))
+				{
+					this._NombreInmueble = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(250)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Latitud", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> Latitud
+		{
+			get
+			{
+				return this._Latitud;
+			}
+			set
+			{
+				if ((this._Latitud != value))
+				{
+					this._Latitud = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitud", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> Longitud
+		{
+			get
+			{
+				return this._Longitud;
+			}
+			set
+			{
+				if ((this._Longitud != value))
+				{
+					this._Longitud = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CostoTotal", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> CostoTotal
+		{
+			get
+			{
+				return this._CostoTotal;
+			}
+			set
+			{
+				if ((this._CostoTotal != value))
+				{
+					this._CostoTotal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CostoMensual", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> CostoMensual
+		{
+			get
+			{
+				return this._CostoMensual;
+			}
+			set
+			{
+				if ((this._CostoMensual != value))
+				{
+					this._CostoMensual = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CostoMto", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> CostoMto
+		{
+			get
+			{
+				return this._CostoMto;
+			}
+			set
+			{
+				if ((this._CostoMto != value))
+				{
+					this._CostoMto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nuevo", DbType="Int")]
+		public System.Nullable<int> Nuevo
+		{
+			get
+			{
+				return this._Nuevo;
+			}
+			set
+			{
+				if ((this._Nuevo != value))
+				{
+					this._Nuevo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Antiguedad", DbType="Int")]
+		public System.Nullable<int> Antiguedad
+		{
+			get
+			{
+				return this._Antiguedad;
+			}
+			set
+			{
+				if ((this._Antiguedad != value))
+				{
+					this._Antiguedad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTipoPropiedad", DbType="Int NOT NULL")]
+		public int IdTipoPropiedad
+		{
+			get
+			{
+				return this._IdTipoPropiedad;
+			}
+			set
+			{
+				if ((this._IdTipoPropiedad != value))
+				{
+					this._IdTipoPropiedad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Propiedad", DbType="VarChar(50)")]
+		public string Propiedad
+		{
+			get
+			{
+				return this._Propiedad;
+			}
+			set
+			{
+				if ((this._Propiedad != value))
+				{
+					this._Propiedad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAsentamiento", DbType="Int NOT NULL")]
+		public int IdAsentamiento
+		{
+			get
+			{
+				return this._IdAsentamiento;
+			}
+			set
+			{
+				if ((this._IdAsentamiento != value))
+				{
+					this._IdAsentamiento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Asentamiento", DbType="VarChar(200)")]
+		public string Asentamiento
+		{
+			get
+			{
+				return this._Asentamiento;
+			}
+			set
+			{
+				if ((this._Asentamiento != value))
+				{
+					this._Asentamiento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdEstatusInmueble", DbType="Int NOT NULL")]
+		public int IdEstatusInmueble
+		{
+			get
+			{
+				return this._IdEstatusInmueble;
+			}
+			set
+			{
+				if ((this._IdEstatusInmueble != value))
+				{
+					this._IdEstatusInmueble = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstatusInmueble", DbType="VarChar(50)")]
+		public string EstatusInmueble
+		{
+			get
+			{
+				return this._EstatusInmueble;
+			}
+			set
+			{
+				if ((this._EstatusInmueble != value))
+				{
+					this._EstatusInmueble = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdMunicipio", DbType="Int NOT NULL")]
+		public int IdMunicipio
+		{
+			get
+			{
+				return this._IdMunicipio;
+			}
+			set
+			{
+				if ((this._IdMunicipio != value))
+				{
+					this._IdMunicipio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Municipio", DbType="VarChar(100)")]
+		public string Municipio
+		{
+			get
+			{
+				return this._Municipio;
+			}
+			set
+			{
+				if ((this._Municipio != value))
+				{
+					this._Municipio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdEstado", DbType="Int NOT NULL")]
+		public int IdEstado
+		{
+			get
+			{
+				return this._IdEstado;
+			}
+			set
+			{
+				if ((this._IdEstado != value))
+				{
+					this._IdEstado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(50)")]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdDetalleInmueble", DbType="Int NOT NULL")]
+		public int IdDetalleInmueble
+		{
+			get
+			{
+				return this._IdDetalleInmueble;
+			}
+			set
+			{
+				if ((this._IdDetalleInmueble != value))
+				{
+					this._IdDetalleInmueble = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumRecamaras", DbType="Int")]
+		public System.Nullable<int> NumRecamaras
+		{
+			get
+			{
+				return this._NumRecamaras;
+			}
+			set
+			{
+				if ((this._NumRecamaras != value))
+				{
+					this._NumRecamaras = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumBanos", DbType="Int")]
+		public System.Nullable<int> NumBanos
+		{
+			get
+			{
+				return this._NumBanos;
+			}
+			set
+			{
+				if ((this._NumBanos != value))
+				{
+					this._NumBanos = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumServicios", DbType="Int")]
+		public System.Nullable<int> NumServicios
+		{
+			get
+			{
+				return this._NumServicios;
+			}
+			set
+			{
+				if ((this._NumServicios != value))
+				{
+					this._NumServicios = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumEstacionamientos", DbType="Int")]
+		public System.Nullable<int> NumEstacionamientos
+		{
+			get
+			{
+				return this._NumEstacionamientos;
+			}
+			set
+			{
+				if ((this._NumEstacionamientos != value))
+				{
+					this._NumEstacionamientos = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConAlberca", DbType="Int")]
+		public System.Nullable<int> ConAlberca
+		{
+			get
+			{
+				return this._ConAlberca;
+			}
+			set
+			{
+				if ((this._ConAlberca != value))
+				{
+					this._ConAlberca = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumM2", DbType="Int")]
+		public System.Nullable<int> NumM2
+		{
+			get
+			{
+				return this._NumM2;
+			}
+			set
+			{
+				if ((this._NumM2 != value))
+				{
+					this._NumM2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumTotal", DbType="Int")]
+		public System.Nullable<int> NumTotal
+		{
+			get
+			{
+				return this._NumTotal;
+			}
+			set
+			{
+				if ((this._NumTotal != value))
+				{
+					this._NumTotal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaAlta", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaAlta
+		{
+			get
+			{
+				return this._FechaAlta;
+			}
+			set
+			{
+				if ((this._FechaAlta != value))
+				{
+					this._FechaAlta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaModificacion
+		{
+			get
+			{
+				return this._FechaModificacion;
+			}
+			set
+			{
+				if ((this._FechaModificacion != value))
+				{
+					this._FechaModificacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUsuarioInmueble", DbType="Int NOT NULL")]
+		public int IdUsuarioInmueble
+		{
+			get
+			{
+				return this._IdUsuarioInmueble;
+			}
+			set
+			{
+				if ((this._IdUsuarioInmueble != value))
+				{
+					this._IdUsuarioInmueble = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50)")]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
 				}
 			}
 		}

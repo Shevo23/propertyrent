@@ -27,36 +27,130 @@ namespace Inmobiliaria.Views.Contrataciones
 
         #region Methods
 
+        private void LimpiarControles()
+        {
+            try
+            {
+                txtFechaInicioContrato.Text = string.Empty;
+                txtFechaFinContrato.Text = string.Empty;
+                txtMesesContrato.Text = string.Empty;
+                txtAnioContrato.Text = string.Empty;
+
+                cmbInmueble.SelectedIndex = 0;
+                txtDescripcion.Text = string.Empty;
+                txtCostoTotal.Text = string.Empty;
+                txtCostoMensual.Text = string.Empty;
+                txtCostoMantenimiento.Text = string.Empty;
+                txtAntiguedad.Text = string.Empty;
+                cmbTipoPropiedad.SelectedIndex = 0;
+                cmbEstado.SelectedIndex = 0;
+                cmbMunicipio.SelectedIndex = 0;
+                cmbAsentamiento.SelectedIndex = 0;
+                cmbEstatusInmueble.SelectedIndex = 0;
+                chkNuevo.Checked = true;
+                txtNumRecamaras.Text = string.Empty;
+                txtNumBanos.Text = string.Empty;
+                txtNumServicios.Text = string.Empty;
+                txtNumEstacionamiento.Text = string.Empty;
+                chkAlberca.Checked = true;
+                txtNumM2.Text = string.Empty;
+                txtNumTotal.Text = string.Empty;
+
+                cmbArrendador.SelectedIndex = 0;
+                txtNombres.Text = string.Empty;
+                txtPaterno.Text = string.Empty;
+                txtMaterno.Text = string.Empty;
+                txtEmail.Text = string.Empty;
+                txtMovil.Text = string.Empty;
+                txtFijo.Text = string.Empty;
+                chk_Estatus.Checked = true;
+                cmbTipoIdentificacion.SelectedIndex = 0;
+
+                cmbArrendatario.SelectedIndex = 0;
+                txtEdad.Text = string.Empty;
+                txtUltimoGradoEstudio.Text = string.Empty;
+                txtCarreraOficio.Text = string.Empty;
+                cmbEstadoArrendatario.SelectedIndex = 0;
+                cmbMunicipioArrendatario.SelectedIndex = 0;
+                cmbAsentamientoArrendatario.SelectedIndex = 0;
+                txtNumPersonasHabitar.Text = string.Empty;
+                txtNumPersonasDependen.Text = string.Empty;
+                cmbEstadoCivil.SelectedIndex = 0;
+                txtMovilArrendatario.Text = string.Empty;
+                txtEmpresaTrabaja.Text = string.Empty;
+                txtAntiguedadArrendatario.Text = string.Empty;
+                txtHorario.Text = string.Empty;
+                txtDireccionEmpleo.Text = string.Empty;
+                txtFijoArrendatario.Text = string.Empty;
+                txtNombreJefe.Text = string.Empty;
+                txtPuestoEmpleo.Text = string.Empty;
+                txtSalarioMensual.Text = string.Empty;
+                txtMotivoCambio.InnerText = string.Empty;
+                txtRelacionFiador.Text = string.Empty;
+                txtNombreFiador.Text = string.Empty;
+                txtDireccionFiador.Text = string.Empty;
+                txtTelefonoFiador.Text = string.Empty;
+                txtMovilFiador.Text = string.Empty;
+                cmbEstadoCivilFiador.SelectedIndex = 0;
+                txtTiempoMatrimonio.Text = string.Empty;
+                txtEdadFiador.Text = string.Empty;
+                txtEmpresaTrabajaFiador.Text = string.Empty;
+                txtDireccionEmpleoFiador.Text = string.Empty;
+                txtPuestoEmpleoFiador.Text = string.Empty;
+                txtSalarioMensualFiador.Text = string.Empty;
+                cmbTipoIdentificacionArrendatario.SelectedIndex = 0;
+
+            }
+            catch (Exception ex)
+            {
+                ShowMessage(ex.Message, MessageType.Error);
+            }
+        }
+
         private void DownloadCarta(string pathCarta)
         {
-            byte[] vs = File.ReadAllBytes(pathCarta);
-            Response.Clear();
-            Response.ContentType = "application/force-download";
-            Response.ContentType = ContentType;
-            Response.AddHeader("content-disposition", "attachment; filename=" + System.IO.Path.GetFileName(pathCarta));
-            Response.AppendHeader("content-disposition", "attachment; filename=" + System.IO.Path.GetFileName(pathCarta));
-            Response.WriteFile(pathCarta);
-            Response.BufferOutput = false;
-            Response.BinaryWrite(vs);
-            Response.Flush();
-            Response.Close();
-            Response.End();
+            try
+            {
+                byte[] vs = File.ReadAllBytes(pathCarta);
+                Response.Clear();
+                Response.ContentType = "application/force-download";
+                Response.ContentType = ContentType;
+                Response.AddHeader("content-disposition", "attachment; filename=" + System.IO.Path.GetFileName(pathCarta));
+                Response.AppendHeader("content-disposition", "attachment; filename=" + System.IO.Path.GetFileName(pathCarta));
+                Response.WriteFile(pathCarta);
+                Response.BufferOutput = false;
+                Response.BinaryWrite(vs);
+                Response.Flush();
+                Response.Close();
+                Response.End();
+            }
+            catch (Exception ex)
+            {
+                ShowMessage(ex.Message, MessageType.Error);
+            }
         }
 
         private void DownloadContrato(string pathContrato)
         {
-            byte[] vs = File.ReadAllBytes(pathContrato);
-            Response.Clear();
-            Response.ContentType = "application/force-download";
-            Response.ContentType = ContentType;
-            Response.AddHeader("content-disposition", "attachment; filename=" + System.IO.Path.GetFileName(pathContrato));
-            Response.AppendHeader("content-disposition", "attachment; filename=" + System.IO.Path.GetFileName(pathContrato));
-            Response.WriteFile(pathContrato);
-            Response.BufferOutput = false;
-            Response.BinaryWrite(vs);
-            Response.Flush();
-            Response.Close();
-            Response.End();
+            try
+            {
+                byte[] vs = File.ReadAllBytes(pathContrato);
+                Response.Clear();
+                Response.ContentType = "application/force-download";
+                Response.ContentType = ContentType;
+                Response.AddHeader("content-disposition", "attachment; filename=" + System.IO.Path.GetFileName(pathContrato));
+                Response.AppendHeader("content-disposition", "attachment; filename=" + System.IO.Path.GetFileName(pathContrato));
+                Response.WriteFile(pathContrato);
+                Response.BufferOutput = false;
+                Response.BinaryWrite(vs);
+                Response.Flush();
+                Response.Close();
+                Response.End();
+            }
+            catch (Exception ex)
+            {
+                ShowMessage(ex.Message, MessageType.Error);
+            }
         }
 
         private void GetContratos()
@@ -117,7 +211,7 @@ namespace Inmobiliaria.Views.Contrataciones
 
                 if (dsNumero.Tables[0].Rows.Count > 0)
                 {
-                    consecutivo = int.Parse(dsNumero.Tables[0].Rows[0]["IdContrato"].ToString());
+                    consecutivo = int.Parse(dsNumero.Tables[0].Rows[0]["IdContrato"].ToString()) + 1;
                 }
                 else
                 {
@@ -632,6 +726,7 @@ namespace Inmobiliaria.Views.Contrataciones
                 s1 = s1.Replace("#NombreFiador#", datosContrato.NombreFiador);
                 s1 = s1.Replace("#CantidadMensual#", datosContrato.CantidadMensual);
                 s1 = s1.Replace("#NombreArrendatario#", datosContrato.NombreArrendatario);
+                s1 = s1.Replace("#DireccionArrendatario#", datosContrato.DireccionArrendatario);
                 s1 = s1.Replace("#DireccionFiador#", datosContrato.DireccionFiador);
                 s1 = s1.Replace("#Fecha#", datosContrato.Fecha);
 
@@ -721,6 +816,11 @@ namespace Inmobiliaria.Views.Contrataciones
             {
                 if (!IsPostBack)
                 {
+                    cmbMunicipio.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbAsentamiento.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbMunicipioArrendatario.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbAsentamientoArrendatario.Items.Insert(0, new ListItem("Seleccione..."));
+
                     GetContratos();
                     GetEstadoCivil();
                     GetInmuebles(0);
@@ -791,6 +891,7 @@ namespace Inmobiliaria.Views.Contrataciones
             datosContrato.DireccionInmueble = cmbAsentamiento.SelectedItem.Text + " " + cmbMunicipio.SelectedItem.Text + " " + cmbEstado.SelectedItem.Text;
             datosContrato.NombreArrendador = cmbArrendador.SelectedItem.Text;
             datosContrato.NombreArrendatario = cmbArrendatario.SelectedItem.Text;
+            datosContrato.DireccionArrendatario = cmbAsentamientoArrendatario.SelectedItem.Text + " " + cmbMunicipioArrendatario.SelectedItem.Text + " " + cmbEstadoArrendatario.SelectedItem.Text;
             datosContrato.NombreFiador = txtNombreFiador.Text;
             datosContrato.DireccionFiador = txtDireccionFiador.Text;
             datosContrato.CantidadMensual = txtCostoMensual.Text;
@@ -818,11 +919,13 @@ namespace Inmobiliaria.Views.Contrataciones
             try
             {
                 txtNumContrato.Text = "IMSERV" + RellenarCadena(GetNumeroContrato().ToString());
-            }
-            catch (Exception)
-            {
 
-                throw;
+                LimpiarControles();
+
+            }
+            catch (Exception ex)
+            {
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -840,10 +943,9 @@ namespace Inmobiliaria.Views.Contrataciones
                 txtMesesContrato.Text = months.ToString();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -859,10 +961,9 @@ namespace Inmobiliaria.Views.Contrataciones
                 DownloadContrato(ViewState["UbicacionContrato"].ToString());
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -877,10 +978,21 @@ namespace Inmobiliaria.Views.Contrataciones
 
                 DownloadCarta(ViewState["UbicacionCarta"].ToString());
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                ShowMessage(ex.Message, MessageType.Error);
+            }
+        }
 
-                throw;
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LimpiarControles();
+            }
+            catch (Exception ex)
+            {
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 

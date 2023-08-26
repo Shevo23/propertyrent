@@ -81,11 +81,11 @@ namespace BTLInmobiliaria
             context.Connection.Close();
         }
 
-        public void UpdateUsuariosInmuebles(int idUsuarioInmueble, int idUsuario, int idInmueble, DateTime fechaModificacion)
+        public void UpdateUsuariosInmuebles(int idUsuarioInmueble, int idUsuario, int idInmueble)
         {
             context.Connection.Open();
 
-            context.sp_UpdateUsuariosInmuebles(idUsuarioInmueble, idUsuario, idInmueble, fechaModificacion);
+            context.sp_UpdateUsuariosInmuebles(idUsuarioInmueble, idUsuario, idInmueble);
 
             context.Connection.Close();
         }

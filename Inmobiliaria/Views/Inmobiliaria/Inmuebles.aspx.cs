@@ -275,10 +275,9 @@ namespace Inmobiliaria.Views
                     GetTipoPropiedad();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -288,10 +287,9 @@ namespace Inmobiliaria.Views
             {
                 GetMunicipios(int.Parse(cmbEstado.SelectedValue));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -301,10 +299,9 @@ namespace Inmobiliaria.Views
             {
                 GetAsentamientos(int.Parse(cmbMunicipio.SelectedValue));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -326,7 +323,7 @@ namespace Inmobiliaria.Views
                         , int.Parse(txtNumEstacionamiento.Text.Trim()), Convert.ToInt32(chkAlberca.Checked), int.Parse(txtNumM2.Text.Trim()), int.Parse(txtNumTotal.Text.Trim())
                         , Convert.ToInt32(idInmueble));
 
-                    inmobiliaria.InsertUsuariosInmuebles(1, Convert.ToInt32(idInmueble), DateTime.Now);
+                    inmobiliaria.InsertUsuariosInmuebles(int.Parse(Session["IdUsuario"].ToString()), Convert.ToInt32(idInmueble), DateTime.Now);
 
                     flpFotosInmueble.Enabled = true;
                     btn_Guardar.Enabled = false;
@@ -337,13 +334,24 @@ namespace Inmobiliaria.Views
                 }
                 else
                 {
-                    
+                    inmobiliaria.UpdateInmuebles(int.Parse(ViewState["IdInmueble"].ToString()), txtNombreInmueble.Text.Trim(), txtDescripcion.Text.Trim(), 0, 0, decimal.Parse(txtCostoTotal.Text.Trim())
+                        , decimal.Parse(txtCostoMensual.Text.Trim()), decimal.Parse(txtCostoMantenimiento.Text.Trim()), Convert.ToInt32(chkNuevo.Checked), int.Parse(txtAntiguedad.Text.Trim())
+                        , int.Parse(cmbTipoPropiedad.SelectedValue), int.Parse(cmbAsentamiento.SelectedValue), int.Parse(cmbEstatusInmueble.SelectedValue));
+
+                    inmobiliaria.UpdateDetalleInmuebles(int.Parse(ViewState["IdDetalleInmueble"].ToString()), int.Parse(txtNumRecamaras.Text.Trim()), int.Parse(txtNumBanos.Text.Trim()), int.Parse(txtNumServicios.Text.Trim())
+                        , int.Parse(txtNumEstacionamiento.Text.Trim()), Convert.ToInt32(chkAlberca.Checked), int.Parse(txtNumM2.Text.Trim()), int.Parse(txtNumTotal.Text.Trim())
+                        , int.Parse(ViewState["IdInmueble"].ToString()));
+
+                    inmobiliaria.UpdateUsuariosInmuebles(int.Parse(ViewState["IdUsuarioInmueble"].ToString()), int.Parse(Session["IdUsuario"].ToString()), int.Parse(ViewState["IdInmueble"].ToString()));
+
+                    ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
+
+                    GetInmuebles(0);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -374,10 +382,9 @@ namespace Inmobiliaria.Views
                 chkNuevo.Checked = false;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -450,10 +457,9 @@ namespace Inmobiliaria.Views
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -526,10 +532,9 @@ namespace Inmobiliaria.Views
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -543,14 +548,15 @@ namespace Inmobiliaria.Views
                 GridViewRow namingContainer = button.NamingContainer as GridViewRow;
 
                 ViewState["IdInmueble"] = Convert.ToInt32(grdInmuebles.DataKeys[namingContainer.RowIndex].Values["IdInmueble"].ToString());
+                ViewState["IdDetalleInmueble"] = Convert.ToInt32(grdInmuebles.DataKeys[namingContainer.RowIndex].Values["IdDetalleInmueble"].ToString());
+                ViewState["IdUsuarioInmueble"] = Convert.ToInt32(grdInmuebles.DataKeys[namingContainer.RowIndex].Values["IdUsuarioInmueble"].ToString());
 
                 GetInmuebles(Convert.ToInt32(ViewState["IdInmueble"].ToString()));
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -566,10 +572,9 @@ namespace Inmobiliaria.Views
                 GetImagenes(int.Parse(ViewState["IdInmueble"].ToString()));
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -588,10 +593,9 @@ namespace Inmobiliaria.Views
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -607,10 +611,9 @@ namespace Inmobiliaria.Views
                 GetArchivos(int.Parse(ViewState["IdInmueble"].ToString()));
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -640,10 +643,9 @@ namespace Inmobiliaria.Views
                 chkAlberca.Checked = false;
                 chkNuevo.Checked = false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -671,10 +673,9 @@ namespace Inmobiliaria.Views
                 GetImagenes(Convert.ToInt32(ViewState["IdInmueble"].ToString()));
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -693,10 +694,9 @@ namespace Inmobiliaria.Views
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
@@ -724,10 +724,9 @@ namespace Inmobiliaria.Views
                 GetArchivos(Convert.ToInt32(ViewState["IdInmueble"].ToString()));
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                ShowMessage(ex.Message, MessageType.Error);
             }
         }
 
