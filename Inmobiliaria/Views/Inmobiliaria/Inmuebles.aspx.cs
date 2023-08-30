@@ -317,16 +317,11 @@ namespace Inmobiliaria.Views
                         , decimal.Parse(txtCostoMensual.Text.Trim()), decimal.Parse(txtCostoMantenimiento.Text.Trim()), Convert.ToInt32(chkNuevo.Checked), int.Parse(txtAntiguedad.Text.Trim())
                         , int.Parse(cmbTipoPropiedad.SelectedValue), int.Parse(cmbAsentamiento.SelectedValue), int.Parse(cmbEstatusInmueble.SelectedValue));
 
-                    // ViewState["IdInmueble"] = idInmueble;
-
                     inmobiliaria.InsertDetalleInmuebles(int.Parse(txtNumRecamaras.Text.Trim()), int.Parse(txtNumBanos.Text.Trim()), int.Parse(txtNumServicios.Text.Trim())
                         , int.Parse(txtNumEstacionamiento.Text.Trim()), Convert.ToInt32(chkAlberca.Checked), int.Parse(txtNumM2.Text.Trim()), int.Parse(txtNumTotal.Text.Trim())
                         , Convert.ToInt32(idInmueble));
 
                     inmobiliaria.InsertUsuariosInmuebles(int.Parse(Session["IdUsuario"].ToString()), Convert.ToInt32(idInmueble), DateTime.Now);
-
-                    flpFotosInmueble.Enabled = true;
-                    btn_Guardar.Enabled = false;
 
                     ShowMessage("El registro ha sido guardado exitosamente.", MessageType.Exito);
 
@@ -339,10 +334,9 @@ namespace Inmobiliaria.Views
                         , int.Parse(cmbTipoPropiedad.SelectedValue), int.Parse(cmbAsentamiento.SelectedValue), int.Parse(cmbEstatusInmueble.SelectedValue));
 
                     inmobiliaria.UpdateDetalleInmuebles(int.Parse(ViewState["IdDetalleInmueble"].ToString()), int.Parse(txtNumRecamaras.Text.Trim()), int.Parse(txtNumBanos.Text.Trim()), int.Parse(txtNumServicios.Text.Trim())
-                        , int.Parse(txtNumEstacionamiento.Text.Trim()), Convert.ToInt32(chkAlberca.Checked), int.Parse(txtNumM2.Text.Trim()), int.Parse(txtNumTotal.Text.Trim())
-                        , int.Parse(ViewState["IdInmueble"].ToString()));
+                        , int.Parse(txtNumEstacionamiento.Text.Trim()), Convert.ToInt32(chkAlberca.Checked), int.Parse(txtNumM2.Text.Trim()), int.Parse(txtNumTotal.Text.Trim()));
 
-                    inmobiliaria.UpdateUsuariosInmuebles(int.Parse(ViewState["IdUsuarioInmueble"].ToString()), int.Parse(Session["IdUsuario"].ToString()), int.Parse(ViewState["IdInmueble"].ToString()));
+                    inmobiliaria.UpdateUsuariosInmuebles(int.Parse(ViewState["IdUsuarioInmueble"].ToString()), int.Parse(Session["IdUsuario"].ToString()));
 
                     ShowMessage("El registro ha sido actualizado exitosamente.", MessageType.Exito);
 

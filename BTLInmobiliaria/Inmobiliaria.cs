@@ -81,20 +81,20 @@ namespace BTLInmobiliaria
             context.Connection.Close();
         }
 
-        public void UpdateUsuariosInmuebles(int idUsuarioInmueble, int idUsuario, int idInmueble)
+        public void UpdateUsuariosInmuebles(int idUsuarioInmueble, int idUsuario)
         {
             context.Connection.Open();
 
-            context.sp_UpdateUsuariosInmuebles(idUsuarioInmueble, idUsuario, idInmueble);
+            context.sp_UpdateUsuariosInmuebles(idUsuarioInmueble, idUsuario);
 
             context.Connection.Close();
         }
 
-        public void UpdateDetalleInmuebles(int idDetalleInmueble, int numRecamaras, int numBanos, int numServicios, int numEstacionamientos, int conAlberca, int numM2, int numTotal, int idInmueble)
+        public void UpdateDetalleInmuebles(int idDetalleInmueble, int numRecamaras, int numBanos, int numServicios, int numEstacionamientos, int conAlberca, int numM2, int numTotal)
         {
             context.Connection.Open();
 
-            context.sp_UpdateDetalleInmuebles(idDetalleInmueble, numRecamaras, numBanos, numServicios, numEstacionamientos, conAlberca, numM2, numTotal, idInmueble);
+            context.sp_UpdateDetalleInmuebles(idDetalleInmueble, numRecamaras, numBanos, numServicios, numEstacionamientos, conAlberca, numM2, numTotal);
 
             context.Connection.Close();
         }

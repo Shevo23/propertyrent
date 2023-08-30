@@ -209,39 +209,49 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-3">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtCostoTotal"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGroup-sizing">Costo total:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtCostoTotal" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ValidChars=" " ID="FilteredTextBoxExtender3" runat="server" FilterType="Numbers" TargetControlID="txtCostoTotal" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender3" runat="server" FilterType="Numbers" TargetControlID="txtCostoTotal" />
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtCostoMensual"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGroup">Renta mensual:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtCostoMensual" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ValidChars=" " ID="FilteredTextBoxExtender4" runat="server" FilterType="Numbers" TargetControlID="txtCostoMensual" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" FilterType="Numbers" TargetControlID="txtCostoMensual" />
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtCostoMantenimiento"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGroup-sizin">Costo mantenimiento:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtCostoMantenimiento" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ValidChars=" " ID="FilteredTextBoxExtender5" runat="server" FilterType="Numbers" TargetControlID="txtCostoMantenimiento" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender5" runat="server" FilterType="Numbers" TargetControlID="txtCostoMantenimiento" />
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
+
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGroup-sizi">Antigüedad:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtAntiguedad" MaxLength="2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ValidChars=" " ID="FilteredTextBoxExtender6" runat="server" FilterType="Numbers" TargetControlID="txtAntiguedad" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender6" runat="server" FilterType="Numbers" TargetControlID="txtAntiguedad" />
                                         </div>
                                     </div>
                                 </div>
@@ -324,58 +334,77 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-3">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtNumRecamaras"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"># recamaras:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtNumRecamaras" MaxLength="1" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ValidChars=" " ID="FilteredTextBoxExtender7" runat="server" FilterType="Numbers" TargetControlID="txtNumRecamaras" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender7" runat="server" FilterType="Numbers" TargetControlID="txtNumRecamaras" />
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtNumBanos"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"># baños:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtNumBanos" MaxLength="1" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ValidChars=" " ID="FilteredTextBoxExtender8" runat="server" FilterType="Numbers" TargetControlID="txtNumBanos" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender8" runat="server" FilterType="Numbers" TargetControlID="txtNumBanos" />
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
+                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtNumServicios"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"># servicios:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtNumServicios" MaxLength="1" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender12" runat="server" FilterType="Numbers" TargetControlID="txtNumServicios" />
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
+                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtNumEstacionamiento"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"># estacionamientos:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtNumEstacionamiento" MaxLength="1" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ValidChars=" " ID="FilteredTextBoxExtender9" runat="server" FilterType="Numbers" TargetControlID="txtNumEstacionamiento" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender9" runat="server" FilterType="Numbers" TargetControlID="txtNumEstacionamiento" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-3">
+                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtNumM2"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">total m2:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtNumM2" MaxLength="3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ValidChars=" " ID="FilteredTextBoxExtender10" runat="server" FilterType="Numbers" TargetControlID="txtNumM2" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender10" runat="server" FilterType="Numbers" TargetControlID="txtNumM2" />
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtNumTotal"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">total construccion:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtNumTotal" MaxLength="3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ValidChars=" " ID="FilteredTextBoxExtender11" runat="server" FilterType="Numbers" TargetControlID="txtNumTotal" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender11" runat="server" FilterType="Numbers" TargetControlID="txtNumTotal" />
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
@@ -433,7 +462,7 @@
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:BoundField DataField="IdInmueble" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="Nombre" HeaderText="Nombre Inmueble" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="NombreInmueble" HeaderText="Nombre Inmueble" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
                                             <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
                                             <asp:TemplateField HeaderText="Usado / Nuevo" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White">
                                                 <ItemTemplate>

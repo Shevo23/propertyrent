@@ -524,24 +524,6 @@
       <Column Name="Activo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_UpdateDetalleInmuebles" Method="sp_UpdateDetalleInmuebles">
-    <Parameter Name="IdDetalleInmueble" Parameter="idDetalleInmueble" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumRecamaras" Parameter="numRecamaras" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumBanos" Parameter="numBanos" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumServicios" Parameter="numServicios" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumEstacionamientos" Parameter="numEstacionamientos" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ConAlberca" Parameter="conAlberca" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumM2" Parameter="numM2" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumTotal" Parameter="numTotal" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_UpdateUsuariosInmuebles" Method="sp_UpdateUsuariosInmuebles">
-    <Parameter Name="IdUsuarioInmueble" Parameter="idUsuarioInmueble" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.sp_GetInmuebles" Method="sp_GetInmuebles">
     <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
     <ElementType Name="sp_GetInmueblesResult">
@@ -578,5 +560,21 @@
       <Column Name="IdUsuarioInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.sp_UpdateDetalleInmuebles" Method="sp_UpdateDetalleInmuebles">
+    <Parameter Name="IdDetalleInmueble" Parameter="idDetalleInmueble" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumRecamaras" Parameter="numRecamaras" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumBanos" Parameter="numBanos" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumServicios" Parameter="numServicios" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumEstacionamientos" Parameter="numEstacionamientos" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ConAlberca" Parameter="conAlberca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumM2" Parameter="numM2" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumTotal" Parameter="numTotal" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateUsuariosInmuebles" Method="sp_UpdateUsuariosInmuebles">
+    <Parameter Name="IdUsuarioInmueble" Parameter="idUsuarioInmueble" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

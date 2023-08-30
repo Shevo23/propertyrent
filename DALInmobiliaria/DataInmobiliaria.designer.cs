@@ -490,25 +490,25 @@ namespace DALInmobiliaria
 			return ((ISingleResult<sp_GetContratosResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateDetalleInmuebles")]
-		public int sp_UpdateDetalleInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdDetalleInmueble", DbType="Int")] System.Nullable<int> idDetalleInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumRecamaras", DbType="Int")] System.Nullable<int> numRecamaras, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumBanos", DbType="Int")] System.Nullable<int> numBanos, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumServicios", DbType="Int")] System.Nullable<int> numServicios, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumEstacionamientos", DbType="Int")] System.Nullable<int> numEstacionamientos, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ConAlberca", DbType="Int")] System.Nullable<int> conAlberca, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumM2", DbType="Int")] System.Nullable<int> numM2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumTotal", DbType="Int")] System.Nullable<int> numTotal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDetalleInmueble, numRecamaras, numBanos, numServicios, numEstacionamientos, conAlberca, numM2, numTotal, idInmueble);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateUsuariosInmuebles")]
-		public int sp_UpdateUsuariosInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuarioInmueble", DbType="Int")] System.Nullable<int> idUsuarioInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuario", DbType="Int")] System.Nullable<int> idUsuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idUsuarioInmueble, idUsuario, idInmueble);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetInmuebles")]
 		public ISingleResult<sp_GetInmueblesResult> sp_GetInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idInmueble);
 			return ((ISingleResult<sp_GetInmueblesResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateDetalleInmuebles")]
+		public int sp_UpdateDetalleInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdDetalleInmueble", DbType="Int")] System.Nullable<int> idDetalleInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumRecamaras", DbType="Int")] System.Nullable<int> numRecamaras, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumBanos", DbType="Int")] System.Nullable<int> numBanos, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumServicios", DbType="Int")] System.Nullable<int> numServicios, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumEstacionamientos", DbType="Int")] System.Nullable<int> numEstacionamientos, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ConAlberca", DbType="Int")] System.Nullable<int> conAlberca, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumM2", DbType="Int")] System.Nullable<int> numM2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumTotal", DbType="Int")] System.Nullable<int> numTotal)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDetalleInmueble, numRecamaras, numBanos, numServicios, numEstacionamientos, conAlberca, numM2, numTotal);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateUsuariosInmuebles")]
+		public int sp_UpdateUsuariosInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuarioInmueble", DbType="Int")] System.Nullable<int> idUsuarioInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuario", DbType="Int")] System.Nullable<int> idUsuario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idUsuarioInmueble, idUsuario);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
