@@ -475,14 +475,6 @@ namespace DALInmobiliaria
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertContratos")]
-		public int sp_InsertContratos([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumContrato", DbType="VarChar(50)")] string numContrato, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ContratoMeses", DbType="Int")] System.Nullable<int> contratoMeses, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ContratoAnio", DbType="Int")] System.Nullable<int> contratoAnio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaVigenciaInicio", DbType="VarChar(30)")] string fechaVigenciaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaVigenciaFin", DbType="VarChar(30)")] string fechaVigenciaFin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArrendador", DbType="Int")] System.Nullable<int> idArrendador, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArrendatario", DbType="Int")] System.Nullable<int> idArrendatario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuario", DbType="Int")] System.Nullable<int> idUsuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdContrato", DbType="Int")] ref System.Nullable<int> idContrato)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), numContrato, contratoMeses, contratoAnio, fechaVigenciaInicio, fechaVigenciaFin, idArrendador, idArrendatario, idInmueble, idUsuario, idContrato);
-			idContrato = ((System.Nullable<int>)(result.GetParameterValue(9)));
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetContratos")]
 		public ISingleResult<sp_GetContratosResult> sp_GetContratos()
 		{
@@ -508,6 +500,14 @@ namespace DALInmobiliaria
 		public int sp_UpdateUsuariosInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuarioInmueble", DbType="Int")] System.Nullable<int> idUsuarioInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuario", DbType="Int")] System.Nullable<int> idUsuario)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idUsuarioInmueble, idUsuario);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertContratos")]
+		public int sp_InsertContratos([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumContrato", DbType="VarChar(50)")] string numContrato, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ContratoMeses", DbType="Int")] System.Nullable<int> contratoMeses, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ContratoAnio", DbType="Int")] System.Nullable<int> contratoAnio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaVigenciaInicio", DbType="VarChar(30)")] string fechaVigenciaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaVigenciaFin", DbType="VarChar(30)")] string fechaVigenciaFin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArrendador", DbType="Int")] System.Nullable<int> idArrendador, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdArrendatario", DbType="Int")] System.Nullable<int> idArrendatario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuario", DbType="Int")] System.Nullable<int> idUsuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdContrato", DbType="Int")] ref System.Nullable<int> idContrato)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), numContrato, contratoMeses, contratoAnio, fechaVigenciaInicio, fechaVigenciaFin, idArrendador, idArrendatario, idInmueble, idUsuario, idContrato);
+			idContrato = ((System.Nullable<int>)(result.GetParameterValue(9)));
 			return ((int)(result.ReturnValue));
 		}
 	}

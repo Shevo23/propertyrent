@@ -38,6 +38,9 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFechaInicioContrato"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGup-siz-sm">Fecha inicio contrato:</span>
@@ -46,6 +49,9 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtFechaFinContrato"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inptGup-siz-sm">Fecha fin contrato:</span>
@@ -89,10 +95,14 @@
                                                     </li>
                                                 </ul>
                                                 <div class="tab-content" id="myTabContent">
+                                                    <%--inmuebles--%>
                                                     <div class="tab-pane fade show active" id="inmuebles" role="tabpanel" aria-labelledby="home-tab">
                                                         <br />
                                                         <div class="row">
                                                             <div class="col-sm-6">
+                                                                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="cmbInmueble"
+                                                                    ValidationGroup="Global" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                                                    Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic"></asp:CompareValidator>
                                                                 <div class="input-group mb-4">
                                                                     <div class="input-group-prepend">
                                                                         <label class="input-group-text" for="cmbInmueble">Nombre del Inmueble:</label>
@@ -253,11 +263,14 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
+                                                    <%--arrendador--%>
                                                     <div class="tab-pane fade" id="arrendador" role="tabpanel" aria-labelledby="profile-tab">
                                                         <br />
                                                         <div class="row">
                                                             <div class="col-md-5">
+                                                                <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToValidate="cmbArrendador"
+                                                                    ValidationGroup="Global" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                                                    Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic"></asp:CompareValidator>
                                                                 <div class="input-group mb-3">
                                                                     <div class="input-group-prepend">
                                                                         <label class="input-group-text" for="cmbInmueble">Nombre del Arrendador:</label>
@@ -333,11 +346,14 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
+                                                    <%--arrendatario--%>
                                                     <div class="tab-pane fade" id="arrendatario" role="tabpanel" aria-labelledby="contact-tab">
                                                         <br />
                                                         <div class="row">
                                                             <div class="col-md-5">
+                                                                <asp:CompareValidator ID="CompareValidator3" runat="server" ControlToValidate="cmbArrendatario"
+                                                                    ValidationGroup="Global" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                                                    Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic"></asp:CompareValidator>
                                                                 <div class="input-group mb-3">
                                                                     <div class="input-group-prepend">
                                                                         <label class="input-group-text" for="cmbArrendatario">Nombre del Arrendatario:</label>
@@ -638,7 +654,7 @@
                             </div>
                             <div class="modal-footer">
                                 <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-danger" Text="Cancelar" data-dismiss="modal" OnClick="btnCancelar_Click" />
-                                <asp:Button ID="btnGuardar" Text="Guardar" runat="server" CssClass="btn btn-success" data-dismiss="modal" UseSubmitBehavior="false" OnClick="btnGuardar_Click" />
+                                <asp:Button ID="btnGuardar" Text="Guardar" runat="server" CssClass="btn btn-success" data-dismiss="modal" UseSubmitBehavior="false" OnClick="btnGuardar_Click" ValidationGroup="Global" />
 
                             </div>
                         </div>
@@ -683,21 +699,21 @@
                                                     <asp:ImageButton runat="server" ID="ibtnCartaRecision" ToolTip="Ver carta" ImageUrl="~/Images/archivos.png" Width="15px" data-toggle="modal" data-target="#divAgregarImagenes" OnClick="ibtnCartaRecision_Click" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField DataField="IdContrato" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" Visible="false" HeaderStyle-HorizontalAlign="Center"/>
-                                            <asp:BoundField DataField="NumContrato" HeaderText="NumContrato" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
-                                            <asp:BoundField DataField="FechaVigenciaInicio" HeaderText="Inicio vigencia" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
-                                            <asp:BoundField DataField="FechaVigenciaFin" HeaderText="Fin vigencia" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
-                                            <asp:BoundField DataField="IdArrendador" HeaderText="IdArrendador" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
-                                            <asp:BoundField DataField="NombreArrendador" HeaderText="NombreArrendador" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
-                                            <asp:BoundField DataField="IdArrendatario" HeaderText="IdArrendatario" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
-                                            <asp:BoundField DataField="NombreArrendatario" HeaderText="NombreArrendatario" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
-                                            <asp:BoundField DataField="IdInmueble" HeaderText="IdInmueble" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
-                                            <asp:BoundField DataField="NombreInmueble" HeaderText="NombreInmueble" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
-                                            <asp:BoundField DataField="FechaAlta" HeaderText="Fecha registro" DataFormatString="{0:dd/MM/yyyy}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
-                                            <asp:BoundField DataField="IdArchivoContrato" HeaderText="IdArchivoContrato" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
-                                            <asp:BoundField DataField="UbicacionContrato" HeaderText="UbicacionContrato" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
-                                            <asp:BoundField DataField="IdArchivoCarta" HeaderText="IdArchivoCarta" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
-                                            <asp:BoundField DataField="UbicacionCarta" HeaderText="UbicacionCarta" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center"/>
+                                            <asp:BoundField DataField="IdContrato" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" Visible="false" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="NumContrato" HeaderText="NumContrato" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="FechaVigenciaInicio" HeaderText="Inicio vigencia" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="FechaVigenciaFin" HeaderText="Fin vigencia" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="IdArrendador" HeaderText="IdArrendador" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="NombreArrendador" HeaderText="NombreArrendador" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="IdArrendatario" HeaderText="IdArrendatario" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="NombreArrendatario" HeaderText="NombreArrendatario" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="IdInmueble" HeaderText="IdInmueble" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="NombreInmueble" HeaderText="NombreInmueble" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="FechaAlta" HeaderText="Fecha registro" DataFormatString="{0:dd/MM/yyyy}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="IdArchivoContrato" HeaderText="IdArchivoContrato" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="UbicacionContrato" HeaderText="UbicacionContrato" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="IdArchivoCarta" HeaderText="IdArchivoCarta" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="UbicacionCarta" HeaderText="UbicacionCarta" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                             <asp:TemplateField HeaderText="Estatus" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle" HeaderStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
                                                     <asp:Label ID="lblEstatus" Style="color: white" Text='<%# Eval("Activo").ToString() == "1" ? "Activo" : "Inactivo" %>' runat="server" />

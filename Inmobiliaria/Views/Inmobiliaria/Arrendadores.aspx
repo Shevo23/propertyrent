@@ -112,7 +112,7 @@
                                                 <span class="input-group-text" id="inputGroup-sizing-sm">Nombre(s):</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtNombres" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                           <cc1:FilteredTextBoxExtender ValidChars=" " ID="FilteredTextBoxExtender1" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtNombres" />
+                                           <cc1:FilteredTextBoxExtender ValidChars=" ñÑüÜ´" ID="FilteredTextBoxExtender1" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtNombres" />
                                         </div>
                                     </div>
                                 </div>
@@ -126,7 +126,7 @@
                                                 <span class="input-group-text" id="inputGroup-sizing-s">Paterno:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtPaterno" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                           <cc1:FilteredTextBoxExtender ValidChars=" " ID="FilteredTextBoxExtender2" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtPaterno" />
+                                           <cc1:FilteredTextBoxExtender ValidChars=" ñÑüÜ´" ID="FilteredTextBoxExtender2" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtPaterno" />
                                         </div>
                                     </div>
                                 </div>
@@ -138,7 +138,7 @@
                                                 <span class="input-group-text" id="inputGroup-sizing-">Materno:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtMaterno" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                           <cc1:FilteredTextBoxExtender ValidChars=" " ID="FilteredTextBoxExtender3" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtMaterno" />
+                                           <cc1:FilteredTextBoxExtender ValidChars=" ñÑüÜ´" ID="FilteredTextBoxExtender3" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtMaterno" />
                                         </div>
                                     </div>
                                 </div>
@@ -147,13 +147,13 @@
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtEmail"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
-                                        <div class="input-group mb-3">
+                                        <asp:RegularExpressionValidator ErrorMessage="<span style='color: red; font-weight: bold'>Formato incorrecto</span>" ControlToValidate="txtEmail" runat="server"
+                                                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="Global" />
+                                        <div class="input-group mb-4">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text" id="inputGroup-sizing">Correo electronico:</span>
+                                                <span class="input-group-text" id="inputGroup-sizing">Email:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <asp:RegularExpressionValidator ErrorMessage="<span style='color: red; font-weight: bold'>Formato incorrecto</span>" ControlToValidate="txtEmail" runat="server"
-                                                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="Global" />
                                         </div>
                                     </div>
                                 </div>
@@ -167,6 +167,7 @@
                                                 <span class="input-group-text" id="inputGrou-sizin">Movil:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtMovil" MaxLength="10" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" FilterType="Numbers" TargetControlID="txtMovil" />
                                         </div>
                                     </div>
                                 </div>
@@ -180,6 +181,7 @@
                                                 <span class="input-group-text" id="inputGroup-sizin">Teléfono fijo:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtFijo" MaxLength="10" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender5" runat="server" FilterType="Numbers" TargetControlID="txtFijo" />
                                         </div>
                                     </div>
                                 </div>

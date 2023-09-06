@@ -485,19 +485,6 @@
     <Parameter Name="IdContrato" Parameter="idContrato" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_InsertContratos" Method="sp_InsertContratos">
-    <Parameter Name="NumContrato" Parameter="numContrato" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ContratoMeses" Parameter="contratoMeses" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ContratoAnio" Parameter="contratoAnio" Type="System.Int32" DbType="Int" />
-    <Parameter Name="FechaVigenciaInicio" Parameter="fechaVigenciaInicio" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="FechaVigenciaFin" Parameter="fechaVigenciaFin" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="IdArrendador" Parameter="idArrendador" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdArrendatario" Parameter="idArrendatario" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdContrato" Parameter="idContrato" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.sp_GetContratos" Method="sp_GetContratos">
     <ElementType Name="sp_GetContratosResult">
       <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -575,6 +562,19 @@
   <Function Name="dbo.sp_UpdateUsuariosInmuebles" Method="sp_UpdateUsuariosInmuebles">
     <Parameter Name="IdUsuarioInmueble" Parameter="idUsuarioInmueble" Type="System.Int32" DbType="Int" />
     <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertContratos" Method="sp_InsertContratos">
+    <Parameter Name="NumContrato" Parameter="numContrato" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ContratoMeses" Parameter="contratoMeses" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ContratoAnio" Parameter="contratoAnio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaVigenciaInicio" Parameter="fechaVigenciaInicio" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="FechaVigenciaFin" Parameter="fechaVigenciaFin" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="IdArrendador" Parameter="idArrendador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdArrendatario" Parameter="idArrendatario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdContrato" Parameter="idContrato" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

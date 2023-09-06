@@ -19,6 +19,29 @@ namespace Inmobiliaria.Views.Inmobiliaria
         #endregion
 
         #region Methods
+
+        private void LimpiarControles()
+        {
+            try
+            {
+                txtNombres.Text = string.Empty;
+                txtPaterno.Text = string.Empty;
+                txtMaterno.Text = string.Empty;
+                txtEmail.Text = string.Empty;
+                txtMovil.Text = string.Empty;
+                txtFijo.Text = string.Empty;
+                cmbTipoIdentificacion.SelectedIndex = 0;
+                chk_Estatus.Checked = true;
+                chk_Estatus.Enabled = false;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
         protected void ShowMessage(string Message, MessageType type)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
@@ -151,16 +174,7 @@ namespace Inmobiliaria.Views.Inmobiliaria
             {
                 ViewState["oInsertar"] = true;
 
-                lbl_Titulo.Text = "Agregar nuevo";
-                txtNombres.Text = string.Empty;
-                txtPaterno.Text = string.Empty;
-                txtMaterno.Text = string.Empty;
-                txtEmail.Text = string.Empty;
-                txtMovil.Text = string.Empty;
-                txtFijo.Text = string.Empty;
-                cmbTipoIdentificacion.SelectedIndex = 0;
-                chk_Estatus.Checked = true;
-                chk_Estatus.Enabled = false;
+                LimpiarControles();
 
             }
             catch (Exception ex)
@@ -212,16 +226,8 @@ namespace Inmobiliaria.Views.Inmobiliaria
                 ViewState["oInsertar"] = true;
 
                 lbl_Titulo.Text = "Agregar nuevo";
-                txtNombres.Text = string.Empty;
-                txtPaterno.Text = string.Empty;
-                txtMaterno.Text = string.Empty;
-                txtEmail.Text = string.Empty;
-                txtMovil.Text = string.Empty;
-                txtFijo.Text = string.Empty;
-                cmbTipoIdentificacion.SelectedIndex = 0;
-                chk_Estatus.Checked = true;
-                chk_Estatus.Enabled = false;
 
+                LimpiarControles();
             }
             catch (Exception)
             {

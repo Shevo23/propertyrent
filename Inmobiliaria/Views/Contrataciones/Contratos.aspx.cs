@@ -1,19 +1,15 @@
 ﻿using BTLInmobiliaria;
-using iTextSharp.text.html.simpleparser;
-using iTextSharp.text.pdf;
-using iTextSharp.text.pdf.parser;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Net;
 using System.Text;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 
 namespace Inmobiliaria.Views.Contrataciones
 {
@@ -172,7 +168,7 @@ namespace Inmobiliaria.Views.Contrataciones
                     foreach (GridViewRow row in grdContratos.Rows)
                     {
                         Label labels = row.FindControl("lblEstatus") as Label;
-                        
+
                         if (labels.Text == "Activo")
                         {
 
@@ -250,14 +246,14 @@ namespace Inmobiliaria.Views.Contrataciones
                     cmbEstadoCivil.DataTextField = "Descripcion";
                     cmbEstadoCivil.DataBind();
 
-                    cmbEstadoCivil.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbEstadoCivil.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
 
                     cmbEstadoCivilFiador.DataSource = dsCivil;
                     cmbEstadoCivilFiador.DataValueField = "IdEstadoCivil";
                     cmbEstadoCivilFiador.DataTextField = "Descripcion";
                     cmbEstadoCivilFiador.DataBind();
 
-                    cmbEstadoCivilFiador.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbEstadoCivilFiador.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
                 }
             }
             catch (Exception ex)
@@ -284,7 +280,7 @@ namespace Inmobiliaria.Views.Contrataciones
                         cmbArrendatario.DataTextField = "NombreCompleto";
                         cmbArrendatario.DataBind();
 
-                        cmbArrendatario.Items.Insert(0, new ListItem("Seleccione..."));
+                        cmbArrendatario.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
 
                     }
                 }
@@ -355,14 +351,14 @@ namespace Inmobiliaria.Views.Contrataciones
                         cmbTipoIdentificacion.DataTextField = "Descripcion";
                         cmbTipoIdentificacion.DataBind();
 
-                        cmbTipoIdentificacion.Items.Insert(0, new ListItem("Seleccione..."));
+                        cmbTipoIdentificacion.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
 
                         cmbTipoIdentificacionArrendatario.DataSource = dsTipoIdentificacion;
                         cmbTipoIdentificacionArrendatario.DataValueField = "IdTipoIdentificacion";
                         cmbTipoIdentificacionArrendatario.DataTextField = "Descripcion";
                         cmbTipoIdentificacionArrendatario.DataBind();
 
-                        cmbTipoIdentificacionArrendatario.Items.Insert(0, new ListItem("Seleccione..."));
+                        cmbTipoIdentificacionArrendatario.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
 
                     }
                 }
@@ -402,7 +398,7 @@ namespace Inmobiliaria.Views.Contrataciones
                         cmbArrendador.DataTextField = "NombreCompleto";
                         cmbArrendador.DataBind();
 
-                        cmbArrendador.Items.Insert(0, new ListItem("Seleccione..."));
+                        cmbArrendador.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
 
                     }
                 }
@@ -445,7 +441,7 @@ namespace Inmobiliaria.Views.Contrataciones
                     cmbAsentamientoArrendatario.DataTextField = "Descripcion";
                     cmbAsentamientoArrendatario.DataBind();
 
-                    cmbAsentamientoArrendatario.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbAsentamientoArrendatario.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
                 }
             }
             catch (Exception ex)
@@ -470,7 +466,7 @@ namespace Inmobiliaria.Views.Contrataciones
                     cmbMunicipioArrendatario.DataTextField = "Descripcion";
                     cmbMunicipioArrendatario.DataBind();
 
-                    cmbMunicipioArrendatario.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbMunicipioArrendatario.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
                 }
             }
             catch (Exception ex)
@@ -495,7 +491,7 @@ namespace Inmobiliaria.Views.Contrataciones
                     cmbEstadoArrendatario.DataTextField = "Descripcion";
                     cmbEstadoArrendatario.DataBind();
 
-                    cmbEstadoArrendatario.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbEstadoArrendatario.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
                 }
             }
             catch (Exception ex)
@@ -520,14 +516,14 @@ namespace Inmobiliaria.Views.Contrataciones
                     cmbAsentamiento.DataTextField = "Descripcion";
                     cmbAsentamiento.DataBind();
 
-                    cmbAsentamiento.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbAsentamiento.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
 
                     cmbAsentamientoArrendatario.DataSource = dsAsentamiento;
                     cmbAsentamientoArrendatario.DataValueField = "IdAsentamiento";
                     cmbAsentamientoArrendatario.DataTextField = "Descripcion";
                     cmbAsentamientoArrendatario.DataBind();
 
-                    cmbAsentamientoArrendatario.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbAsentamientoArrendatario.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
                 }
             }
             catch (Exception ex)
@@ -552,14 +548,14 @@ namespace Inmobiliaria.Views.Contrataciones
                     cmbMunicipio.DataTextField = "Descripcion";
                     cmbMunicipio.DataBind();
 
-                    cmbMunicipio.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbMunicipio.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
 
                     cmbMunicipioArrendatario.DataSource = dsMunicipio;
                     cmbMunicipioArrendatario.DataValueField = "IdMunicipio";
                     cmbMunicipioArrendatario.DataTextField = "Descripcion";
                     cmbMunicipioArrendatario.DataBind();
 
-                    cmbMunicipioArrendatario.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbMunicipioArrendatario.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
                 }
             }
             catch (Exception ex)
@@ -584,14 +580,14 @@ namespace Inmobiliaria.Views.Contrataciones
                     cmbEstado.DataTextField = "Descripcion";
                     cmbEstado.DataBind();
 
-                    cmbEstado.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbEstado.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
 
                     cmbEstadoArrendatario.DataSource = dsEstados;
                     cmbEstadoArrendatario.DataValueField = "IdEstado";
                     cmbEstadoArrendatario.DataTextField = "Descripcion";
                     cmbEstadoArrendatario.DataBind();
 
-                    cmbEstadoArrendatario.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbEstadoArrendatario.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
                 }
             }
             catch (Exception ex)
@@ -616,7 +612,7 @@ namespace Inmobiliaria.Views.Contrataciones
                     cmbTipoPropiedad.DataTextField = "Descripcion";
                     cmbTipoPropiedad.DataBind();
 
-                    cmbTipoPropiedad.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbTipoPropiedad.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
                 }
             }
             catch (Exception ex)
@@ -643,7 +639,7 @@ namespace Inmobiliaria.Views.Contrataciones
                         cmbInmueble.DataTextField = "NombreInmueble";
                         cmbInmueble.DataBind();
 
-                        cmbInmueble.Items.Insert(0, new ListItem("Seleccione..."));
+                        cmbInmueble.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
                     }
                 }
                 else
@@ -699,7 +695,7 @@ namespace Inmobiliaria.Views.Contrataciones
                     cmbEstatusInmueble.DataTextField = "Descripcion";
                     cmbEstatusInmueble.DataBind();
 
-                    cmbEstatusInmueble.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbEstatusInmueble.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
                 }
             }
             catch (Exception ex)
@@ -730,21 +726,19 @@ namespace Inmobiliaria.Views.Contrataciones
                 s1 = s1.Replace("#DireccionFiador#", datosContrato.DireccionFiador);
                 s1 = s1.Replace("#Fecha#", datosContrato.Fecha);
 
-                StringReader stringReaderContrato = new StringReader(s1);
+                fileNameContrato = "Contrato-" + datosContrato.NumContrato + ".pdf";
+                pathContrato = Server.MapPath("~/Inmuebles/Tmp/") + "Contrato-" + datosContrato.NumContrato + ".pdf";
 
-                iTextSharp.text.Document pdfDocContrato = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4);
-                
+
+                StringReader stringReaderContrato = new StringReader(s1);
+                Document pdfDocContrato = new Document(PageSize.A4);
                 HTMLWorker htmlParserContrato = new HTMLWorker(pdfDocContrato);
-                
-                
+
+
                 using (MemoryStream memoryStream = new MemoryStream())
                 {
-                    PdfWriter writer = PdfWriter.GetInstance(pdfDocContrato, memoryStream);
 
                     PdfWriter wri = PdfWriter.GetInstance(pdfDocContrato, new FileStream(Server.MapPath("~/Inmuebles/Tmp/") + "Contrato-" + datosContrato.NumContrato + ".pdf", FileMode.Create));
-
-                    fileNameContrato = "Contrato-" + datosContrato.NumContrato + ".pdf";
-                    pathContrato = Server.MapPath("~/Inmuebles/Tmp/") + "Contrato-" + datosContrato.NumContrato + ".pdf";
 
                     pdfDocContrato.Open();
 
@@ -754,7 +748,6 @@ namespace Inmobiliaria.Views.Contrataciones
                     byte[] bytes = memoryStream.ToArray();
                     memoryStream.Close();
 
-                   
                 }
 
                 //Carta
@@ -765,20 +758,16 @@ namespace Inmobiliaria.Views.Contrataciones
                 s2 = s2.Replace("#DireccionInmueble#", datosContrato.DireccionInmueble);
                 s2 = s2.Replace("#NombreArrendatario#", datosContrato.NombreArrendatario);
 
+                fileNameCarta = "Carta-" + datosContrato.NumContrato + ".pdf";
+                pathCarta = Server.MapPath("~/Inmuebles/Tmp/") + "Carta-" + datosContrato.NumContrato + ".pdf";
+
                 StringReader stringReaderCarta = new StringReader(s2);
-
-                iTextSharp.text.Document pdfDocCarta = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4);
-
+                Document pdfDocCarta = new Document(PageSize.A4);
                 HTMLWorker htmlParserCarta = new HTMLWorker(pdfDocCarta);
 
                 using (MemoryStream memoryStream = new MemoryStream())
                 {
-                    PdfWriter writer = PdfWriter.GetInstance(pdfDocCarta, memoryStream);
-
                     PdfWriter wri = PdfWriter.GetInstance(pdfDocCarta, new FileStream(Server.MapPath("~/Inmuebles/Tmp/") + "Carta-" + datosContrato.NumContrato + ".pdf", FileMode.Create));
-
-                    fileNameCarta = "Carta-" + datosContrato.NumContrato + ".pdf";
-                    pathCarta = Server.MapPath("~/Inmuebles/Tmp/") + "Carta-" + datosContrato.NumContrato + ".pdf";
 
                     pdfDocCarta.Open();
 
@@ -816,10 +805,10 @@ namespace Inmobiliaria.Views.Contrataciones
             {
                 if (!IsPostBack)
                 {
-                    cmbMunicipio.Items.Insert(0, new ListItem("Seleccione..."));
-                    cmbAsentamiento.Items.Insert(0, new ListItem("Seleccione..."));
-                    cmbMunicipioArrendatario.Items.Insert(0, new ListItem("Seleccione..."));
-                    cmbAsentamientoArrendatario.Items.Insert(0, new ListItem("Seleccione..."));
+                    cmbMunicipio.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
+                    cmbAsentamiento.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
+                    cmbMunicipioArrendatario.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
+                    cmbAsentamientoArrendatario.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Seleccione..."));
 
                     GetContratos();
                     GetEstadoCivil();
@@ -878,13 +867,16 @@ namespace Inmobiliaria.Views.Contrataciones
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             BTLInmobiliaria.Contratos contratos = new BTLInmobiliaria.Contratos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
-            BTLInmobiliaria.DatosContrato datosContrato = new DatosContrato();
+            DatosContrato datosContrato = new DatosContrato();
+            Moneda moneda = new Moneda();
 
             // Insercion
             int idInmueble = int.Parse(cmbInmueble.SelectedItem.Value);
             int idArrendador = int.Parse(cmbArrendador.SelectedItem.Value);
             int idArrendatario = int.Parse(cmbArrendatario.SelectedItem.Value);
             int idUsuario = int.Parse(Session["IdUsuario"].ToString());
+            double cantidadNumero = double.Parse(txtCostoMensual.Text);
+            string cantidadLetra = moneda.Convertir(txtCostoMensual.Text, true, "PESOS");
 
             // DatosContrato
             datosContrato.NumContrato = txtNumContrato.Text.Trim();
@@ -894,13 +886,13 @@ namespace Inmobiliaria.Views.Contrataciones
             datosContrato.DireccionArrendatario = cmbAsentamientoArrendatario.SelectedItem.Text + " " + cmbMunicipioArrendatario.SelectedItem.Text + " " + cmbEstadoArrendatario.SelectedItem.Text;
             datosContrato.NombreFiador = txtNombreFiador.Text;
             datosContrato.DireccionFiador = txtDireccionFiador.Text;
-            datosContrato.CantidadMensual = txtCostoMensual.Text;
+            datosContrato.CantidadMensual = cantidadNumero.ToString("C") + " " + cantidadLetra;
             datosContrato.Fecha = DateTime.Now.ToLongDateString();
 
             try
             {
-               int? idContrato =  contratos.InserContrato(txtNumContrato.Text.Trim(), int.Parse(txtMesesContrato.Text.Trim()), int.Parse(txtAnioContrato.Text.Trim()), txtFechaInicioContrato.Text.Trim(), txtFechaFinContrato.Text.Trim()
-                    , idArrendador, idArrendatario, idInmueble, idUsuario);
+                int? idContrato = contratos.InserContrato(txtNumContrato.Text.Trim(), int.Parse(txtMesesContrato.Text.Trim()), int.Parse(txtAnioContrato.Text.Trim()), txtFechaInicioContrato.Text.Trim(), txtFechaFinContrato.Text.Trim()
+                     , idArrendador, idArrendatario, idInmueble, idUsuario);
 
                 GenerarContratoCarta(datosContrato, idContrato);
 

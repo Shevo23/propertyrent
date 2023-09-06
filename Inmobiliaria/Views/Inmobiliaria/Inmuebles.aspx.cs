@@ -20,6 +20,38 @@ namespace Inmobiliaria.Views
         #endregion
 
         #region Methods
+
+        private void LimpiarControles()
+        {
+            try
+            {
+                txtNombreInmueble.Text = string.Empty;
+                txtDescripcion.Text = string.Empty;
+                txtCostoTotal.Text = string.Empty;
+                txtCostoMensual.Text = string.Empty;
+                txtCostoMantenimiento.Text = string.Empty;
+                txtAntiguedad.Text = string.Empty;
+                cmbTipoPropiedad.SelectedIndex = 0;
+                cmbEstado.SelectedIndex = 0;
+                cmbMunicipio.SelectedIndex = 0;
+                cmbAsentamiento.SelectedIndex = 0;
+                cmbEstatusInmueble.SelectedIndex = 0;
+                txtNumRecamaras.Text = string.Empty;
+                txtNumBanos.Text = string.Empty;
+                txtNumServicios.Text = string.Empty;
+                txtNumEstacionamiento.Text = string.Empty;
+                txtNumM2.Text = string.Empty;
+                txtNumTotal.Text = string.Empty;
+                chkAlberca.Checked = false;
+                chkNuevo.Checked = false;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         protected void ShowMessage(string Message, MessageType type)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
@@ -355,25 +387,7 @@ namespace Inmobiliaria.Views
             {
                 ViewState["oInsertar"] = true;
 
-                txtNombreInmueble.Text = string.Empty;
-                txtDescripcion.Text = string.Empty;
-                txtCostoTotal.Text = string.Empty;
-                txtCostoMensual.Text = string.Empty;
-                txtCostoMantenimiento.Text = string.Empty;
-                txtAntiguedad.Text = string.Empty;
-                cmbTipoPropiedad.SelectedIndex = 0;
-                cmbEstado.SelectedIndex = 0;
-                cmbMunicipio.SelectedIndex = 0;
-                cmbAsentamiento.SelectedIndex = 0;
-                cmbEstatusInmueble.SelectedIndex = 0;
-                txtNumRecamaras.Text = string.Empty;
-                txtNumBanos.Text = string.Empty;
-                txtNumServicios.Text = string.Empty;
-                txtNumEstacionamiento.Text = string.Empty;
-                txtNumM2.Text = string.Empty;
-                txtNumTotal.Text = string.Empty;
-                chkAlberca.Checked = false;
-                chkNuevo.Checked = false;
+                LimpiarControles();
 
             }
             catch (Exception ex)
@@ -617,25 +631,8 @@ namespace Inmobiliaria.Views
             {
                 ViewState["oInsertar"] = null;
 
-                txtNombreInmueble.Text = string.Empty;
-                txtDescripcion.Text = string.Empty;
-                txtCostoTotal.Text = string.Empty;
-                txtCostoMensual.Text = string.Empty;
-                txtCostoMantenimiento.Text = string.Empty;
-                txtAntiguedad.Text = string.Empty;
-                cmbTipoPropiedad.SelectedIndex = 0;
-                cmbEstado.SelectedIndex = 0;
-                cmbMunicipio.SelectedIndex = 0;
-                cmbAsentamiento.SelectedIndex = 0;
-                cmbEstatusInmueble.SelectedIndex = 0;
-                txtNumRecamaras.Text = string.Empty;
-                txtNumBanos.Text = string.Empty;
-                txtNumServicios.Text = string.Empty;
-                txtNumEstacionamiento.Text = string.Empty;
-                txtNumM2.Text = string.Empty;
-                txtNumTotal.Text = string.Empty;
-                chkAlberca.Checked = false;
-                chkNuevo.Checked = false;
+                LimpiarControles();
+
             }
             catch (Exception ex)
             {

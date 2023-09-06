@@ -9,7 +9,6 @@
     <div class="container">
         <br />
         <br />
-        <br />
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="messagealert" id="alert_container">
@@ -191,7 +190,6 @@
                                                 <span class="input-group-text" id="inputGroup-sizing-sm">Nombre del inmueble</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtNombreInmueble" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ValidChars=" " ID="FilteredTextBoxExtender1" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom, Numbers" TargetControlID="txtNombreInmueble" />
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
@@ -203,7 +201,6 @@
                                                 <span class="input-group-text" id="inputGroup-sizing-">Descripcion:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtDescripcion" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ValidChars=" " ID="FilteredTextBoxExtender2" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom, Numbers" TargetControlID="txtNombreInmueble" />
                                         </div>
                                     </div>
                                 </div>
@@ -391,7 +388,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">total m2:</span>
                                             </div>
-                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtNumM2" MaxLength="3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtNumM2" MaxLength="6" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
                                             <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender10" runat="server" FilterType="Numbers" TargetControlID="txtNumM2" />
                                         </div>
                                     </div>
@@ -403,7 +400,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">total construccion:</span>
                                             </div>
-                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtNumTotal" MaxLength="3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtNumTotal" MaxLength="6" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
                                             <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender11" runat="server" FilterType="Numbers" TargetControlID="txtNumTotal" />
                                         </div>
                                     </div>
@@ -466,7 +463,7 @@
                                             <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
                                             <asp:TemplateField HeaderText="Usado / Nuevo" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White">
                                                 <ItemTemplate>
-                                                    <asp:CheckBox ID="chkNuevo" runat="server" CssClass="pull-left" Checked='<%#Convert.ToBoolean(Eval("Nuevo")) %>' Enabled="false" />
+                                                    <asp:CheckBox ID="CheckBox1" runat="server" CssClass="pull-left" Checked='<%#Convert.ToBoolean(Eval("Nuevo")) %>' Enabled="false" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:BoundField DataField="CostoTotal" HeaderText="Costo total" DataFormatString="{0:C}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />

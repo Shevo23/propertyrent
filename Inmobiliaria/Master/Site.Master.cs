@@ -36,23 +36,27 @@ namespace Inmobiliaria.Master
                 switch (perfil)
                 {
                     case "Administrador":
-                        
+
+                        menuContratos.Visible = true;
                         menuConfiguracion.Visible = true;
                         menuInmuebles.Visible = true;
                         menuReportes.Visible = true;
 
                         break;
                     case "Gerente":
+
+                        menuContratos.Visible = true;
                         menuConfiguracion.Visible = false;
                         menuInmuebles.Visible = true;
                         menuReportes.Visible = false;
+
                         break;
                     case "Soporte":
 
+                        menuContratos.Visible = true;
                         menuConfiguracion.Visible = true;
                         menuInmuebles.Visible = true;
                         menuReportes.Visible = true;
-
 
                         break;
                     

@@ -240,15 +240,6 @@ namespace Inmobiliaria.Views.Inmobiliaria
         protected global::System.Web.UI.WebControls.TextBox txtUltimoGradoEstudio;
 
         /// <summary>
-        /// FilteredTextBoxExtender5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender5;
-
-        /// <summary>
         /// RequiredFieldValidator5 control.
         /// </summary>
         /// <remarks>
@@ -265,15 +256,6 @@ namespace Inmobiliaria.Views.Inmobiliaria
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCarreraOficio;
-
-        /// <summary>
-        /// FilteredTextBoxExtender6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender6;
 
         /// <summary>
         /// RequiredFieldValidator6 control.
@@ -429,15 +411,6 @@ namespace Inmobiliaria.Views.Inmobiliaria
         protected global::System.Web.UI.WebControls.TextBox txtEmpresaTrabaja;
 
         /// <summary>
-        /// FilteredTextBoxExtender10 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender10;
-
-        /// <summary>
         /// RequiredFieldValidator10 control.
         /// </summary>
         /// <remarks>
@@ -499,15 +472,6 @@ namespace Inmobiliaria.Views.Inmobiliaria
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPuestoEmpleo;
-
-        /// <summary>
-        /// FilteredTextBoxExtender13 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender13;
 
         /// <summary>
         /// RequiredFieldValidator12 control.
@@ -582,15 +546,6 @@ namespace Inmobiliaria.Views.Inmobiliaria
         protected global::System.Web.UI.WebControls.TextBox txtDireccionEmpleo;
 
         /// <summary>
-        /// FilteredTextBoxExtender16 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender16;
-
-        /// <summary>
         /// RequiredFieldValidator15 control.
         /// </summary>
         /// <remarks>
@@ -636,15 +591,6 @@ namespace Inmobiliaria.Views.Inmobiliaria
         protected global::System.Web.UI.WebControls.TextBox txtMotivoCambio;
 
         /// <summary>
-        /// FilteredTextBoxExtender18 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender18;
-
-        /// <summary>
         /// RequiredFieldValidator17 control.
         /// </summary>
         /// <remarks>
@@ -661,15 +607,6 @@ namespace Inmobiliaria.Views.Inmobiliaria
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRelacionFiador;
-
-        /// <summary>
-        /// FilteredTextBoxExtender19 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender19;
 
         /// <summary>
         /// RequiredFieldValidator18 control.
@@ -715,15 +652,6 @@ namespace Inmobiliaria.Views.Inmobiliaria
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDireccionFiador;
-
-        /// <summary>
-        /// FilteredTextBoxExtender21 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender21;
 
         /// <summary>
         /// RequiredFieldValidator20 control.
@@ -798,6 +726,15 @@ namespace Inmobiliaria.Views.Inmobiliaria
         protected global::System.Web.UI.WebControls.DropDownList cmbEstadoCivilFiador;
 
         /// <summary>
+        /// RequiredFieldValidator28 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator28;
+
+        /// <summary>
         /// txtTiempoMatrimonio control.
         /// </summary>
         /// <remarks>
@@ -861,13 +798,13 @@ namespace Inmobiliaria.Views.Inmobiliaria
         protected global::System.Web.UI.WebControls.TextBox txtEmpresaTrabajaFiador;
 
         /// <summary>
-        /// FilteredTextBoxExtender25 control.
+        /// RequiredFieldValidator27 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender25;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator27;
 
         /// <summary>
         /// txtPuestoEmpleoFiador control.
@@ -922,15 +859,6 @@ namespace Inmobiliaria.Views.Inmobiliaria
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDireccionEmpleoFiador;
-
-        /// <summary>
-        /// FilteredTextBoxExtender29 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender29;
 
         /// <summary>
         /// btnCancelar control.

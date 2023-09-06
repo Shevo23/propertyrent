@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -19,6 +20,55 @@ namespace Inmobiliaria.Views.Inmobiliaria
         #endregion
 
         #region Methods
+
+        private void LimpiarControles()
+        {
+            try
+            {
+                txtNombres.Text = string.Empty;
+                txtPaterno.Text = string.Empty;
+                txtMaterno.Text = string.Empty;
+                txtEdad.Text = string.Empty;
+                txtUltimoGradoEstudio.Text = string.Empty;
+                txtCarreraOficio.Text = string.Empty;
+                cmbEstado.SelectedIndex = 0;
+                cmbMunicipio.SelectedIndex = 0;
+                cmbAsentamiento.SelectedIndex = 0;
+                txtNumPersonasHabitar.Text = string.Empty;
+                txtNumPersonasDependen.Text = string.Empty;
+                cmbEstadoCivil.SelectedIndex = 0;
+                txtMovil.Text = string.Empty;
+                txtEmpresaTrabaja.Text = string.Empty;
+                txtAntiguedad.Text = string.Empty;
+                txtHorario.Text = string.Empty;
+                txtDireccionEmpleo.Text = string.Empty;
+                txtFijo.Text = string.Empty;
+                txtNombreJefe.Text = string.Empty;
+                txtPuestoEmpleo.Text = string.Empty;
+                txtSalarioMensual.Text = string.Empty;
+                txtMotivoCambio.Text = string.Empty;
+                txtRelacionFiador.Text = string.Empty;
+                txtNombreFiador.Text = string.Empty;
+                txtDireccionFiador.Text = string.Empty;
+                txtTelefonoFiador.Text = string.Empty;
+                txtMovilFiador.Text = string.Empty;
+                cmbEstadoCivilFiador.SelectedIndex = 0;
+                txtTiempoMatrimonio.Text = string.Empty;
+                txtEdadFiador.Text = string.Empty;
+                txtEmpresaTrabajaFiador.Text = string.Empty;
+                txtDireccionEmpleoFiador.Text = string.Empty;
+                txtPuestoEmpleoFiador.Text = string.Empty;
+                txtSalarioMensualFiador.Text = string.Empty;
+                chk_Estatus.Checked = true;
+                cmbTipoIdentificacion.SelectedIndex = 0;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         protected void ShowMessage(string Message, MessageType type)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
@@ -173,6 +223,7 @@ namespace Inmobiliaria.Views.Inmobiliaria
         {
             BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
             DataSet dsTipoIdentificacion = new DataSet();
+            NumberFormatInfo numberFormatInfo = new NumberFormatInfo();
 
             try
             {
@@ -193,6 +244,9 @@ namespace Inmobiliaria.Views.Inmobiliaria
 
                     if (dsTipoIdentificacion.Tables[0].Rows.Count > 0)
                     {
+                        numberFormatInfo.NumberDecimalSeparator = ",";
+
+
                         txtNombres.Text = dsTipoIdentificacion.Tables[0].Rows[0]["Nombres"].ToString();
                         txtPaterno.Text = dsTipoIdentificacion.Tables[0].Rows[0]["Paterno"].ToString();
                         txtMaterno.Text = dsTipoIdentificacion.Tables[0].Rows[0]["Materno"].ToString();
@@ -215,7 +269,7 @@ namespace Inmobiliaria.Views.Inmobiliaria
                         txtFijo.Text = dsTipoIdentificacion.Tables[0].Rows[0]["Fijo"].ToString();
                         txtNombreJefe.Text = dsTipoIdentificacion.Tables[0].Rows[0]["NombreJefe"].ToString();
                         txtPuestoEmpleo.Text = dsTipoIdentificacion.Tables[0].Rows[0]["PuestoEmpleo"].ToString();
-                        txtSalarioMensual.Text = dsTipoIdentificacion.Tables[0].Rows[0]["SalarioMensual"].ToString();
+                        txtSalarioMensual.Text = dsTipoIdentificacion.Tables[0].Rows[0]["SalarioMensual"].ToString().ToString(numberFormatInfo);
                         txtMotivoCambio.Text = dsTipoIdentificacion.Tables[0].Rows[0]["MotivoCambio"].ToString();
                         txtRelacionFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["RelacionFiador"].ToString();
                         txtNombreFiador.Text = dsTipoIdentificacion.Tables[0].Rows[0]["NombreFiador"].ToString();
@@ -294,15 +348,8 @@ namespace Inmobiliaria.Views.Inmobiliaria
                 ViewState["oInsertar"] = true;
 
                 lbl_Titulo.Text = "Solicitud de arrendamiento";
-                txtNombres.Text = string.Empty;
-                txtPaterno.Text = string.Empty;
-                txtMaterno.Text = string.Empty;
-                //txtEmail.Text = string.Empty;
-                txtMovil.Text = string.Empty;
-                txtFijo.Text = string.Empty;
-                cmbTipoIdentificacion.SelectedIndex = 0;
-                chk_Estatus.Checked = true;
-                chk_Estatus.Enabled = false;
+
+                LimpiarControles();
 
             }
             catch (Exception ex)
@@ -352,7 +399,15 @@ namespace Inmobiliaria.Views.Inmobiliaria
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                LimpiarControles();
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
         }
 
         protected void btn_Guardar_Click(object sender, EventArgs e)
