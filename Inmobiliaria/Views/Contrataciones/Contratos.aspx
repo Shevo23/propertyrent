@@ -684,11 +684,6 @@
                                     <asp:GridView ID="grdContratos" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered"
                                         DataKeyNames="IdContrato, UbicacionContrato, IdArchivoContrato, UbicacionCarta">
                                         <Columns>
-                                            <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
-                                                <ItemTemplate>
-                                                    <asp:ImageButton runat="server" ID="ibtnEliminar" ToolTip="Eliminar contrato" ImageUrl="~/Images/borrar.png" Width="15px" />
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
                                             <asp:TemplateField HeaderStyle-BackColor="#9c9c9c" HeaderText="Contrato" HeaderStyle-ForeColor="White" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
                                                     <asp:ImageButton runat="server" ID="ibtnContratos" ToolTip="Ver contrato" ImageUrl="~/Images/archivos.png" Width="15px" data-toggle="modal" data-target="#divAgregarImagenes" OnClick="ibtnContratos_Click" />
