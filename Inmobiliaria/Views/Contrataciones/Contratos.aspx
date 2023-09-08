@@ -91,7 +91,7 @@
                                                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#arrendador" role="tab" aria-controls="arrendador" aria-selected="false">Información del Arrendador</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#arrendatario" role="tab" aria-controls="arrendatario" aria-selected="false">Información del Arrendatario</a>
+                                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#arrendatario" role="tab" aria-controls="arrendatario" aria-selected="false">Información del Inquilino</a>
                                                     </li>
                                                 </ul>
                                                 <div class="tab-content" id="myTabContent">
@@ -356,7 +356,7 @@
                                                                     Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic"></asp:CompareValidator>
                                                                 <div class="input-group mb-3">
                                                                     <div class="input-group-prepend">
-                                                                        <label class="input-group-text" for="cmbArrendatario">Nombre del Arrendatario:</label>
+                                                                        <label class="input-group-text" for="cmbArrendatario">Nombre del Inquilino:</label>
                                                                     </div>
                                                                     <asp:DropDownList CssClass="custom-select font-weight-bold" runat="server" ID="cmbArrendatario" AutoPostBack="true" OnSelectedIndexChanged="cmbArrendatario_SelectedIndexChanged"></asp:DropDownList>
                                                                 </div>
@@ -699,11 +699,11 @@
                                             <asp:BoundField DataField="FechaVigenciaInicio" HeaderText="Inicio vigencia" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                             <asp:BoundField DataField="FechaVigenciaFin" HeaderText="Fin vigencia" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                             <asp:BoundField DataField="IdArrendador" HeaderText="IdArrendador" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
-                                            <asp:BoundField DataField="NombreArrendador" HeaderText="NombreArrendador" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="NombreArrendador" HeaderText="Arrendador" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                             <asp:BoundField DataField="IdArrendatario" HeaderText="IdArrendatario" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
-                                            <asp:BoundField DataField="NombreArrendatario" HeaderText="NombreArrendatario" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="NombreArrendatario" HeaderText="Inquilino" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                             <asp:BoundField DataField="IdInmueble" HeaderText="IdInmueble" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
-                                            <asp:BoundField DataField="NombreInmueble" HeaderText="NombreInmueble" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="NombreInmueble" HeaderText="Inmueble" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                             <asp:BoundField DataField="FechaAlta" HeaderText="Fecha registro" DataFormatString="{0:dd/MM/yyyy}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                             <asp:BoundField DataField="IdArchivoContrato" HeaderText="IdArchivoContrato" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                             <asp:BoundField DataField="UbicacionContrato" HeaderText="UbicacionContrato" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />

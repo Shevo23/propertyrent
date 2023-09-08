@@ -172,7 +172,7 @@ namespace Inmobiliaria.Views.Contrataciones
                         if (labels.Text == "Activo")
                         {
 
-                            row.Cells[18].BackColor = ColorTranslator.FromHtml(colorHex);
+                            row.Cells[17].BackColor = ColorTranslator.FromHtml(colorHex);
                         }
 
 
@@ -928,10 +928,21 @@ namespace Inmobiliaria.Views.Contrataciones
                 DateTime inicio = DateTime.Parse(txtFechaInicioContrato.Text);
                 DateTime final = DateTime.Parse(txtFechaFinContrato.Text);
 
-                int years = (final.Year - inicio.Year);
-                int months = 12 * (final.Year - inicio.Year) + inicio.Month - final.Month;
+                int months;
+                var totalYears = final - inicio;
+                
+                double years = (double)(totalYears.TotalDays / 365.25);
 
-                txtAnioContrato.Text = years.ToString();
+                if (years > 0)
+                {
+                    months = Convert.ToInt32(Math.Round(years * 12));
+                }
+                else
+                {
+                    months = Convert.ToInt32(Math.Round((decimal)(((totalYears.TotalDays / 365.25) - years) * 12)));
+                }
+
+                txtAnioContrato.Text = Math.Round(years).ToString();
                 txtMesesContrato.Text = months.ToString();
 
             }

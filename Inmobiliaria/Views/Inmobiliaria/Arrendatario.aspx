@@ -27,7 +27,7 @@
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <h5>Archivos del arrendatario</h5>
+                                        <h5>Archivos del inquilino</h5>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -320,7 +320,7 @@
                                                 <span class="input-group-text" id="inpsuroesup-zin">Horario:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtHorario" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender  ID="FilteredTextBoxExtender12" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom, Numbers" TargetControlID="txtHorario" />
+                                            <cc1:FilteredTextBoxExtender ValidChars=" :"  ID="FilteredTextBoxExtender12" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom, Numbers" TargetControlID="txtHorario" />
                                         </div>
                                     </div>
                                 </div>
@@ -592,7 +592,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-sm-10">
-                                <h4 class="card-title">Arrendatarios registrados</h4>
+                                <h4 class="card-title">Inquilinos registrados</h4>
                             </div>
                             <div class="col-sm-2">
                                 <asp:Button ID="btn_Agregar" runat="server" Text="Agregar" CssClass="btn btn-default btn-info" data-toggle="modal" data-target="#divAgregar" OnClick="btn_Agregar_Click" />
