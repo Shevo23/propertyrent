@@ -217,6 +217,7 @@ namespace Inmobiliaria.Views
                         txtCostoMantenimiento.Text = dsInmuebles.Tables[0].Rows[0]["CostoMto"].ToString();
                         txtAntiguedad.Text = dsInmuebles.Tables[0].Rows[0]["Antiguedad"].ToString();
                         cmbTipoPropiedad.SelectedValue = dsInmuebles.Tables[0].Rows[0]["IdTipoPropiedad"].ToString();
+                        txtCalleInmueble.Text = dsInmuebles.Tables[0].Rows[0]["Calle"].ToString();
                         cmbEstado.SelectedValue = dsInmuebles.Tables[0].Rows[0]["IdEstado"].ToString();
                         GetMunicipios(int.Parse(cmbEstado.SelectedValue));
                         cmbMunicipio.SelectedValue = dsInmuebles.Tables[0].Rows[0]["IdMunicipio"].ToString();
@@ -347,7 +348,7 @@ namespace Inmobiliaria.Views
                 {
                     idInmueble = inmobiliaria.InsertInmuebles(txtNombreInmueble.Text.Trim(), txtDescripcion.Text.Trim(), 0, 0, decimal.Parse(txtCostoTotal.Text.Trim())
                         , decimal.Parse(txtCostoMensual.Text.Trim()), decimal.Parse(txtCostoMantenimiento.Text.Trim()), Convert.ToInt32(chkNuevo.Checked), int.Parse(txtAntiguedad.Text.Trim())
-                        , int.Parse(cmbTipoPropiedad.SelectedValue), int.Parse(cmbAsentamiento.SelectedValue), int.Parse(cmbEstatusInmueble.SelectedValue));
+                        , int.Parse(cmbTipoPropiedad.SelectedValue), int.Parse(cmbAsentamiento.SelectedValue), int.Parse(cmbEstatusInmueble.SelectedValue), txtCalleInmueble.Text.Trim());
 
                     inmobiliaria.InsertDetalleInmuebles(int.Parse(txtNumRecamaras.Text.Trim()), int.Parse(txtNumBanos.Text.Trim()), int.Parse(txtNumServicios.Text.Trim())
                         , int.Parse(txtNumEstacionamiento.Text.Trim()), Convert.ToInt32(chkAlberca.Checked), int.Parse(txtNumM2.Text.Trim()), int.Parse(txtNumTotal.Text.Trim())
@@ -363,7 +364,7 @@ namespace Inmobiliaria.Views
                 {
                     inmobiliaria.UpdateInmuebles(int.Parse(ViewState["IdInmueble"].ToString()), txtNombreInmueble.Text.Trim(), txtDescripcion.Text.Trim(), 0, 0, decimal.Parse(txtCostoTotal.Text.Trim())
                         , decimal.Parse(txtCostoMensual.Text.Trim()), decimal.Parse(txtCostoMantenimiento.Text.Trim()), Convert.ToInt32(chkNuevo.Checked), int.Parse(txtAntiguedad.Text.Trim())
-                        , int.Parse(cmbTipoPropiedad.SelectedValue), int.Parse(cmbAsentamiento.SelectedValue), int.Parse(cmbEstatusInmueble.SelectedValue));
+                        , int.Parse(cmbTipoPropiedad.SelectedValue), int.Parse(cmbAsentamiento.SelectedValue), int.Parse(cmbEstatusInmueble.SelectedValue), txtCalleInmueble.Text.Trim());
 
                     inmobiliaria.UpdateDetalleInmuebles(int.Parse(ViewState["IdDetalleInmueble"].ToString()), int.Parse(txtNumRecamaras.Text.Trim()), int.Parse(txtNumBanos.Text.Trim()), int.Parse(txtNumServicios.Text.Trim())
                         , int.Parse(txtNumEstacionamiento.Text.Trim()), Convert.ToInt32(chkAlberca.Checked), int.Parse(txtNumM2.Text.Trim()), int.Parse(txtNumTotal.Text.Trim()));

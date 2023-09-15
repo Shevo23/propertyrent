@@ -99,11 +99,11 @@ namespace BTLInmobiliaria
             context.Connection.Close();
         }
 
-        public void UpdateInmuebles(int idInmueble, string nombreInmueble, string descripcion, decimal latitud, decimal longitud, decimal costoTotal, decimal costoMensual, decimal costoMto, int nuevo, int antiguedad, int idTipoPropiedad, int idAsentamiento, int idEstatusInmueble)
+        public void UpdateInmuebles(int idInmueble, string nombreInmueble, string descripcion, decimal latitud, decimal longitud, decimal costoTotal, decimal costoMensual, decimal costoMto, int nuevo, int antiguedad, int idTipoPropiedad, int idAsentamiento, int idEstatusInmueble, string calle)
         {
             context.Connection.Open();
 
-            context.sp_UpdateInmuebles(idInmueble, nombreInmueble, descripcion, latitud, longitud, costoTotal, costoMensual, costoMto, nuevo, antiguedad, idTipoPropiedad, idAsentamiento, idEstatusInmueble);
+            context.sp_UpdateInmuebles(idInmueble, nombreInmueble, descripcion, latitud, longitud, costoTotal, costoMensual, costoMto, nuevo, antiguedad, idTipoPropiedad, idAsentamiento, idEstatusInmueble, calle);
 
             context.Connection.Close();
         }
@@ -197,13 +197,13 @@ namespace BTLInmobiliaria
             context.Connection.Close();
         }
 
-        public int? InsertInmuebles(string nombreInmueble, string descripcion, decimal latitud, decimal longitud, decimal costoTotal, decimal costoMensual, decimal costoMto, int nuevo, int antiguedad, int idTipoPropiedad, int idAsentamiento, int idEstatusInmueble)
+        public int? InsertInmuebles(string nombreInmueble, string descripcion, decimal latitud, decimal longitud, decimal costoTotal, decimal costoMensual, decimal costoMto, int nuevo, int antiguedad, int idTipoPropiedad, int idAsentamiento, int idEstatusInmueble, string calle)
         {
             int? idInmueble = 0;
 
             context.Connection.Open();
 
-            context.sp_InsertInmuebles(nombreInmueble, descripcion, latitud, longitud, costoTotal, costoMensual, costoMto, nuevo, antiguedad, idTipoPropiedad, idAsentamiento, idEstatusInmueble, ref idInmueble);
+            context.sp_InsertInmuebles(nombreInmueble, descripcion, latitud, longitud, costoTotal, costoMensual, costoMto, nuevo, antiguedad, idTipoPropiedad, idAsentamiento, idEstatusInmueble, calle, ref idInmueble);
 
             context.Connection.Close();
 

@@ -38,6 +38,7 @@ namespace Inmobiliaria.Views.Contrataciones
                 txtCostoMensual.Text = string.Empty;
                 txtCostoMantenimiento.Text = string.Empty;
                 txtAntiguedad.Text = string.Empty;
+                txtCalleInmueble.Text = string.Empty;
                 cmbTipoPropiedad.SelectedIndex = 0;
                 cmbEstado.SelectedIndex = 0;
                 cmbMunicipio.SelectedIndex = 0;
@@ -648,13 +649,13 @@ namespace Inmobiliaria.Views.Contrataciones
 
                     if (dsInmuebles.Tables[0].Rows.Count > 0)
                     {
-                        //txtNombreInmueble.Text = dsInmuebles.Tables[0].Rows[0]["NombreInmueble"].ToString();
                         txtDescripcion.Text = dsInmuebles.Tables[0].Rows[0]["Descripcion"].ToString();
                         txtCostoTotal.Text = dsInmuebles.Tables[0].Rows[0]["CostoTotal"].ToString();
                         txtCostoMensual.Text = dsInmuebles.Tables[0].Rows[0]["CostoMensual"].ToString();
                         txtCostoMantenimiento.Text = dsInmuebles.Tables[0].Rows[0]["CostoMto"].ToString();
                         txtAntiguedad.Text = dsInmuebles.Tables[0].Rows[0]["Antiguedad"].ToString();
                         cmbTipoPropiedad.SelectedValue = dsInmuebles.Tables[0].Rows[0]["IdTipoPropiedad"].ToString();
+                        txtCalleInmueble.Text = dsInmuebles.Tables[0].Rows[0]["Calle"].ToString();
                         cmbEstado.SelectedValue = dsInmuebles.Tables[0].Rows[0]["IdEstado"].ToString();
                         GetMunicipios(int.Parse(cmbEstado.SelectedValue));
                         cmbMunicipio.SelectedValue = dsInmuebles.Tables[0].Rows[0]["IdMunicipio"].ToString();
@@ -717,13 +718,13 @@ namespace Inmobiliaria.Views.Contrataciones
                 //Contrato
                 s1 = File.ReadAllText(Server.MapPath("~/Contratos/") + "Contrato.html", Encoding.UTF8);
 
-                s1 = s1.Replace("#DireccionInmueble#", datosContrato.DireccionInmueble);
-                s1 = s1.Replace("#NombreArrendador#", datosContrato.NombreArrendador);
-                s1 = s1.Replace("#NombreFiador#", datosContrato.NombreFiador);
+                s1 = s1.Replace("#DireccionInmueble#", datosContrato.DireccionInmueble.ToUpper());
+                s1 = s1.Replace("#NombreArrendador#", datosContrato.NombreArrendador.ToUpper());
+                s1 = s1.Replace("#NombreFiador#", datosContrato.NombreFiador.ToUpper());
                 s1 = s1.Replace("#CantidadMensual#", datosContrato.CantidadMensual);
-                s1 = s1.Replace("#NombreArrendatario#", datosContrato.NombreArrendatario);
-                s1 = s1.Replace("#DireccionArrendatario#", datosContrato.DireccionArrendatario);
-                s1 = s1.Replace("#DireccionFiador#", datosContrato.DireccionFiador);
+                s1 = s1.Replace("#NombreArrendatario#", datosContrato.NombreArrendatario.ToUpper());
+                //s1 = s1.Replace("#DireccionArrendatario#", datosContrato.DireccionArrendatario.ToUpper());
+                s1 = s1.Replace("#DireccionFiador#", datosContrato.DireccionFiador.ToUpper());
                 s1 = s1.Replace("#Fecha#", datosContrato.Fecha);
 
                 fileNameContrato = "Contrato-" + datosContrato.NumContrato + ".pdf";
@@ -754,9 +755,9 @@ namespace Inmobiliaria.Views.Contrataciones
 
                 s2 = File.ReadAllText(Server.MapPath("~/Contratos/") + "CartaResicion.html", Encoding.UTF8);
 
-                s2 = s2.Replace("#NombreArrendatario#", datosContrato.NombreArrendatario);
-                s2 = s2.Replace("#DireccionInmueble#", datosContrato.DireccionInmueble);
-                s2 = s2.Replace("#NombreArrendatario#", datosContrato.NombreArrendatario);
+                s2 = s2.Replace("#NombreArrendatario#", datosContrato.NombreArrendatario.ToUpper());
+                s2 = s2.Replace("#DireccionInmueble#", datosContrato.DireccionInmueble.ToUpper());
+                s2 = s2.Replace("#NombreArrendatario#", datosContrato.NombreArrendatario.ToUpper());
 
                 fileNameCarta = "Carta-" + datosContrato.NumContrato + ".pdf";
                 pathCarta = Server.MapPath("~/Inmuebles/Tmp/") + "Carta-" + datosContrato.NumContrato + ".pdf";
@@ -880,10 +881,10 @@ namespace Inmobiliaria.Views.Contrataciones
 
             // DatosContrato
             datosContrato.NumContrato = txtNumContrato.Text.Trim();
-            datosContrato.DireccionInmueble = cmbAsentamiento.SelectedItem.Text + " " + cmbMunicipio.SelectedItem.Text + " " + cmbEstado.SelectedItem.Text;
+            datosContrato.DireccionInmueble = txtCalleInmueble.Text + ", " + cmbAsentamiento.SelectedItem.Text + ", " + cmbMunicipio.SelectedItem.Text + ", " + cmbEstado.SelectedItem.Text;
             datosContrato.NombreArrendador = cmbArrendador.SelectedItem.Text;
             datosContrato.NombreArrendatario = cmbArrendatario.SelectedItem.Text;
-            datosContrato.DireccionArrendatario = cmbAsentamientoArrendatario.SelectedItem.Text + " " + cmbMunicipioArrendatario.SelectedItem.Text + " " + cmbEstadoArrendatario.SelectedItem.Text;
+            datosContrato.DireccionArrendatario =  cmbAsentamientoArrendatario.SelectedItem.Text + ", " + cmbMunicipioArrendatario.SelectedItem.Text + ", " + cmbEstadoArrendatario.SelectedItem.Text;
             datosContrato.NombreFiador = txtNombreFiador.Text;
             datosContrato.DireccionFiador = txtDireccionFiador.Text;
             datosContrato.CantidadMensual = cantidadNumero.ToString("C") + " " + cantidadLetra;
@@ -894,11 +895,23 @@ namespace Inmobiliaria.Views.Contrataciones
                 int? idContrato = contratos.InserContrato(txtNumContrato.Text.Trim(), int.Parse(txtMesesContrato.Text.Trim()), int.Parse(txtAnioContrato.Text.Trim()), txtFechaInicioContrato.Text.Trim(), txtFechaFinContrato.Text.Trim()
                      , idArrendador, idArrendatario, idInmueble, idUsuario);
 
-                GenerarContratoCarta(datosContrato, idContrato);
+                if (idContrato == 0)
+                {
+                    ShowMessage("El inmueble ya contiene un contrato vigente", MessageType.Advertencia);
 
-                ShowMessage("El registro ha sido guardado exitosamente.", MessageType.Exito);
+                    LimpiarControles();
 
-                GetContratos();
+                    GetContratos();
+
+                }
+                else
+                {
+                    GenerarContratoCarta(datosContrato, idContrato);
+
+                    ShowMessage("El registro ha sido guardado exitosamente.", MessageType.Exito);
+
+                    GetContratos();
+                }
             }
             catch (Exception ex)
             {

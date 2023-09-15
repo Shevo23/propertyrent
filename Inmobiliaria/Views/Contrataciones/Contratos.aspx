@@ -110,8 +110,6 @@
                                                                     <asp:DropDownList CssClass="custom-select font-weight-bold" runat="server" ID="cmbInmueble" AutoPostBack="true" OnSelectedIndexChanged="cmbInmueble_SelectedIndexChanged"></asp:DropDownList>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="row">
                                                             <div class="col-sm-6">
                                                                 <div class="input-group mb-3">
                                                                     <div class="input-group-prepend">
@@ -120,6 +118,9 @@
                                                                     <asp:TextBox runat="server" CssClass="form-control font-weight-bold" ID="txtDescripcion" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" Enabled="false"></asp:TextBox>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-sm-3">
@@ -156,15 +157,17 @@
                                                             </div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-sm-3">
+                                                            <div class="col-sm-6">
                                                                 <div class="input-group mb-3">
                                                                     <div class="input-group-prepend">
-                                                                        <label class="input-group-text" for="cmbTipoPropiedad">Tipo propiedad</label>
+                                                                        <span class="input-group-text" id="inputGrop-sizing-">Calle y número:</span>
                                                                     </div>
-                                                                    <asp:DropDownList CssClass="custom-select font-weight-bold" runat="server" ID="cmbTipoPropiedad" Enabled="false"></asp:DropDownList>
+                                                                    <asp:TextBox runat="server" CssClass="form-control font-weight-bold" ID="txtCalleInmueble" Enabled="false" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-3">
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
                                                                 <div class="input-group mb-3">
                                                                     <div class="input-group-prepend">
                                                                         <label class="input-group-text" for="cmbEstado">Estado:</label>
@@ -172,7 +175,7 @@
                                                                     <asp:DropDownList CssClass="custom-select font-weight-bold" runat="server" ID="cmbEstado" AutoPostBack="true" Enabled="false"></asp:DropDownList>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-3">
+                                                            <div class="col-sm-4">
                                                                 <div class="input-group mb-3">
                                                                     <div class="input-group-prepend">
                                                                         <label class="input-group-text" for="cmbMunicipio">Municipio:</label>
@@ -181,7 +184,7 @@
                                                                 </div>
 
                                                             </div>
-                                                            <div class="col-sm-3">
+                                                            <div class="col-sm-4">
                                                                 <div class="input-group mb-3">
                                                                     <div class="input-group-prepend">
                                                                         <label class="input-group-text" for="cmbAsentamiento">Colonia:</label>
@@ -191,6 +194,14 @@
                                                             </div>
                                                         </div>
                                                         <div class="row">
+                                                            <div class="col-sm-3">
+                                                                <div class="input-group mb-3">
+                                                                    <div class="input-group-prepend">
+                                                                        <label class="input-group-text" for="cmbTipoPropiedad">Tipo propiedad</label>
+                                                                    </div>
+                                                                    <asp:DropDownList CssClass="custom-select font-weight-bold" runat="server" ID="cmbTipoPropiedad" Enabled="false"></asp:DropDownList>
+                                                                </div>
+                                                            </div>
                                                             <div class="col-sm-3">
                                                                 <div class="input-group mb-3">
                                                                     <div class="input-group-prepend">
@@ -666,7 +677,7 @@
         <br />
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card border-warning">
                     <div class="card-header">
                         <div class="row">
                             <div class="col-sm-10">
@@ -750,6 +761,5 @@
             });
         }
     </script>
-
 </asp:Content>
 

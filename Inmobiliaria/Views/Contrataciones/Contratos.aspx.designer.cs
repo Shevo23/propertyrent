@@ -159,13 +159,13 @@ namespace Inmobiliaria.Views.Contrataciones
         protected global::System.Web.UI.WebControls.TextBox txtAntiguedad;
 
         /// <summary>
-        /// cmbTipoPropiedad control.
+        /// txtCalleInmueble control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmbTipoPropiedad;
+        protected global::System.Web.UI.WebControls.TextBox txtCalleInmueble;
 
         /// <summary>
         /// cmbEstado control.
@@ -193,6 +193,15 @@ namespace Inmobiliaria.Views.Contrataciones
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbAsentamiento;
+
+        /// <summary>
+        /// cmbTipoPropiedad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cmbTipoPropiedad;
 
         /// <summary>
         /// cmbEstatusInmueble control.

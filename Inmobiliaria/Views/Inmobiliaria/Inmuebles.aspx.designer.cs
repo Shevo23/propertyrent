@@ -240,22 +240,22 @@ namespace Inmobiliaria.Views
         protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender6;
 
         /// <summary>
-        /// CompareValidator1 control.
+        /// RequiredFieldValidator14 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator14;
 
         /// <summary>
-        /// cmbTipoPropiedad control.
+        /// txtCalleInmueble control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmbTipoPropiedad;
+        protected global::System.Web.UI.WebControls.TextBox txtCalleInmueble;
 
         /// <summary>
         /// CompareValidator2 control.
@@ -310,6 +310,24 @@ namespace Inmobiliaria.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbAsentamiento;
+
+        /// <summary>
+        /// CompareValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+
+        /// <summary>
+        /// cmbTipoPropiedad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cmbTipoPropiedad;
 
         /// <summary>
         /// CompareValidator5 control.

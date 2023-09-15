@@ -155,22 +155,6 @@
     <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_UpdateInmuebles" Method="sp_UpdateInmuebles">
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NombreInmueble" Parameter="nombreInmueble" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(250)" />
-    <Parameter Name="Latitud" Parameter="latitud" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="Longitud" Parameter="longitud" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="CostoTotal" Parameter="costoTotal" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="CostoMensual" Parameter="costoMensual" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="CostoMto" Parameter="costoMto" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="Nuevo" Parameter="nuevo" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Antiguedad" Parameter="antiguedad" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdTipoPropiedad" Parameter="idTipoPropiedad" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdAsentamiento" Parameter="idAsentamiento" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdEstatusInmueble" Parameter="idEstatusInmueble" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.sp_InsertUsuariosInmuebles" Method="sp_InsertUsuariosInmuebles">
     <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
     <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
@@ -185,22 +169,6 @@
       <Column Name="CP" Type="System.String" DbType="Char(5)" CanBeNull="true" />
       <Column Name="IdMunicipio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.sp_InsertInmuebles" Method="sp_InsertInmuebles">
-    <Parameter Name="NombreInmueble" Parameter="nombreInmueble" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(250)" />
-    <Parameter Name="Latitud" Parameter="latitud" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="Longitud" Parameter="longitud" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="CostoTotal" Parameter="costoTotal" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="CostoMensual" Parameter="costoMensual" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="CostoMto" Parameter="costoMto" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="Nuevo" Parameter="nuevo" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Antiguedad" Parameter="antiguedad" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdTipoPropiedad" Parameter="idTipoPropiedad" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdAsentamiento" Parameter="idAsentamiento" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdEstatusInmueble" Parameter="idEstatusInmueble" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_GetImagenesInmueble" Method="sp_GetImagenesInmueble">
     <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
@@ -511,43 +479,6 @@
       <Column Name="Activo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_GetInmuebles" Method="sp_GetInmuebles">
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_GetInmueblesResult">
-      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NombreInmueble" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="Latitud" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="Longitud" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="CostoTotal" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="CostoMensual" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="CostoMto" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="Nuevo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Antiguedad" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IdTipoPropiedad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Propiedad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="IdAsentamiento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Asentamiento" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="IdEstatusInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="EstatusInmueble" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="IdMunicipio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Municipio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="IdEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="IdDetalleInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NumRecamaras" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NumBanos" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NumServicios" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NumEstacionamientos" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ConAlberca" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NumM2" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NumTotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FechaAlta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="IdUsuarioInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.sp_UpdateDetalleInmuebles" Method="sp_UpdateDetalleInmuebles">
     <Parameter Name="IdDetalleInmueble" Parameter="idDetalleInmueble" Type="System.Int32" DbType="Int" />
     <Parameter Name="NumRecamaras" Parameter="numRecamaras" Type="System.Int32" DbType="Int" />
@@ -563,6 +494,91 @@
     <Parameter Name="IdUsuarioInmueble" Parameter="idUsuarioInmueble" Type="System.Int32" DbType="Int" />
     <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GetInmuebles" Method="sp_GetInmuebles">
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetInmueblesResult">
+      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreInmueble" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Latitud" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Longitud" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CostoTotal" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CostoMensual" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CostoMto" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Nuevo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Antiguedad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdTipoPropiedad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Propiedad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Calle" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="IdAsentamiento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Asentamiento" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IdEstatusInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstatusInmueble" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdMunicipio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Municipio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Calle1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="IdDetalleInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumRecamaras" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumBanos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumServicios" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumEstacionamientos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConAlberca" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumM2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumTotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaAlta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdUsuarioInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_InsertInmuebles" Method="sp_InsertInmuebles">
+    <Parameter Name="NombreInmueble" Parameter="nombreInmueble" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Latitud" Parameter="latitud" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Longitud" Parameter="longitud" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="CostoTotal" Parameter="costoTotal" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="CostoMensual" Parameter="costoMensual" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="CostoMto" Parameter="costoMto" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Nuevo" Parameter="nuevo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Antiguedad" Parameter="antiguedad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdTipoPropiedad" Parameter="idTipoPropiedad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdAsentamiento" Parameter="idAsentamiento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdEstatusInmueble" Parameter="idEstatusInmueble" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Calle" Parameter="calle" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateInmuebles" Method="sp_UpdateInmuebles">
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NombreInmueble" Parameter="nombreInmueble" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Latitud" Parameter="latitud" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Longitud" Parameter="longitud" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="CostoTotal" Parameter="costoTotal" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="CostoMensual" Parameter="costoMensual" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="CostoMto" Parameter="costoMto" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Nuevo" Parameter="nuevo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Antiguedad" Parameter="antiguedad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdTipoPropiedad" Parameter="idTipoPropiedad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdAsentamiento" Parameter="idAsentamiento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdEstatusInmueble" Parameter="idEstatusInmueble" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Calle" Parameter="calle" Type="System.String" DbType="VarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GetReporteContratos" Method="sp_GetReporteContratos">
+    <ElementType Name="sp_GetReporteContratosResult">
+      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreInmueble" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumContrato" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreArrendatario" Type="System.String" DbType="VarChar(151)" CanBeNull="true" />
+      <Column Name="CostoTotal" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="RentaMensual" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CostoMto" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </ElementType>
   </Function>
   <Function Name="dbo.sp_InsertContratos" Method="sp_InsertContratos">
     <Parameter Name="NumContrato" Parameter="numContrato" Type="System.String" DbType="VarChar(50)" />

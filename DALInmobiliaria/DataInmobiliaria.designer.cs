@@ -216,13 +216,6 @@ namespace DALInmobiliaria
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateInmuebles")]
-		public int sp_UpdateInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NombreInmueble", DbType="VarChar(100)")] string nombreInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(250)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Latitud", DbType="Decimal(18,0)")] System.Nullable<decimal> latitud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Longitud", DbType="Decimal(18,0)")] System.Nullable<decimal> longitud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoTotal", DbType="Decimal(18,0)")] System.Nullable<decimal> costoTotal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoMensual", DbType="Decimal(18,0)")] System.Nullable<decimal> costoMensual, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoMto", DbType="Decimal(18,0)")] System.Nullable<decimal> costoMto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo", DbType="Int")] System.Nullable<int> nuevo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Antiguedad", DbType="Int")] System.Nullable<int> antiguedad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoPropiedad", DbType="Int")] System.Nullable<int> idTipoPropiedad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAsentamiento", DbType="Int")] System.Nullable<int> idAsentamiento, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdEstatusInmueble", DbType="Int")] System.Nullable<int> idEstatusInmueble)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idInmueble, nombreInmueble, descripcion, latitud, longitud, costoTotal, costoMensual, costoMto, nuevo, antiguedad, idTipoPropiedad, idAsentamiento, idEstatusInmueble);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertUsuariosInmuebles")]
 		public int sp_InsertUsuariosInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdUsuario", DbType="Int")] System.Nullable<int> idUsuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaAlta", DbType="DateTime")] System.Nullable<System.DateTime> fechaAlta)
 		{
@@ -235,14 +228,6 @@ namespace DALInmobiliaria
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idMunicipio);
 			return ((ISingleResult<sp_GetAsentamientosResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertInmuebles")]
-		public int sp_InsertInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NombreInmueble", DbType="VarChar(100)")] string nombreInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(250)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Latitud", DbType="Decimal(18,0)")] System.Nullable<decimal> latitud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Longitud", DbType="Decimal(18,0)")] System.Nullable<decimal> longitud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoTotal", DbType="Decimal(18,0)")] System.Nullable<decimal> costoTotal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoMensual", DbType="Decimal(18,0)")] System.Nullable<decimal> costoMensual, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoMto", DbType="Decimal(18,0)")] System.Nullable<decimal> costoMto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo", DbType="Int")] System.Nullable<int> nuevo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Antiguedad", DbType="Int")] System.Nullable<int> antiguedad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoPropiedad", DbType="Int")] System.Nullable<int> idTipoPropiedad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAsentamiento", DbType="Int")] System.Nullable<int> idAsentamiento, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdEstatusInmueble", DbType="Int")] System.Nullable<int> idEstatusInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] ref System.Nullable<int> idInmueble)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreInmueble, descripcion, latitud, longitud, costoTotal, costoMensual, costoMto, nuevo, antiguedad, idTipoPropiedad, idAsentamiento, idEstatusInmueble, idInmueble);
-			idInmueble = ((System.Nullable<int>)(result.GetParameterValue(12)));
-			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetImagenesInmueble")]
@@ -482,13 +467,6 @@ namespace DALInmobiliaria
 			return ((ISingleResult<sp_GetContratosResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetInmuebles")]
-		public ISingleResult<sp_GetInmueblesResult> sp_GetInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idInmueble);
-			return ((ISingleResult<sp_GetInmueblesResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateDetalleInmuebles")]
 		public int sp_UpdateDetalleInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdDetalleInmueble", DbType="Int")] System.Nullable<int> idDetalleInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumRecamaras", DbType="Int")] System.Nullable<int> numRecamaras, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumBanos", DbType="Int")] System.Nullable<int> numBanos, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumServicios", DbType="Int")] System.Nullable<int> numServicios, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumEstacionamientos", DbType="Int")] System.Nullable<int> numEstacionamientos, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ConAlberca", DbType="Int")] System.Nullable<int> conAlberca, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumM2", DbType="Int")] System.Nullable<int> numM2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NumTotal", DbType="Int")] System.Nullable<int> numTotal)
 		{
@@ -501,6 +479,35 @@ namespace DALInmobiliaria
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idUsuarioInmueble, idUsuario);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetInmuebles")]
+		public ISingleResult<sp_GetInmueblesResult> sp_GetInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idInmueble);
+			return ((ISingleResult<sp_GetInmueblesResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertInmuebles")]
+		public int sp_InsertInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NombreInmueble", DbType="VarChar(100)")] string nombreInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(250)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Latitud", DbType="Decimal(18,0)")] System.Nullable<decimal> latitud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Longitud", DbType="Decimal(18,0)")] System.Nullable<decimal> longitud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoTotal", DbType="Decimal(18,0)")] System.Nullable<decimal> costoTotal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoMensual", DbType="Decimal(18,0)")] System.Nullable<decimal> costoMensual, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoMto", DbType="Decimal(18,0)")] System.Nullable<decimal> costoMto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo", DbType="Int")] System.Nullable<int> nuevo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Antiguedad", DbType="Int")] System.Nullable<int> antiguedad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoPropiedad", DbType="Int")] System.Nullable<int> idTipoPropiedad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAsentamiento", DbType="Int")] System.Nullable<int> idAsentamiento, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdEstatusInmueble", DbType="Int")] System.Nullable<int> idEstatusInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Calle", DbType="VarChar(150)")] string calle, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] ref System.Nullable<int> idInmueble)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreInmueble, descripcion, latitud, longitud, costoTotal, costoMensual, costoMto, nuevo, antiguedad, idTipoPropiedad, idAsentamiento, idEstatusInmueble, calle, idInmueble);
+			idInmueble = ((System.Nullable<int>)(result.GetParameterValue(13)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateInmuebles")]
+		public int sp_UpdateInmuebles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdInmueble", DbType="Int")] System.Nullable<int> idInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NombreInmueble", DbType="VarChar(100)")] string nombreInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(250)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Latitud", DbType="Decimal(18,0)")] System.Nullable<decimal> latitud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Longitud", DbType="Decimal(18,0)")] System.Nullable<decimal> longitud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoTotal", DbType="Decimal(18,0)")] System.Nullable<decimal> costoTotal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoMensual", DbType="Decimal(18,0)")] System.Nullable<decimal> costoMensual, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CostoMto", DbType="Decimal(18,0)")] System.Nullable<decimal> costoMto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nuevo", DbType="Int")] System.Nullable<int> nuevo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Antiguedad", DbType="Int")] System.Nullable<int> antiguedad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdTipoPropiedad", DbType="Int")] System.Nullable<int> idTipoPropiedad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdAsentamiento", DbType="Int")] System.Nullable<int> idAsentamiento, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdEstatusInmueble", DbType="Int")] System.Nullable<int> idEstatusInmueble, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Calle", DbType="VarChar(150)")] string calle)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idInmueble, nombreInmueble, descripcion, latitud, longitud, costoTotal, costoMensual, costoMto, nuevo, antiguedad, idTipoPropiedad, idAsentamiento, idEstatusInmueble, calle);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetReporteContratos")]
+		public ISingleResult<sp_GetReporteContratosResult> sp_GetReporteContratos()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_GetReporteContratosResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertContratos")]
@@ -3299,6 +3306,8 @@ namespace DALInmobiliaria
 		
 		private string _Propiedad;
 		
+		private string _Calle;
+		
 		private int _IdAsentamiento;
 		
 		private string _Asentamiento;
@@ -3314,6 +3323,8 @@ namespace DALInmobiliaria
 		private int _IdEstado;
 		
 		private string _Estado;
+		
+		private string _Calle1;
 		
 		private int _IdDetalleInmueble;
 		
@@ -3535,6 +3546,22 @@ namespace DALInmobiliaria
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Calle", DbType="VarChar(150)")]
+		public string Calle
+		{
+			get
+			{
+				return this._Calle;
+			}
+			set
+			{
+				if ((this._Calle != value))
+				{
+					this._Calle = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAsentamiento", DbType="Int NOT NULL")]
 		public int IdAsentamiento
 		{
@@ -3659,6 +3686,22 @@ namespace DALInmobiliaria
 				if ((this._Estado != value))
 				{
 					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Calle1", DbType="VarChar(150)")]
+		public string Calle1
+		{
+			get
+			{
+				return this._Calle1;
+			}
+			set
+			{
+				if ((this._Calle1 != value))
+				{
+					this._Calle1 = value;
 				}
 			}
 		}
@@ -3851,6 +3894,158 @@ namespace DALInmobiliaria
 				if ((this._Nombre != value))
 				{
 					this._Nombre = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetReporteContratosResult
+	{
+		
+		private int _IdInmueble;
+		
+		private string _NombreInmueble;
+		
+		private int _IdContrato;
+		
+		private string _NumContrato;
+		
+		private string _NombreArrendatario;
+		
+		private System.Nullable<decimal> _CostoTotal;
+		
+		private System.Nullable<decimal> _RentaMensual;
+		
+		private System.Nullable<decimal> _CostoMto;
+		
+		public sp_GetReporteContratosResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdInmueble", DbType="Int NOT NULL")]
+		public int IdInmueble
+		{
+			get
+			{
+				return this._IdInmueble;
+			}
+			set
+			{
+				if ((this._IdInmueble != value))
+				{
+					this._IdInmueble = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreInmueble", DbType="VarChar(100)")]
+		public string NombreInmueble
+		{
+			get
+			{
+				return this._NombreInmueble;
+			}
+			set
+			{
+				if ((this._NombreInmueble != value))
+				{
+					this._NombreInmueble = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdContrato", DbType="Int NOT NULL")]
+		public int IdContrato
+		{
+			get
+			{
+				return this._IdContrato;
+			}
+			set
+			{
+				if ((this._IdContrato != value))
+				{
+					this._IdContrato = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumContrato", DbType="VarChar(50)")]
+		public string NumContrato
+		{
+			get
+			{
+				return this._NumContrato;
+			}
+			set
+			{
+				if ((this._NumContrato != value))
+				{
+					this._NumContrato = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreArrendatario", DbType="VarChar(151)")]
+		public string NombreArrendatario
+		{
+			get
+			{
+				return this._NombreArrendatario;
+			}
+			set
+			{
+				if ((this._NombreArrendatario != value))
+				{
+					this._NombreArrendatario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CostoTotal", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> CostoTotal
+		{
+			get
+			{
+				return this._CostoTotal;
+			}
+			set
+			{
+				if ((this._CostoTotal != value))
+				{
+					this._CostoTotal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RentaMensual", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> RentaMensual
+		{
+			get
+			{
+				return this._RentaMensual;
+			}
+			set
+			{
+				if ((this._RentaMensual != value))
+				{
+					this._RentaMensual = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CostoMto", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> CostoMto
+		{
+			get
+			{
+				return this._CostoMto;
+			}
+			set
+			{
+				if ((this._CostoMto != value))
+				{
+					this._CostoMto = value;
 				}
 			}
 		}

@@ -9,6 +9,7 @@
     <div class="container">
         <br />
         <br />
+        <br />
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="messagealert" id="alert_container">
@@ -59,8 +60,8 @@
                                                                 <asp:ImageButton runat="server" ID="ibtnEliminarArchivo" ToolTip="Eliminar" ImageUrl="~/Images/borrar.png" Width="20px" OnClick="ibtnEliminarArchivo_Click" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
-                                                        <asp:BoundField DataField="IdArchivoInmueble" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White"/>
-                                                        <asp:BoundField DataField="IdInmueble" HeaderText="Id Inmueble" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White"/>
+                                                        <asp:BoundField DataField="IdArchivoInmueble" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
+                                                        <asp:BoundField DataField="IdInmueble" HeaderText="Id Inmueble" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
                                                         <asp:BoundField DataField="NombreArchivo" HeaderText="Nombre del archivo" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
                                                         <asp:TemplateField ControlStyle-CssClass="img-thumbnail" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White">
                                                             <ItemTemplate>
@@ -145,7 +146,7 @@
                                                 </asp:GridView>
                                             </ContentTemplate>
                                             <Triggers>
-                                                <asp:PostBackTrigger ControlID="grdImagenes"/>
+                                                <asp:PostBackTrigger ControlID="grdImagenes" />
                                             </Triggers>
                                         </asp:UpdatePanel>
                                     </div>
@@ -193,7 +194,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
-                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDescripcion"
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDescripcion"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
@@ -253,24 +254,24 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-3">
-                                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="cmbTipoPropiedad"
-                                                ValidationGroup="Global" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
-                                                Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic">
-                                            </asp:CompareValidator>
+                                    <div class="col-sm-6">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="txtCalleInmueble"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
-                                                <label class="input-group-text" for="cmbTipoPropiedad">Tipo propiedad</label>
+                                                <span class="input-group-text" id="inputGrop-sizing-">Calle y número:</span>
                                             </div>
-                                            <asp:DropDownList CssClass="custom-select" runat="server" ID="cmbTipoPropiedad"></asp:DropDownList>
-                                            
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtCalleInmueble" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
                                         <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToValidate="cmbEstado"
-                                                ValidationGroup="Global" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
-                                                Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic">
-                                            </asp:CompareValidator>
+                                            ValidationGroup="Global" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic">
+                                        </asp:CompareValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="cmbEstado">Estado:</label>
@@ -278,11 +279,11 @@
                                             <asp:DropDownList CssClass="custom-select" runat="server" ID="cmbEstado" AutoPostBack="true" OnSelectedIndexChanged="cmbEstado_SelectedIndexChanged"></asp:DropDownList>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-4">
                                         <asp:CompareValidator ID="CompareValidator3" runat="server" ControlToValidate="cmbMunicipio"
-                                                ValidationGroup="Global" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
-                                                Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic">
-                                            </asp:CompareValidator>
+                                            ValidationGroup="Global" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic">
+                                        </asp:CompareValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="cmbMunicipio">Municipio:</label>
@@ -291,11 +292,11 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-4">
                                         <asp:CompareValidator ID="CompareValidator4" runat="server" ControlToValidate="cmbAsentamiento"
-                                                ValidationGroup="Global" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
-                                                Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic">
-                                            </asp:CompareValidator>
+                                            ValidationGroup="Global" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic">
+                                        </asp:CompareValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="cmbAsentamiento">Colonia:</label>
@@ -303,13 +304,26 @@
                                             <asp:DropDownList CssClass="custom-select" runat="server" ID="cmbAsentamiento"></asp:DropDownList>
                                         </div>
                                     </div>
+
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-3">
+                                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="cmbTipoPropiedad"
+                                            ValidationGroup="Global" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic">
+                                        </asp:CompareValidator>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text" for="cmbTipoPropiedad">Tipo propiedad</label>
+                                            </div>
+                                            <asp:DropDownList CssClass="custom-select" runat="server" ID="cmbTipoPropiedad"></asp:DropDownList>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
                                         <asp:CompareValidator ID="CompareValidator5" runat="server" ControlToValidate="cmbEstatusInmueble"
-                                                ValidationGroup="Global" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
-                                                Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic">
-                                            </asp:CompareValidator>
+                                            ValidationGroup="Global" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            Type="Integer" ValueToCompare="0" Operator="GreaterThan" Display="Dynamic">
+                                        </asp:CompareValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="cmbEstatusInmueble">Estatus:</label>
@@ -355,7 +369,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
-                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtNumServicios"
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtNumServicios"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
@@ -367,7 +381,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
-                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtNumEstacionamiento"
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtNumEstacionamiento"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
@@ -381,7 +395,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-3">
-                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtNumM2"
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtNumM2"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
@@ -425,7 +439,7 @@
         <br />
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card border-warning">
                     <div class="card-header">
                         <div class="row">
                             <div class="col-sm-10">
@@ -474,8 +488,8 @@
                                             <asp:BoundField DataField="Estado" HeaderText="Estado" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
                                             <asp:BoundField DataField="FechaAlta" HeaderText="Fecha registro" DataFormatString="{0:dd/MM/yyyy}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
                                             <asp:BoundField DataField="EstatusInmueble" HeaderText="Estatus" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="IdDetalleInmueble" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" Visible="false"/>
-                                            <asp:BoundField DataField="IdUsuarioInmueble" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" Visible="false"/>
+                                            <asp:BoundField DataField="IdDetalleInmueble" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" Visible="false" />
+                                            <asp:BoundField DataField="IdUsuarioInmueble" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" Visible="false" />
                                         </Columns>
                                     </asp:GridView>
                                 </div>
