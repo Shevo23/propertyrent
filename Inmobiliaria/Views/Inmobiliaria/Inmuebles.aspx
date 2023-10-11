@@ -206,19 +206,19 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-4">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtCostoTotal"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text" id="inputGroup-sizing">Costo total:</span>
+                                                <span class="input-group-text" id="inputGroup-sizing">Valor inmueble:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtCostoTotal" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
                                             <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender3" runat="server" FilterType="Numbers" TargetControlID="txtCostoTotal" />
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-4">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtCostoMensual"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
@@ -230,7 +230,7 @@
                                             <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" FilterType="Numbers" TargetControlID="txtCostoMensual" />
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-4">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtCostoMantenimiento"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
@@ -240,16 +240,6 @@
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtCostoMantenimiento" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
                                             <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender5" runat="server" FilterType="Numbers" TargetControlID="txtCostoMantenimiento" />
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="inputGroup-sizi">Antigüedad:</span>
-                                            </div>
-                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtAntiguedad" MaxLength="2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender6" runat="server" FilterType="Numbers" TargetControlID="txtAntiguedad" />
                                         </div>
                                     </div>
                                 </div>
@@ -263,6 +253,18 @@
                                                 <span class="input-group-text" id="inputGrop-sizing-">Calle y número:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtCalleInmueble" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="txtAntiguedad"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizi">Antigüedad:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtAntiguedad" MaxLength="2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender6" runat="server" FilterType="Numbers" TargetControlID="txtAntiguedad" />
                                         </div>
                                     </div>
                                 </div>

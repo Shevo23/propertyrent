@@ -153,7 +153,7 @@
                                                 <span class="input-group-text" id="inputGroup-sizing">Edad:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtEdad" MaxLength="2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender  ID="FilteredTextBoxExtender4" runat="server" FilterType="Numbers" TargetControlID="txtEdad" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" FilterType="Numbers" TargetControlID="txtEdad" />
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
@@ -201,7 +201,7 @@
                                                 <span class="input-group-text" id="inputGrp-sizing">Ultimo grado de estudios:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtUltimoGradoEstudio" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            
+
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
@@ -213,7 +213,7 @@
                                                 <span class="input-group-text" id="inpurp-sizing">Carrera / oficio:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtCarreraOficio" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -227,7 +227,7 @@
                                                 <span class="input-group-text" id="inputGrou-sizin">Movil:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtMovil" MaxLength="10" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender  ID="FilteredTextBoxExtender7" runat="server" FilterType="Numbers" TargetControlID="txtMovil" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender7" runat="server" FilterType="Numbers" TargetControlID="txtMovil" />
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
@@ -239,7 +239,7 @@
                                                 <span class="input-group-text" id="inputGroup-zin">Num personas a habitar:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtNumPersonasHabitar" MaxLength="1" aria-label="Sizing example input" aria-describedby="inputGroup-zin"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender  ID="FilteredTextBoxExtender8" runat="server" FilterType="Numbers" TargetControlID="txtEdad" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender8" runat="server" FilterType="Numbers" TargetControlID="txtEdad" />
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
@@ -251,7 +251,7 @@
                                                 <span class="input-group-text" id="inpuroup-zin">Personas dependan usted:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtNumPersonasDependen" MaxLength="1" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender  ID="FilteredTextBoxExtender9" runat="server" FilterType="Numbers" TargetControlID="txtNumPersonasDependen" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender9" runat="server" FilterType="Numbers" TargetControlID="txtNumPersonasDependen" />
                                         </div>
                                     </div>
                                 </div>
@@ -299,10 +299,10 @@
                                                 <span class="input-group-text" id="inpurosup-zin">Empresa:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtEmpresaTrabaja" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            
+
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtAntiguedad"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
@@ -311,7 +311,7 @@
                                                 <span class="input-group-text" id="inpuroesup-zin">Antigüedad:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtAntiguedad" aria-label="Sizing example input" MaxLength="2" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender  ID="FilteredTextBoxExtender11" runat="server" FilterType="Numbers" TargetControlID="txtAntiguedad" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender11" runat="server" FilterType="Numbers" TargetControlID="txtAntiguedad" />
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
@@ -320,7 +320,7 @@
                                                 <span class="input-group-text" id="inpsuroesup-zin">Horario:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtHorario" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ValidChars=" :"  ID="FilteredTextBoxExtender12" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom, Numbers" TargetControlID="txtHorario" />
+                                            <cc1:FilteredTextBoxExtender ValidChars=" :" ID="FilteredTextBoxExtender12" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom, Numbers" TargetControlID="txtHorario" />
                                         </div>
                                     </div>
                                 </div>
@@ -334,7 +334,7 @@
                                                 <span class="input-group-text" id="inpsurewoesp-zin">Puesto:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtPuestoEmpleo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            
+
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
@@ -346,7 +346,7 @@
                                                 <span class="input-group-text" id="inputGroup-sizinp">Jefe inmediato:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtNombreJefe" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ValidChars=" ñÑüÜ"  ID="FilteredTextBoxExtender14" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtNombreJefe" />
+                                            <cc1:FilteredTextBoxExtender ValidChars=" ñÑüÜ" ID="FilteredTextBoxExtender14" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtNombreJefe" />
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
@@ -358,12 +358,12 @@
                                                 <span class="input-group-text" id="inputGroup-sizi">Salario mensual:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtSalarioMensual" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender  ID="FilteredTextBoxExtender15" runat="server" FilterType="Numbers" TargetControlID="txtSalarioMensual" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender15" runat="server" FilterType="Numbers" TargetControlID="txtSalarioMensual" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-5">
+                                    <div class="col-sm-7">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="txtDireccionEmpleo"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
@@ -372,10 +372,10 @@
                                                 <span class="input-group-text" id="inpsurewoesup-zin">Dirección:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtDireccionEmpleo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            
+
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-4">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="txtFijo"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
@@ -384,7 +384,7 @@
                                                 <span class="input-group-text" id="inputGroup-sizin">Teléfono fijo:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtFijo" aria-label="Sizing example input" MaxLength="10" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender  ID="FilteredTextBoxExtender17" runat="server" FilterType="Numbers" TargetControlID="txtSalarioMensual" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender17" runat="server" FilterType="Numbers" TargetControlID="txtSalarioMensual" />
                                         </div>
                                     </div>
 
@@ -412,7 +412,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Motivo por el que cambia de residencia</span>
                                             </div>
-                                            <asp:TextBox ID="txtMotivoCambio"  class="form-control" runat="server" TextMode="MultiLine" MaxLength="250" />
+                                            <asp:TextBox ID="txtMotivoCambio" class="form-control" runat="server" TextMode="MultiLine" MaxLength="250" />
                                         </div>
                                     </div>
                                 </div>
@@ -423,18 +423,6 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-5">
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ControlToValidate="txtRelacionFiador"
-                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
-                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="inputGroupm-sizinp">Relación con el arrendatario:</span>
-                                            </div>
-                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtRelacionFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            
-                                        </div>
-                                    </div>
                                     <div class="col-sm-6">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="txtNombreFiador"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
@@ -447,9 +435,7 @@
                                             <cc1:FilteredTextBoxExtender ValidChars=" ñÑüÜ´" ID="FilteredTextBoxExtender20" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtNombreFiador" />
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-5">
+                                    <div class="col-sm-6">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="txtDireccionFiador"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
@@ -458,10 +444,11 @@
                                                 <span class="input-group-text" id="inputGrosupm-ssizinp">Dirección:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtDireccionFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator20" runat="server" ControlToValidate="txtTelefonoFiador"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
@@ -470,10 +457,10 @@
                                                 <span class="input-group-text" id="inputGrosuapm-ssizinp">Teléfono:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtTelefonoFiador" aria-label="Sizing example input" MaxLength="10" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender  ID="FilteredTextBoxExtender22" runat="server" FilterType="Numbers" TargetControlID="txtTelefonoFiador" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender22" runat="server" FilterType="Numbers" TargetControlID="txtTelefonoFiador" />
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-4">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ControlToValidate="txtMovilFiador"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
@@ -482,7 +469,19 @@
                                                 <span class="input-group-text" id="inputGrosuapma-ssizinp">Movil:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtMovilFiador" MaxLength="10" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender  ID="FilteredTextBoxExtender23" runat="server" FilterType="Numbers" TargetControlID="txtMovilFiador" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender23" runat="server" FilterType="Numbers" TargetControlID="txtMovilFiador" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator22" runat="server" ControlToValidate="txtEdadFiador"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGrsuapma-sszinp">Edad:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtEdadFiador" aria-label="Sizing example input" MaxLength="2" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender26" runat="server" FilterType="Numbers" TargetControlID="txtEdadFiador" />
                                         </div>
                                     </div>
                                 </div>
@@ -498,7 +497,7 @@
                                             <asp:DropDownList CssClass="custom-select" runat="server" ID="cmbEstadoCivilFiador"></asp:DropDownList>
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator28" runat="server" ControlToValidate="txtTiempoMatrimonio"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
@@ -507,21 +506,10 @@
                                                 <span class="input-group-text" id="inputGrsuapma-ssizinp">Años matrimonio:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtTiempoMatrimonio" aria-label="Sizing example input" MaxLength="2" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender  ID="FilteredTextBoxExtender24" runat="server" FilterType="Numbers" TargetControlID="txtTiempoMatrimonio" />
+                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender24" runat="server" FilterType="Numbers" TargetControlID="txtTiempoMatrimonio" />
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator22" runat="server" ControlToValidate="txtEdadFiador"
-                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
-                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="inputGrsuapma-sszinp">Edad:</span>
-                                            </div>
-                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtEdadFiador" aria-label="Sizing example input" MaxLength="2" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender  ID="FilteredTextBoxExtender26" runat="server" FilterType="Numbers" TargetControlID="txtEdadFiador" />
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-4">
@@ -533,7 +521,7 @@
                                                 <span class="input-group-text" id="inputsuapma-sszinp">Donde trabaja:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtEmpresaTrabajaFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            
+
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
@@ -545,7 +533,7 @@
                                                 <span class="input-group-text" id="inputsuapya-sszinp">Puesto:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtPuestoEmpleoFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            
+
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
@@ -557,12 +545,12 @@
                                                 <span class="input-group-text" id="inputuapya-sszinp">Salario:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtSalarioMensualFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ValidChars="0123456789,"  ID="FilteredTextBoxExtender28" runat="server" FilterType="Custom" TargetControlID="txtSalarioMensualFiador" />
+                                            <cc1:FilteredTextBoxExtender ValidChars="0123456789," ID="FilteredTextBoxExtender28" runat="server" FilterType="Custom" TargetControlID="txtSalarioMensualFiador" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-5">
+                                    <div class="col-sm-7">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator25" runat="server" ControlToValidate="txtDireccionEmpleoFiador"
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
@@ -571,7 +559,19 @@
                                                 <span class="input-group-text" id="inputpya-sszinp">Dirección:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtDireccionEmpleoFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                            
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ControlToValidate="txtRelacionFiador"
+                                            Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
+                                            ValidationGroup="Global"></asp:RequiredFieldValidator>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroupm-sizinp">Relación con el arrendatario:</span>
+                                            </div>
+                                            <asp:TextBox runat="server" CssClass="form-control" ID="txtRelacionFiador" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+
                                         </div>
                                     </div>
                                 </div>
