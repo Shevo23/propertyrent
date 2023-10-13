@@ -267,6 +267,7 @@
     <Content Include="Views\Inmobiliaria\Arrendatario.aspx" />
     <Content Include="Views\Inmobiliaria\Inmuebles.aspx" />
     <Content Include="Views\Login.aspx" />
+    <Content Include="Views\Pagos\PagosInmueble.aspx" />
     <Content Include="Views\Reportes\ReporteContratos.aspx" />
     <Content Include="Views\Settings\Roles.aspx" />
     <Content Include="Views\Settings\TipoIdentificacion.aspx" />
@@ -363,6 +364,13 @@
     </Compile>
     <Compile Include="Views\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pagos\PagosInmueble.aspx.cs">
+      <DependentUpon>PagosInmueble.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pagos\PagosInmueble.aspx.designer.cs">
+      <DependentUpon>PagosInmueble.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Reportes\ReporteContratos.aspx.cs">
       <DependentUpon>ReporteContratos.aspx</DependentUpon>

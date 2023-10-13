@@ -62,6 +62,25 @@ namespace BTLInmobiliaria
 
         #region Select
 
+        public DataSet GetContratosActivos()
+        {
+            DataTable data;
+
+            context.Connection.Open();
+
+            var dsResult = context.sp_GetContratosActivos();
+
+            data = dsResult.CopyToDataTable();
+
+            context.Connection.Close();
+
+            DataSet resultDataSet = new DataSet();
+
+            resultDataSet.Tables.Add(data);
+
+            return resultDataSet;
+        }
+
         public DataSet GetNumeroContrato()
         {
             DataTable data;

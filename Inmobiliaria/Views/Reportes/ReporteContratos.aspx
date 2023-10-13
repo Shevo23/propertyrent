@@ -38,6 +38,9 @@
                                             <asp:BoundField DataField="CostoTotal" HeaderText="Costo total" DataFormatString="{0:C}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                             <asp:BoundField DataField="RentaMensual" HeaderText="Renta mensual" DataFormatString="{0:C}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                             <asp:BoundField DataField="CostoMto" HeaderText="Costo mantenimiento" DataFormatString="{0:C}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="Descripcion" HeaderText="Tipo pago" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" DataFormatString="{0:C}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="FechaPago" HeaderText="Fecha pago"  HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                         </Columns>
                                     </asp:GridView>
                                 </div>

@@ -38,7 +38,12 @@
                         <a class="nav-link dropdown-toggle" style="color: #ffffff" href="#" id="menuContratos" runat="server" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contratos</a>
                         <div class="dropdown-menu" style="background-color: #990f26;" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Contrataciones/Contratos.aspx")%>">Nuevo contrato</a>
-                            
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" style="color: #ffffff" href="#" id="menuPagos" runat="server" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pagos</a>
+                        <div class="dropdown-menu" style="background-color: #990f26;" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Pagos/PagosInmueble.aspx")%>">Registro de pagos</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">

@@ -40,6 +40,7 @@ namespace Inmobiliaria.Master
                         menuContratos.Visible = true;
                         menuConfiguracion.Visible = true;
                         menuInmuebles.Visible = true;
+                        menuPagos.Visible = true;
                         menuReportes.Visible = true;
 
                         break;
@@ -48,6 +49,7 @@ namespace Inmobiliaria.Master
                         menuContratos.Visible = true;
                         menuConfiguracion.Visible = false;
                         menuInmuebles.Visible = true;
+                        menuPagos.Visible = false;
                         menuReportes.Visible = false;
 
                         break;
@@ -56,6 +58,7 @@ namespace Inmobiliaria.Master
                         menuContratos.Visible = true;
                         menuConfiguracion.Visible = true;
                         menuInmuebles.Visible = true;
+                        menuPagos.Visible = true;
                         menuReportes.Visible = true;
 
                         break;
