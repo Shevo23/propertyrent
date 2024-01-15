@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
     <link rel="shortcut icon" href="<%=ResolveUrl("~/images/logo.ico")%>" />
-    <title>Inmobiliaria Ser.</title>
+    <title>Property Rent</title>
 
     <!-- CSS -->
     <link href="<%=ResolveUrl("~/Content/bootstrap.css") %>" rel="stylesheet" />
@@ -26,8 +26,8 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></asp:ScriptManager>
 
 
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #990f26;">
-            <a class="navbar-brand" style="color: #fbd253; font-weight: bold" href="<%=ResolveUrl("~/Views/Default.aspx")%>">Inmobiliaria Serv.</a>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #0c2b54;">
+            <a class="navbar-brand" style="color: #ffbd59; font-weight: bold" href="<%=ResolveUrl("~/Views/Default.aspx")%>">Property Rent</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -36,40 +36,40 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="color: #ffffff" href="#" id="menuContratos" runat="server" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contratos</a>
-                        <div class="dropdown-menu" style="background-color: #990f26;" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Contrataciones/Contratos.aspx")%>">Nuevo contrato</a>
+                        <div class="dropdown-menu" style="background-color: #0c2b54;" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" style="color: #ffbd59;" href="<%=ResolveUrl("~/Views/Contrataciones/Contratos.aspx")%>">Nuevo contrato</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="color: #ffffff" href="#" id="menuPagos" runat="server" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pagos</a>
-                        <div class="dropdown-menu" style="background-color: #990f26;" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Pagos/PagosInmueble.aspx")%>">Registro de pagos</a>
+                        <div class="dropdown-menu" style="background-color: #0c2b54;" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" style="color: #ffbd59;" href="<%=ResolveUrl("~/Views/Pagos/PagosInmueble.aspx")%>">Registro de pagos</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="color: #ffffff" href="#" id="menuInmuebles" runat="server" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inmuebles</a>
-                        <div class="dropdown-menu" style="background-color: #990f26;" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Inmobiliaria/Arrendadores.aspx")%>">Registro de Arrendadores</a>
-                            <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Inmobiliaria/Arrendatario.aspx")%>">Registro de Inquilinos</a>
-                            <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Inmobiliaria/Inmuebles.aspx")%>">Registro de inmuebles</a>
+                        <div class="dropdown-menu" style="background-color: #0c2b54;" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" style="color: #ffbd59;" href="<%=ResolveUrl("~/Views/Inmobiliaria/Arrendadores.aspx")%>">Registro de Arrendadores</a>
+                            <a class="dropdown-item" style="color: #ffbd59;" href="<%=ResolveUrl("~/Views/Inmobiliaria/Arrendatario.aspx")%>">Registro de Inquilinos</a>
+                            <a class="dropdown-item" style="color: #ffbd59;" href="<%=ResolveUrl("~/Views/Inmobiliaria/Inmuebles.aspx")%>">Registro de inmuebles</a>
                             
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="color: #ffffff" href="#" id="menuReportes" runat="server" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reportes</a>
-                        <div class="dropdown-menu" style="background-color: #990f26;" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Reportes/ReporteContratos.aspx")%>">Reporte de contratos</a>
+                        <div class="dropdown-menu" style="background-color: #0c2b54;" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" style="color: #ffbd59;" href="<%=ResolveUrl("~/Views/Reportes/ReporteContratos.aspx")%>">Reporte de contratos</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="menuConfiguracion" style="color: #ffffff" runat="server" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configuración</a>
-                        <div class="dropdown-menu" style="background-color: #990f26;" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Settings/Usuarios.aspx")%>">Usuarios</a>
-                            <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Settings/Roles.aspx")%>">Roles dentro del sistema</a>
-                            <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Settings/UsuariosRoles.aspx")%>">Roles por usuario</a>
-                            <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Settings/TipoIdentificacion.aspx")%>">Tipos de identificación</a>
+                        <div class="dropdown-menu" style="background-color: #0c2b54;" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" style="color: #ffbd59;" href="<%=ResolveUrl("~/Views/Settings/Usuarios.aspx")%>">Usuarios</a>
+                            <a class="dropdown-item" style="color: #ffbd59;" href="<%=ResolveUrl("~/Views/Settings/Roles.aspx")%>">Roles dentro del sistema</a>
+                            <a class="dropdown-item" style="color: #ffbd59;" href="<%=ResolveUrl("~/Views/Settings/UsuariosRoles.aspx")%>">Roles por usuario</a>
+                            <a class="dropdown-item" style="color: #ffbd59;" href="<%=ResolveUrl("~/Views/Settings/TipoIdentificacion.aspx")%>">Tipos de identificación</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" style="color: #fbd253;" href="<%=ResolveUrl("~/Views/Settings/TipoPropiedad.aspx")%>">Tipos de propiedades</a>
+                            <a class="dropdown-item" style="color: #ffbd59;" href="<%=ResolveUrl("~/Views/Settings/TipoPropiedad.aspx")%>">Tipos de propiedades</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -79,7 +79,7 @@
             </div>
 
             <div class="form-inline">
-                <span class="navbar-text" id="lblRol" runat="server" style="color: #fbd253"></span>
+                <span class="navbar-text" id="lblRol" runat="server" style="color: #ffbd59"></span>
                 &nbsp;
                     <span class="navbar-text" id="lblUsuario" runat="server" style="color: #ffffff"></span>
             </div>
@@ -91,12 +91,12 @@
         <footer>
             <p>
                 &copy; <%= DateTime.Now.Year %> <i class="fa fa-heart"></i>
-                Inmobiliaria Serv.
+                Property Rent
             </p>
         </footer>
 
         <%--<nav class="navbar fixed-bottom navbar-light" style="background-color: #9c9c9c;">
-            <p style="color: #fbd253">&copy; <%: DateTime.Now.Year %> - Inmobiliaria Serv.</p>
+            <p style="color: #ffbd59">&copy; <%: DateTime.Now.Year %> - Inmobiliaria Serv.</p>
         </nav>--%>
 
 

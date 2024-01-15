@@ -160,7 +160,7 @@ input {
 }
 
 .overlay {
-    background: #f6f5f7;
+    background: #0c2b54;
     background: -webkit-linear-gradient(to right, #FF4B2B, #f6f5f7);
     background: linear-gradient(to right, #FF4B2B, #f6f5f7);
     background-repeat: no-repeat;
@@ -227,7 +227,7 @@ input {
     }
 
 footer {
-    background-color: #9c9c9c;
+    background-color: #0c2b54;
     color: #fbd253;
     font-size: 14px;
     bottom: 0;
@@ -247,6 +247,6 @@ footer {
     }
 
     footer a {
-        color: #3c97bf;
+        color: #ffbd59;
         text-decoration: none;
     }

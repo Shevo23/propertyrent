@@ -27,6 +27,8 @@ namespace Inmobiliaria.Views.Contrataciones
         {
             try
             {
+                lbl_Titulo.Text = "Nuevo contrato";
+
                 txtFechaInicioContrato.Text = string.Empty;
                 txtFechaFinContrato.Text = string.Empty;
                 txtMesesContrato.Text = string.Empty;

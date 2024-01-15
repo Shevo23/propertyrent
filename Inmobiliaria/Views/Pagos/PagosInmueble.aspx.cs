@@ -265,5 +265,11 @@ namespace Inmobiliaria.Views.Pagos
                 ShowMessage(ex.Message, MessageType.Error);
             }
         }
+
+        protected void grdPagosInmueble_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdPagosInmueble.PageIndex = e.NewPageIndex;
+            GetPagosInmueble(0, int.Parse(cmbInmueble.SelectedValue));
+        }
     }
 }

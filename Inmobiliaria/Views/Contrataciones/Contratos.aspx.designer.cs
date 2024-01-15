@@ -708,15 +708,6 @@ namespace Inmobiliaria.Views.Contrataciones
         protected global::System.Web.UI.WebControls.Button btnGuardar;
 
         /// <summary>
-        /// btn_Agregar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Agregar;
-
-        /// <summary>
         /// UpdatePanel3 control.
         /// </summary>
         /// <remarks>
@@ -733,5 +724,14 @@ namespace Inmobiliaria.Views.Contrataciones
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdContratos;
+
+        /// <summary>
+        /// btn_Agregar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Agregar;
     }
 }

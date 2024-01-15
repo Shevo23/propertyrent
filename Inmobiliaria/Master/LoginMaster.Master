@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-    <title>Inmobiliaria Serv.</title>
+    <title>Property Rent</title>
     <link rel="shortcut icon" href="<%=ResolveUrl("~/images/logo.ico")%>" />
     <link href="<%=ResolveUrl("~/css/signin.css") %>" rel="stylesheet" />
     

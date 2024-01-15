@@ -196,5 +196,10 @@ namespace Inmobiliaria.Views.Settings
 
         #endregion
 
+        protected void grdUsuarios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdUsuarios.PageIndex = e.NewPageIndex;
+            GetUsuarios(0, 0);
+        }
     }
 }

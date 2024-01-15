@@ -160,5 +160,10 @@ namespace Inmobiliaria.Views.Settings
 
         #endregion
 
+        protected void grdTipoPropiedades_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdTipoPropiedades.PageIndex = e.NewPageIndex;
+            GetTipoPropiedad(0, 0);
+        }
     }
 }

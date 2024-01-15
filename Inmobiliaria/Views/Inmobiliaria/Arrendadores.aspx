@@ -21,15 +21,10 @@
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <div class="modal-header" style="background-color: #0c2b54; color: white">
+                                <h5>Archivos del arrendador</h5>
                             </div>
                             <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <h5>Archivos del arrendador</h5>
-                                    </div>
-                                </div>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator26" runat="server" ControlToValidate="flpArchivosInmueble"
@@ -51,24 +46,26 @@
                                     <div class="col-md-12">
                                         <asp:UpdatePanel runat="server">
                                             <ContentTemplate>
-                                                <asp:GridView ID="grdArchivos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered"
-                                                    OnRowDataBound="grdArchivos_RowDataBound" DataKeyNames="IdArchivoArrendador,NombreArchivo,IdArrendador">
-                                                    <Columns>
-                                                        <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
-                                                            <ItemTemplate>
-                                                                <asp:ImageButton runat="server" ID="ibtnEliminarArchivo" ToolTip="Eliminar" ImageUrl="~/Images/borrar.png" Width="20px" OnClick="ibtnEliminarArchivo_Click" />
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
-                                                        <asp:BoundField DataField="IdArchivoArrendador" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                                        <asp:BoundField DataField="IdArrendador" HeaderText="Id Inmueble" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                                        <asp:BoundField DataField="NombreArchivo" HeaderText="Nombre del archivo" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                                        <asp:TemplateField ControlStyle-CssClass="img-thumbnail" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" ItemStyle-HorizontalAlign="Center">
-                                                            <ItemTemplate>
-                                                                <asp:Image ID="archivo" runat="server" Height="100px" Width="200px" />
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
-                                                    </Columns>
-                                                </asp:GridView>
+                                                <div class="table table-hover table-responsive" style="font-size: small">
+                                                    <asp:GridView ID="grdArchivos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered"
+                                                        OnRowDataBound="grdArchivos_RowDataBound" DataKeyNames="IdArchivoArrendador,NombreArchivo,IdArrendador">
+                                                        <Columns>
+                                                            <asp:TemplateField HeaderStyle-BackColor="#0c2b54">
+                                                                <ItemTemplate>
+                                                                    <asp:ImageButton runat="server" ID="ibtnEliminarArchivo" ToolTip="Eliminar" ImageUrl="~/Images/borrar.png" Width="20px" OnClick="ibtnEliminarArchivo_Click" />
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:BoundField DataField="IdArchivoArrendador" HeaderText="#" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" />
+                                                            <asp:BoundField DataField="IdArrendador" HeaderText="Id Inmueble" Visible="false" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" />
+                                                            <asp:BoundField DataField="NombreArchivo" HeaderText="Nombre del archivo" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" />
+                                                            <asp:TemplateField ControlStyle-CssClass="img-thumbnail" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" ItemStyle-HorizontalAlign="Center">
+                                                                <ItemTemplate>
+                                                                    <asp:Image ID="archivo" runat="server" Height="100px" Width="200px" />
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                </div>
                                             </ContentTemplate>
                                             <Triggers>
                                                 <asp:PostBackTrigger ControlID="grdArchivos" />
@@ -95,10 +92,10 @@
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header" style="background-color: #0c2b54; color: white">
                                 <h4 class="modal‐title">
                                     <asp:Label runat="server" ID="lbl_Titulo"></asp:Label></h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <button type="button" class="close" style="color: white" data-dismiss="modal">&times;</button>
 
                             </div>
                             <div class="modal-body">
@@ -112,7 +109,7 @@
                                                 <span class="input-group-text" id="inputGroup-sizing-sm">Nombre(s):</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtNombres" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                           <cc1:FilteredTextBoxExtender ValidChars=" ñÑüÜ´" ID="FilteredTextBoxExtender1" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtNombres" />
+                                            <cc1:FilteredTextBoxExtender ValidChars=" ñÑüÜ´" ID="FilteredTextBoxExtender1" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtNombres" />
                                         </div>
                                     </div>
                                 </div>
@@ -126,7 +123,7 @@
                                                 <span class="input-group-text" id="inputGroup-sizing-s">Paterno:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtPaterno" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                           <cc1:FilteredTextBoxExtender ValidChars=" ñÑüÜ´" ID="FilteredTextBoxExtender2" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtPaterno" />
+                                            <cc1:FilteredTextBoxExtender ValidChars=" ñÑüÜ´" ID="FilteredTextBoxExtender2" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtPaterno" />
                                         </div>
                                     </div>
                                 </div>
@@ -138,7 +135,7 @@
                                                 <span class="input-group-text" id="inputGroup-sizing-">Materno:</span>
                                             </div>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="txtMaterno" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
-                                           <cc1:FilteredTextBoxExtender ValidChars=" ñÑüÜ´" ID="FilteredTextBoxExtender3" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtMaterno" />
+                                            <cc1:FilteredTextBoxExtender ValidChars=" ñÑüÜ´" ID="FilteredTextBoxExtender3" runat="server" FilterType="LowercaseLetters, UppercaseLetters, Custom" TargetControlID="txtMaterno" />
                                         </div>
                                     </div>
                                 </div>
@@ -148,7 +145,7 @@
                                             Display="Dynamic" ErrorMessage="<span style='color: red; font-weight: bold'>* Requerido</span>"
                                             ValidationGroup="Global"></asp:RequiredFieldValidator>
                                         <asp:RegularExpressionValidator ErrorMessage="<span style='color: red; font-weight: bold'>Formato incorrecto</span>" ControlToValidate="txtEmail" runat="server"
-                                                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="Global" />
+                                            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="Global" />
                                         <div class="input-group mb-4">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGroup-sizing">Email:</span>
@@ -215,49 +212,48 @@
         <br />
         <div class="row">
             <div class="col-md-12">
-                <div class="card border-warning">
+                <div class="card border-light mb-3">
                     <div class="card-header">
                         <div class="row">
                             <div class="col-sm-10">
-                                <h4 class="card-title">Arrendadores registrados</h4>
-                            </div>
-                            <div class="col-sm-2">
-                                <asp:Button ID="btn_Agregar" runat="server" Text="Agregar" CssClass="btn btn-default btn-info" data-toggle="modal" data-target="#divAgregar" OnClick="btn_Agregar_Click" />
+                                <h4 class="card-title" style="color: #0c2b54">Arrendadores registrados</h4>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
                         <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                             <ContentTemplate>
-                                <div class="table table-responsive" style="font-size: small">
+                                <div class="table table-hover table-responsive" style="font-size: small">
                                     <asp:GridView ID="grdArrendadores" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered"
-                                        DataKeyNames="IdArrendador">
+                                        DataKeyNames="IdArrendador" AllowPaging="true" PageSize="10" PagerSettings-Mode="Numeric"
+                                        OnPageIndexChanging="grdArrendadores_PageIndexChanging">
                                         <Columns>
-                                            <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
+                                            <asp:TemplateField HeaderStyle-BackColor="#0c2b54">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton runat="server" ID="ibtnEditar" ToolTip="Editar" ImageUrl="~/Images/editar.png" Width="20px" data-toggle="modal" data-target="#divAgregar" OnClick="ibtnEditar_Click" />
+                                                    <asp:ImageButton runat="server" ID="ibtnEditar" ToolTip="Editar" ImageUrl="~/Images/editar.png" Width="25px" data-toggle="modal" data-target="#divAgregar" OnClick="ibtnEditar_Click" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderStyle-BackColor="#9c9c9c">
+                                            <asp:TemplateField HeaderStyle-BackColor="#0c2b54">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton runat="server" ID="ibtnArchivos" ToolTip="Ver archivos" ImageUrl="~/Images/archivos.png" Width="15px" data-toggle="modal" data-target="#divAgregarArchivos" OnClick="ibtnArchivos_Click" />
+                                                    <asp:ImageButton runat="server" ID="ibtnArchivos" ToolTip="Ver archivos" ImageUrl="~/Images/archivos.png" Width="25px" data-toggle="modal" data-target="#divAgregarArchivos" OnClick="ibtnArchivos_Click" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField DataField="IdArrendador" HeaderText="#" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="Nombres" HeaderText="Nombres" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="Paterno" HeaderText="Paterno" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="Materno" HeaderText="Materno" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="Email" HeaderText="Email" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" Visible="false" />
-                                            <asp:BoundField DataField="Movil" HeaderText="Movil" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="Fijo" HeaderText="Fijo" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:BoundField DataField="IdTipoIdentificacion" HeaderText="IdTipoIdentificacion" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" Visible="false" />
-                                            <asp:BoundField DataField="FechaAlta" HeaderText="Fecha registro"  DataFormatString="{0:dd/MM/yyyy}" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White" />
-                                            <asp:TemplateField HeaderText="Usado / Nuevo" Visible="false" HeaderStyle-BackColor="#9c9c9c" HeaderStyle-ForeColor="White">
+                                            <asp:BoundField DataField="IdArrendador" HeaderText="#" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="Nombres" HeaderText="Nombres" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="Paterno" HeaderText="Paterno" Visible="false" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="Materno" HeaderText="Materno" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="Email" HeaderText="Email" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" Visible="false" />
+                                            <asp:BoundField DataField="Movil" HeaderText="Movil" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="Fijo" HeaderText="Fijo" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" />
+                                            <asp:BoundField DataField="IdTipoIdentificacion" HeaderText="IdTipoIdentificacion" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" Visible="false" />
+                                            <asp:BoundField DataField="FechaAlta" HeaderText="Fecha registro" DataFormatString="{0:dd/MM/yyyy}" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" />
+                                            <asp:TemplateField HeaderText="Usado / Nuevo" Visible="false" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White">
                                                 <ItemTemplate>
                                                     <asp:CheckBox ID="chkActivo" runat="server" CssClass="pull-left" Checked='<%#Convert.ToBoolean(Eval("Activo")) %>' Enabled="false" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
+                                        <PagerStyle HorizontalAlign="Center" CssClass="GridPager" />
                                     </asp:GridView>
                                 </div>
                             </ContentTemplate>
@@ -265,6 +261,11 @@
                                 <asp:AsyncPostBackTrigger EventName="Click" ControlID="btn_Agregar" />
                             </Triggers>
                         </asp:UpdatePanel>
+                    </div>
+                    <div class="card-footer">
+                        <div class="col-lg-12">
+                            <asp:Button ID="btn_Agregar" runat="server" Text="Agregar" CssClass="btn float-right" BackColor="#0c2b54" ForeColor="White" data-toggle="modal" data-target="#divAgregar" OnClick="btn_Agregar_Click" />
+                        </div>
                     </div>
                 </div>
             </div>

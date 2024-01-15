@@ -87,15 +87,6 @@ namespace Inmobiliaria.Views.Settings
         protected global::System.Web.UI.WebControls.Button btn_Guardar;
 
         /// <summary>
-        /// btn_Agregar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Agregar;
-
-        /// <summary>
         /// UpdatePanel3 control.
         /// </summary>
         /// <remarks>
@@ -112,5 +103,14 @@ namespace Inmobiliaria.Views.Settings
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdUsuariosRoles;
+
+        /// <summary>
+        /// btn_Agregar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Agregar;
     }
 }

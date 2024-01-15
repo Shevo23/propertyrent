@@ -14,12 +14,12 @@
                     <form action="#">
                     </form>
                 </div>
-                <div class="form-container sign-in-container" style="background-color: #990f26; color: #ffffff">
+                <div class="form-container sign-in-container" style="background-color: #ffffff; color: #ffffff">
                     <br />
                     <br />
                     <br />
                     <br />
-                    <h1 style="color: #fbd253">Inmobiliaria Serv.</h1>
+                    <h1 style="color: #0c2b54">Property Rent</h1>
                     <br />
                     <br />
                     <br />
@@ -39,7 +39,7 @@
                     <asp:Button runat="server" Text="Entrar" ID="btnIngresar" OnClick="btnIngresar_Click" ValidationGroup="Login" Width="150px" />
 
                 </div>
-                <div class="overlay-container" style="background-color: #f6f5f7">
+                <div class="overlay-container" style="background-color: #0c2b54">
                     <div class="overlay">
                         <div class="overlay-panel overlay-left">
                         </div>
@@ -51,7 +51,7 @@
             <footer>
                 <p>
                     <%= DateTime.Now.Year %> <i class="fa fa-heart"></i>
-                    Inmobiliaria Serv.
+                    Property Rent
                 </p>
             </footer>
         </ContentTemplate>

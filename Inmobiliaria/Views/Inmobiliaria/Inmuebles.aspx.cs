@@ -388,6 +388,8 @@ namespace Inmobiliaria.Views
             {
                 ViewState["oInsertar"] = true;
 
+                lbl_Titulo.Text = "Agregar inmueble";
+
                 LimpiarControles();
 
             }
@@ -552,6 +554,8 @@ namespace Inmobiliaria.Views
             try
             {
                 ViewState["oInsertar"] = false;
+
+                lbl_Titulo.Text = "Editar inmueble";
 
                 ImageButton button = (ImageButton)sender;
                 GridViewRow namingContainer = button.NamingContainer as GridViewRow;
@@ -722,8 +726,13 @@ namespace Inmobiliaria.Views
             }
         }
 
+
         #endregion
 
-
+        protected void grdInmuebles_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdInmuebles.PageIndex = e.NewPageIndex;
+            GetInmuebles(0);
+        }
     }
 }

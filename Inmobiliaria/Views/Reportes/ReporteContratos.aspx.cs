@@ -78,5 +78,11 @@ namespace Inmobiliaria.Views
             //required to avoid the runtime error "  
             //Control 'GridView1' of type 'GridView' must be placed inside a form tag with runat=server."  
         }
+
+        protected void grdContratos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdContratos.PageIndex = e.NewPageIndex;
+            GetReporteContratos();
+        }
     }
 }

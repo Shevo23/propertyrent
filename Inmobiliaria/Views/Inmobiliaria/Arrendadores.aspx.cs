@@ -401,8 +401,13 @@ namespace Inmobiliaria.Views.Inmobiliaria
             }
         }
 
+
         #endregion
 
-
+        protected void grdArrendadores_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdArchivos.PageIndex = e.NewPageIndex;
+            GetArrendadores(0, 0);
+        }
     }
 }

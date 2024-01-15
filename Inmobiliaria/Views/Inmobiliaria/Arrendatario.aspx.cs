@@ -615,5 +615,10 @@ namespace Inmobiliaria.Views.Inmobiliaria
 
         #endregion
 
+        protected void grdArrendatario_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdArrendatario.PageIndex = e.NewPageIndex;
+            GetArrendatarios(0, 0);
+        }
     }
 }

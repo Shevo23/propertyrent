@@ -234,8 +234,13 @@ namespace Inmobiliaria.Views.Settings
             }
         }
 
+
         #endregion
 
-
+        protected void grdUsuariosRoles_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdUsuariosRoles.PageIndex = e.NewPageIndex;
+            GetUsuariosRoles(0, 0);
+        }
     }
 }
