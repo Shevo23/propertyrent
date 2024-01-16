@@ -49,7 +49,7 @@ namespace Inmobiliaria.Views.Inmobiliaria
 
         private void GetTipoIdentificacion(int busqueda, int idTipoIdentificacion)
         {
-            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             DataSet dsTipoIdentificacion = new DataSet();
 
             try
@@ -87,7 +87,7 @@ namespace Inmobiliaria.Views.Inmobiliaria
 
         private void GetArrendadores(int busqueda, int idArrendador)
         {
-            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             DataSet dsTipoIdentificacion = new DataSet();
 
             try
@@ -128,7 +128,7 @@ namespace Inmobiliaria.Views.Inmobiliaria
 
         private void GetArchivos(int idArrendador)
         {
-            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             DataSet dsInmuebles = new DataSet();
 
             try
@@ -185,7 +185,7 @@ namespace Inmobiliaria.Views.Inmobiliaria
 
         protected void btn_Guardar_Click(object sender, EventArgs e)
         {
-            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
 
             var idTipo = int.Parse(cmbTipoIdentificacion.SelectedValue);
 
@@ -259,7 +259,7 @@ namespace Inmobiliaria.Views.Inmobiliaria
 
         protected void ibtnEliminarArchivo_Click(object sender, ImageClickEventArgs e)
         {
-            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
 
             try
             {
@@ -328,7 +328,7 @@ namespace Inmobiliaria.Views.Inmobiliaria
 
         protected void btnGuardarArchivosArrendador_Click(object sender, EventArgs e)
         {
-            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Inmobiliaria inmobiliaria = new BTLInmobiliaria.Inmobiliaria(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             int iUploadedCnt = 0;
             int iFailedCnt = 0;
 

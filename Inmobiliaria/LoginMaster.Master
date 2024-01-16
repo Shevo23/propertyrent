@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LoginMaster.master.cs" Inherits="Inmobiliaria.Master.LoginMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Property Rent</title>
+    <link rel="shortcut icon" href="<%=ResolveUrl("~/images/logo.ico")%>" />
+    <link href="<%=ResolveUrl("~/css/signin.css") %>" rel="stylesheet" />
+    
+    <script src="<%=ResolveUrl("~/Scripts/bootstrap.js")%>"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body class="text-center">
+    <form id="form1" runat="server" class="form-signin">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></asp:ScriptManager>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

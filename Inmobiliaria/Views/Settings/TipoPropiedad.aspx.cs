@@ -25,7 +25,7 @@ namespace Inmobiliaria.Views.Settings
 
         private void GetTipoPropiedad(int busqueda, int idTipoPropiedad)
         {
-            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             DataSet dsTipoPropiedad = new DataSet();
 
             try
@@ -114,7 +114,7 @@ namespace Inmobiliaria.Views.Settings
 
         protected void btn_Guardar_Click(object sender, EventArgs e)
         {
-            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
 
             try
             {

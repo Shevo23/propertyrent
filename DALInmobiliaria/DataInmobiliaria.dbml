@@ -1,210 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDInmuebles" Class="DataInmobiliariaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-5DD360I\SQLEXPRESS;Initial Catalog=BDInmuebles;Integrated Security=True" SettingsObjectName="DALInmobiliaria.Properties.Settings" SettingsPropertyName="BDInmueblesConnectionString" Provider="System.Data.SqlClient" />
-  <Function Name="dbo.sp_DeleteUsuario" Method="sp_DeleteUsuario">
-    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDPropertyRent" Class="DataInmobiliariaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-5DD360I\SQLEXPRESS;Initial Catalog=BDPropertyRent;Integrated Security=True" SettingsObjectName="DALInmobiliaria.Properties.Settings" SettingsPropertyName="BDPropertyRentConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_DeleteArchivosArrendador" Method="sp_DeleteArchivosArrendador">
+    <Parameter Name="IdArchivoArrendador" Parameter="idArchivoArrendador" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_GetRoles" Method="sp_GetRoles">
-    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_GetRolesResult">
-      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_GetTipoPropiedad" Method="sp_GetTipoPropiedad">
-    <Parameter Name="IdTipoPropiedad" Parameter="idTipoPropiedad" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_GetTipoPropiedadResult">
-      <Column Name="IdTipoPropiedad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_GetUsuarios" Method="sp_GetUsuarios">
-    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_GetUsuariosResult">
-      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Paterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Materno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NombreUsuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Movil" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="Activo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_GetUsuariosRoles" Method="sp_GetUsuariosRoles">
-    <Parameter Name="IdUsuarioRol" Parameter="idUsuarioRol" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_GetUsuariosRolesResult">
-      <Column Name="IdUsuarioRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
-      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_InsertRoles" Method="sp_InsertRoles">
-    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+  <Function Name="dbo.sp_DeleteArchivosArrendatario" Method="sp_DeleteArchivosArrendatario">
+    <Parameter Name="IdArchivoArrendatario" Parameter="idArchivoArrendatario" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_InsertTipoPropiedad" Method="sp_InsertTipoPropiedad">
-    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_InsertUsuario" Method="sp_InsertUsuario">
-    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Materno" Parameter="materno" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="NombreUsuario" Parameter="nombreUsuario" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(200)" />
-    <Parameter Name="Movil" Parameter="movil" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_InsertUsuariosRoles" Method="sp_InsertUsuariosRoles">
-    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_UpdateRoles" Method="sp_UpdateRoles">
-    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_UpdateTipoPropiedad" Method="sp_UpdateTipoPropiedad">
-    <Parameter Name="IdTipoPropiedad" Parameter="idTipoPropiedad" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_UpdateUsuario" Method="sp_UpdateUsuario">
-    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Materno" Parameter="materno" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="NombreUsuario" Parameter="nombreUsuario" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(200)" />
-    <Parameter Name="Movil" Parameter="movil" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_UpdateUsuariosRoles" Method="sp_UpdateUsuariosRoles">
-    <Parameter Name="IdUsuarioRol" Parameter="idUsuarioRol" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_GetTiposIdentificacion" Method="sp_GetTiposIdentificacion">
-    <Parameter Name="IdTipoIdentificacion" Parameter="idTipoIdentificacion" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_GetTiposIdentificacionResult">
-      <Column Name="IdTipoIdentificacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_UpdateTipoIdentificacion" Method="sp_UpdateTipoIdentificacion">
-    <Parameter Name="IdTipoIdentificacion" Parameter="idTipoIdentificacion" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_InsertTipoIdentificacion" Method="sp_InsertTipoIdentificacion">
-    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_GetEstatusInmueble" Method="sp_GetEstatusInmueble">
-    <ElementType Name="sp_GetEstatusInmuebleResult">
-      <Column Name="IdEstatusInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_GetPaises" Method="sp_GetPaises">
-    <ElementType Name="sp_GetPaisesResult">
-      <Column Name="IdPais" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_GetMunicipios" Method="sp_GetMunicipios">
-    <Parameter Name="IdEstado" Parameter="idEstado" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_GetMunicipiosResult">
-      <Column Name="IdMunicipio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="IdEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_GetEstados" Method="sp_GetEstados">
-    <ElementType Name="sp_GetEstadosResult">
-      <Column Name="IdEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="IdPais" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_InsertDetalleInmueble" Method="sp_InsertDetalleInmueble">
-    <Parameter Name="NumRecamaras" Parameter="numRecamaras" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumBanos" Parameter="numBanos" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumServicios" Parameter="numServicios" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumEstacionamientos" Parameter="numEstacionamientos" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ConAlberca" Parameter="conAlberca" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumM2" Parameter="numM2" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumTotal" Parameter="numTotal" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_InsertImagenesInmueble" Method="sp_InsertImagenesInmueble">
-    <Parameter Name="NombreImagen" Parameter="nombreImagen" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="UbicacionImagen" Parameter="ubicacionImagen" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_InsertUsuariosInmuebles" Method="sp_InsertUsuariosInmuebles">
-    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <Parameter Name="FechaAlta" Parameter="fechaAlta" Type="System.DateTime" DbType="DateTime" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_GetAsentamientos" Method="sp_GetAsentamientos">
-    <Parameter Name="IdMunicipio" Parameter="idMunicipio" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_GetAsentamientosResult">
-      <Column Name="IdAsentamiento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="CP" Type="System.String" DbType="Char(5)" CanBeNull="true" />
-      <Column Name="IdMunicipio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_GetImagenesInmueble" Method="sp_GetImagenesInmueble">
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_GetImagenesInmuebleResult">
-      <Column Name="IdImagenInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NombreImagen" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="UbicacionImagen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_GetUsuarioPermisos" Method="sp_GetUsuarioPermisos">
-    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_GetUsuarioPermisosResult">
-      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Paterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Materno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_GetValidaUsuario" Method="sp_GetValidaUsuario">
-    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(200)" />
-    <ElementType Name="sp_GetValidaUsuarioResult">
-      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Paterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Materno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NombreUsuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Movil" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="Activo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
   </Function>
   <Function Name="dbo.sp_DeleteArchivosInmueble" Method="sp_DeleteArchivosInmueble">
     <Parameter Name="IdArchivoInmueble" Parameter="idArchivoInmueble" Type="System.Int32" DbType="Int" />
@@ -214,74 +16,10 @@
     <Parameter Name="IdImagenInmueble" Parameter="idImagenInmueble" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_InsertArchivosInmueble" Method="sp_InsertArchivosInmueble">
-    <Parameter Name="NombreArchivo" Parameter="nombreArchivo" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="UbicacionArchivo" Parameter="ubicacionArchivo" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_GetArchivosInmueble" Method="sp_GetArchivosInmueble">
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_GetArchivosInmuebleResult">
-      <Column Name="IdArchivoInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NombreArchivo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="UbicacionArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_InsertArrendador" Method="sp_InsertArrendador">
-    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Materno" Parameter="materno" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="Movil" Parameter="movil" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="Fijo" Parameter="fijo" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="FechaAlta" Parameter="fechaAlta" Type="System.DateTime" DbType="DateTime" />
+  <Function Name="dbo.sp_DeleteUsuario" Method="sp_DeleteUsuario">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
     <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdTipoIdentificacion" Parameter="idTipoIdentificacion" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_UpdateArrendador" Method="sp_UpdateArrendador">
-    <Parameter Name="IdArrendador" Parameter="idArrendador" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Materno" Parameter="materno" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="Movil" Parameter="movil" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="Fijo" Parameter="fijo" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="FechaBaja" Parameter="fechaBaja" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdTipoIdentificacion" Parameter="idTipoIdentificacion" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_InsertArchivosArrendador" Method="sp_InsertArchivosArrendador">
-    <Parameter Name="NombreArchivo" Parameter="nombreArchivo" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="UbicacionArchivo" Parameter="ubicacionArchivo" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="IdArrendador" Parameter="idArrendador" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_InsertArchivosArrendatario" Method="sp_InsertArchivosArrendatario">
-    <Parameter Name="NombreArchivo" Parameter="nombreArchivo" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="UbicacionArchivo" Parameter="ubicacionArchivo" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="IdArrendatario" Parameter="idArrendatario" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_DeleteArchivosArrendador" Method="sp_DeleteArchivosArrendador">
-    <Parameter Name="IdArchivoArrendador" Parameter="idArchivoArrendador" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_DeleteArchivosArrendatario" Method="sp_DeleteArchivosArrendatario">
-    <Parameter Name="IdArchivoArrendatario" Parameter="idArchivoArrendatario" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_GetArchivosArrendatario" Method="sp_GetArchivosArrendatario">
-    <Parameter Name="IdArrendatario" Parameter="idArrendatario" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_GetArchivosArrendatarioResult">
-      <Column Name="IdArchivoArrendatario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NombreArchivo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="UbicacionArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="IdArrendatario" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
   </Function>
   <Function Name="dbo.sp_GetArchivosArrendador" Method="sp_GetArchivosArrendador">
     <Parameter Name="IdArrendador" Parameter="idArrendador" Type="System.Int32" DbType="Int" />
@@ -292,85 +30,40 @@
       <Column Name="IdArrendador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_InsertArrendatarios" Method="sp_InsertArrendatarios">
-    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Materno" Parameter="materno" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Edad" Parameter="edad" Type="System.Int32" DbType="Int" />
-    <Parameter Name="UltimoGradoEstudio" Parameter="ultimoGradoEstudio" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="CarreraOficio" Parameter="carreraOficio" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="IdAsentamiento" Parameter="idAsentamiento" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumPersonasHabitar" Parameter="numPersonasHabitar" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumPersonasDependen" Parameter="numPersonasDependen" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdEstadoCivil" Parameter="idEstadoCivil" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Movil" Parameter="movil" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="EmpresaTrabaja" Parameter="empresaTrabaja" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="Antiguedad" Parameter="antiguedad" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Horario" Parameter="horario" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="DireccionEmpleo" Parameter="direccionEmpleo" Type="System.String" DbType="VarChar(200)" />
-    <Parameter Name="Fijo" Parameter="fijo" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="NombreJefe" Parameter="nombreJefe" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="PuestoEmpleo" Parameter="puestoEmpleo" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="SalarioMensual" Parameter="salarioMensual" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="MotivoCambio" Parameter="motivoCambio" Type="System.String" DbType="VarChar(250)" />
-    <Parameter Name="RelacionFiador" Parameter="relacionFiador" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="NombreFiador" Parameter="nombreFiador" Type="System.String" DbType="VarChar(150)" />
-    <Parameter Name="DireccionFiador" Parameter="direccionFiador" Type="System.String" DbType="VarChar(200)" />
-    <Parameter Name="TelefonoFiador" Parameter="telefonoFiador" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="MovilFiador" Parameter="movilFiador" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="IdEstadoCivilFiador" Parameter="idEstadoCivilFiador" Type="System.Int32" DbType="Int" />
-    <Parameter Name="TiempoMatrimonio" Parameter="tiempoMatrimonio" Type="System.Int32" DbType="Int" />
-    <Parameter Name="EdadFiador" Parameter="edadFiador" Type="System.Int32" DbType="Int" />
-    <Parameter Name="EmpresaTrabajaFiador" Parameter="empresaTrabajaFiador" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="DireccionEmpleoFiador" Parameter="direccionEmpleoFiador" Type="System.String" DbType="VarChar(250)" />
-    <Parameter Name="PuestoEmpleoFiador" Parameter="puestoEmpleoFiador" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="SalarioMensualFiador" Parameter="salarioMensualFiador" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdTipoIdentificacion" Parameter="idTipoIdentificacion" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_UpdateArrendatarios" Method="sp_UpdateArrendatarios">
+  <Function Name="dbo.sp_GetArchivosArrendatario" Method="sp_GetArchivosArrendatario">
     <Parameter Name="IdArrendatario" Parameter="idArrendatario" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Materno" Parameter="materno" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Edad" Parameter="edad" Type="System.Int32" DbType="Int" />
-    <Parameter Name="UltimoGradoEstudio" Parameter="ultimoGradoEstudio" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="CarreraOficio" Parameter="carreraOficio" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="IdAsentamiento" Parameter="idAsentamiento" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumPersonasHabitar" Parameter="numPersonasHabitar" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumPersonasDependen" Parameter="numPersonasDependen" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdEstadoCivil" Parameter="idEstadoCivil" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Movil" Parameter="movil" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="EmpresaTrabaja" Parameter="empresaTrabaja" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="Antiguedad" Parameter="antiguedad" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Horario" Parameter="horario" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="DireccionEmpleo" Parameter="direccionEmpleo" Type="System.String" DbType="VarChar(200)" />
-    <Parameter Name="Fijo" Parameter="fijo" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="NombreJefe" Parameter="nombreJefe" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="PuestoEmpleo" Parameter="puestoEmpleo" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="SalarioMensual" Parameter="salarioMensual" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="MotivoCambio" Parameter="motivoCambio" Type="System.String" DbType="VarChar(250)" />
-    <Parameter Name="RelacionFiador" Parameter="relacionFiador" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="NombreFiador" Parameter="nombreFiador" Type="System.String" DbType="VarChar(150)" />
-    <Parameter Name="DireccionFiador" Parameter="direccionFiador" Type="System.String" DbType="VarChar(200)" />
-    <Parameter Name="TelefonoFiador" Parameter="telefonoFiador" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="MovilFiador" Parameter="movilFiador" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="IdEstadoCivilFiador" Parameter="idEstadoCivilFiador" Type="System.Int32" DbType="Int" />
-    <Parameter Name="TiempoMatrimonio" Parameter="tiempoMatrimonio" Type="System.Int32" DbType="Int" />
-    <Parameter Name="EdadFiador" Parameter="edadFiador" Type="System.Int32" DbType="Int" />
-    <Parameter Name="EmpresaTrabajaFiador" Parameter="empresaTrabajaFiador" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="DireccionEmpleoFiador" Parameter="direccionEmpleoFiador" Type="System.String" DbType="VarChar(250)" />
-    <Parameter Name="PuestoEmpleoFiador" Parameter="puestoEmpleoFiador" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="SalarioMensualFiador" Parameter="salarioMensualFiador" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdTipoIdentificacion" Parameter="idTipoIdentificacion" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
+    <ElementType Name="sp_GetArchivosArrendatarioResult">
+      <Column Name="IdArchivoArrendatario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreArchivo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UbicacionArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdArrendatario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
   </Function>
-  <Function Name="dbo.sp_GetEstadoCivil" Method="sp_GetEstadoCivil">
-    <ElementType Name="sp_GetEstadoCivilResult">
-      <Column Name="IdEstadoCivil" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+  <Function Name="dbo.sp_GetArchivosInmueble" Method="sp_GetArchivosInmueble">
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetArchivosInmuebleResult">
+      <Column Name="IdArchivoInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreArchivo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UbicacionArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetArrendadores" Method="sp_GetArrendadores">
+    <Parameter Name="IdArrendador" Parameter="idArrendador" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetArrendadoresResult">
+      <Column Name="IdArrendador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Paterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Materno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(202)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Movil" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Fijo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FechaAlta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaBaja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdTipoIdentificacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.sp_GetArrendatarios" Method="sp_GetArrendatarios">
@@ -418,40 +111,14 @@
       <Column Name="IdTipoIdentificacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_GetArrendadores" Method="sp_GetArrendadores">
-    <Parameter Name="IdArrendador" Parameter="idArrendador" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_GetArrendadoresResult">
-      <Column Name="IdArrendador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombres" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Paterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Materno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(202)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Movil" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Fijo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="FechaAlta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FechaBaja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Activo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IdTipoIdentificacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+  <Function Name="dbo.sp_GetAsentamientos" Method="sp_GetAsentamientos">
+    <Parameter Name="IdMunicipio" Parameter="idMunicipio" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetAsentamientosResult">
+      <Column Name="IdAsentamiento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CP" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="IdMunicipio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.sp_GetNumeroContrato" Method="sp_GetNumeroContrato">
-    <ElementType Name="sp_GetNumeroContratoResult">
-      <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_InsertArchivosContratos" Method="sp_InsertArchivosContratos">
-    <Parameter Name="NombreArchivo" Parameter="nombreArchivo" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="UbicacionArchivo" Parameter="ubicacionArchivo" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="IdContrato" Parameter="idContrato" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_InsertArchivosCartas" Method="sp_InsertArchivosCartas">
-    <Parameter Name="NombreArchivo" Parameter="nombreArchivo" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="UbicacionArchivo" Parameter="ubicacionArchivo" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="IdContrato" Parameter="idContrato" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_GetContratos" Method="sp_GetContratos">
     <ElementType Name="sp_GetContratosResult">
@@ -479,21 +146,59 @@
       <Column Name="Activo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_UpdateDetalleInmuebles" Method="sp_UpdateDetalleInmuebles">
-    <Parameter Name="IdDetalleInmueble" Parameter="idDetalleInmueble" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumRecamaras" Parameter="numRecamaras" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumBanos" Parameter="numBanos" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumServicios" Parameter="numServicios" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumEstacionamientos" Parameter="numEstacionamientos" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ConAlberca" Parameter="conAlberca" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumM2" Parameter="numM2" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NumTotal" Parameter="numTotal" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
+  <Function Name="dbo.sp_GetContratosActivos" Method="sp_GetContratosActivos">
+    <ElementType Name="sp_GetContratosActivosResult">
+      <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumContrato" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContratoMeses" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContratoAnio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaVigenciaInicio" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FechaVigenciaFin" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="IdArrendador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreArrendador" Type="System.String" DbType="VarChar(151)" CanBeNull="true" />
+      <Column Name="IdArrendatario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreArrendatario" Type="System.String" DbType="VarChar(151)" CanBeNull="true" />
+      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreInmueble" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="IdArchivoContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Contrato" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UbicacionContrato" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdArchivoCarta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Carta" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UbicacionCarta" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FechaAlta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
-  <Function Name="dbo.sp_UpdateUsuariosInmuebles" Method="sp_UpdateUsuariosInmuebles">
-    <Parameter Name="IdUsuarioInmueble" Parameter="idUsuarioInmueble" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
+  <Function Name="dbo.sp_GetEstadoCivil" Method="sp_GetEstadoCivil">
+    <ElementType Name="sp_GetEstadoCivilResult">
+      <Column Name="IdEstadoCivil" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetEstados" Method="sp_GetEstados">
+    <ElementType Name="sp_GetEstadosResult">
+      <Column Name="IdEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdPais" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetEstatusInmueble" Method="sp_GetEstatusInmueble">
+    <ElementType Name="sp_GetEstatusInmuebleResult">
+      <Column Name="IdEstatusInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetImagenesInmueble" Method="sp_GetImagenesInmueble">
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetImagenesInmuebleResult">
+      <Column Name="IdImagenInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreImagen" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UbicacionImagen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
   <Function Name="dbo.sp_GetInmuebles" Method="sp_GetInmuebles">
     <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
@@ -534,6 +239,236 @@
       <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_GetMunicipios" Method="sp_GetMunicipios">
+    <Parameter Name="IdEstado" Parameter="idEstado" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetMunicipiosResult">
+      <Column Name="IdMunicipio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetNumeroContrato" Method="sp_GetNumeroContrato">
+    <ElementType Name="sp_GetNumeroContratoResult">
+      <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetPagosInmuebles" Method="sp_GetPagosInmuebles">
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetPagosInmueblesResult">
+      <Column Name="IdPagoInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdTipoPago" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="FechaPago" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetPaises" Method="sp_GetPaises">
+    <ElementType Name="sp_GetPaisesResult">
+      <Column Name="IdPais" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetReporteContratos" Method="sp_GetReporteContratos">
+    <ElementType Name="sp_GetReporteContratosResult">
+      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreInmueble" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumContrato" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreArrendatario" Type="System.String" DbType="VarChar(151)" CanBeNull="true" />
+      <Column Name="CostoTotal" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="RentaMensual" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CostoMto" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="FechaPago" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetRoles" Method="sp_GetRoles">
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetRolesResult">
+      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetTipoPago" Method="sp_GetTipoPago">
+    <ElementType Name="sp_GetTipoPagoResult">
+      <Column Name="IdTipoPago" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetTipoPropiedad" Method="sp_GetTipoPropiedad">
+    <Parameter Name="IdTipoPropiedad" Parameter="idTipoPropiedad" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetTipoPropiedadResult">
+      <Column Name="IdTipoPropiedad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetTiposIdentificacion" Method="sp_GetTiposIdentificacion">
+    <Parameter Name="IdTipoIdentificacion" Parameter="idTipoIdentificacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetTiposIdentificacionResult">
+      <Column Name="IdTipoIdentificacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetUsuarioPermisos" Method="sp_GetUsuarioPermisos">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetUsuarioPermisosResult">
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetUsuarios" Method="sp_GetUsuarios">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetUsuariosResult">
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Paterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Materno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreUsuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Movil" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetUsuariosRoles" Method="sp_GetUsuariosRoles">
+    <Parameter Name="IdUsuarioRol" Parameter="idUsuarioRol" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetUsuariosRolesResult">
+      <Column Name="IdUsuarioRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="IdRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetValidaUsuario" Method="sp_GetValidaUsuario">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="sp_GetValidaUsuarioResult">
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Paterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Materno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreUsuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Movil" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_InsertArchivosArrendador" Method="sp_InsertArchivosArrendador">
+    <Parameter Name="NombreArchivo" Parameter="nombreArchivo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="UbicacionArchivo" Parameter="ubicacionArchivo" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdArrendador" Parameter="idArrendador" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertArchivosArrendatario" Method="sp_InsertArchivosArrendatario">
+    <Parameter Name="NombreArchivo" Parameter="nombreArchivo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="UbicacionArchivo" Parameter="ubicacionArchivo" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdArrendatario" Parameter="idArrendatario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertArchivosCartas" Method="sp_InsertArchivosCartas">
+    <Parameter Name="NombreArchivo" Parameter="nombreArchivo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="UbicacionArchivo" Parameter="ubicacionArchivo" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdContrato" Parameter="idContrato" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertArchivosContratos" Method="sp_InsertArchivosContratos">
+    <Parameter Name="NombreArchivo" Parameter="nombreArchivo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="UbicacionArchivo" Parameter="ubicacionArchivo" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdContrato" Parameter="idContrato" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertArchivosInmueble" Method="sp_InsertArchivosInmueble">
+    <Parameter Name="NombreArchivo" Parameter="nombreArchivo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="UbicacionArchivo" Parameter="ubicacionArchivo" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertArrendador" Method="sp_InsertArrendador">
+    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Materno" Parameter="materno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Movil" Parameter="movil" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Fijo" Parameter="fijo" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="FechaAlta" Parameter="fechaAlta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdTipoIdentificacion" Parameter="idTipoIdentificacion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertArrendatarios" Method="sp_InsertArrendatarios">
+    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Materno" Parameter="materno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Edad" Parameter="edad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UltimoGradoEstudio" Parameter="ultimoGradoEstudio" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CarreraOficio" Parameter="carreraOficio" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="IdAsentamiento" Parameter="idAsentamiento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumPersonasHabitar" Parameter="numPersonasHabitar" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumPersonasDependen" Parameter="numPersonasDependen" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdEstadoCivil" Parameter="idEstadoCivil" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Movil" Parameter="movil" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpresaTrabaja" Parameter="empresaTrabaja" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Antiguedad" Parameter="antiguedad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Horario" Parameter="horario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DireccionEmpleo" Parameter="direccionEmpleo" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Fijo" Parameter="fijo" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="NombreJefe" Parameter="nombreJefe" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PuestoEmpleo" Parameter="puestoEmpleo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="SalarioMensual" Parameter="salarioMensual" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="MotivoCambio" Parameter="motivoCambio" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="RelacionFiador" Parameter="relacionFiador" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NombreFiador" Parameter="nombreFiador" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="DireccionFiador" Parameter="direccionFiador" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="TelefonoFiador" Parameter="telefonoFiador" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="MovilFiador" Parameter="movilFiador" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="IdEstadoCivilFiador" Parameter="idEstadoCivilFiador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TiempoMatrimonio" Parameter="tiempoMatrimonio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EdadFiador" Parameter="edadFiador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EmpresaTrabajaFiador" Parameter="empresaTrabajaFiador" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="DireccionEmpleoFiador" Parameter="direccionEmpleoFiador" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="PuestoEmpleoFiador" Parameter="puestoEmpleoFiador" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="SalarioMensualFiador" Parameter="salarioMensualFiador" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdTipoIdentificacion" Parameter="idTipoIdentificacion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertContratos" Method="sp_InsertContratos">
+    <Parameter Name="NumContrato" Parameter="numContrato" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ContratoMeses" Parameter="contratoMeses" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ContratoAnio" Parameter="contratoAnio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaVigenciaInicio" Parameter="fechaVigenciaInicio" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="FechaVigenciaFin" Parameter="fechaVigenciaFin" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="IdArrendador" Parameter="idArrendador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdArrendatario" Parameter="idArrendatario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdContrato" Parameter="idContrato" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertDetalleInmueble" Method="sp_InsertDetalleInmueble">
+    <Parameter Name="NumRecamaras" Parameter="numRecamaras" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumBanos" Parameter="numBanos" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumServicios" Parameter="numServicios" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumEstacionamientos" Parameter="numEstacionamientos" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ConAlberca" Parameter="conAlberca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumM2" Parameter="numM2" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumTotal" Parameter="numTotal" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertImagenesInmueble" Method="sp_InsertImagenesInmueble">
+    <Parameter Name="NombreImagen" Parameter="nombreImagen" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="UbicacionImagen" Parameter="ubicacionImagen" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.sp_InsertInmuebles" Method="sp_InsertInmuebles">
     <Parameter Name="NombreInmueble" Parameter="nombreInmueble" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(250)" />
@@ -549,6 +484,109 @@
     <Parameter Name="IdEstatusInmueble" Parameter="idEstatusInmueble" Type="System.Int32" DbType="Int" />
     <Parameter Name="Calle" Parameter="calle" Type="System.String" DbType="VarChar(150)" />
     <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertPagosInmuebles" Method="sp_InsertPagosInmuebles">
+    <Parameter Name="IdTipoPago" Parameter="idTipoPago" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cantidad" Parameter="cantidad" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="FechaPago" Parameter="fechaPago" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertRoles" Method="sp_InsertRoles">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertTipoIdentificacion" Method="sp_InsertTipoIdentificacion">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertTipoPropiedad" Method="sp_InsertTipoPropiedad">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUsuario" Method="sp_InsertUsuario">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Materno" Parameter="materno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NombreUsuario" Parameter="nombreUsuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Movil" Parameter="movil" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUsuariosInmuebles" Method="sp_InsertUsuariosInmuebles">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaAlta" Parameter="fechaAlta" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUsuariosRoles" Method="sp_InsertUsuariosRoles">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateArrendador" Method="sp_UpdateArrendador">
+    <Parameter Name="IdArrendador" Parameter="idArrendador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Materno" Parameter="materno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Movil" Parameter="movil" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Fijo" Parameter="fijo" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="FechaBaja" Parameter="fechaBaja" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdTipoIdentificacion" Parameter="idTipoIdentificacion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateArrendatarios" Method="sp_UpdateArrendatarios">
+    <Parameter Name="IdArrendatario" Parameter="idArrendatario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Materno" Parameter="materno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Edad" Parameter="edad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UltimoGradoEstudio" Parameter="ultimoGradoEstudio" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CarreraOficio" Parameter="carreraOficio" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="IdAsentamiento" Parameter="idAsentamiento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumPersonasHabitar" Parameter="numPersonasHabitar" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumPersonasDependen" Parameter="numPersonasDependen" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdEstadoCivil" Parameter="idEstadoCivil" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Movil" Parameter="movil" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpresaTrabaja" Parameter="empresaTrabaja" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Antiguedad" Parameter="antiguedad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Horario" Parameter="horario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DireccionEmpleo" Parameter="direccionEmpleo" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Fijo" Parameter="fijo" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="NombreJefe" Parameter="nombreJefe" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PuestoEmpleo" Parameter="puestoEmpleo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="SalarioMensual" Parameter="salarioMensual" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="MotivoCambio" Parameter="motivoCambio" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="RelacionFiador" Parameter="relacionFiador" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NombreFiador" Parameter="nombreFiador" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="DireccionFiador" Parameter="direccionFiador" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="TelefonoFiador" Parameter="telefonoFiador" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="MovilFiador" Parameter="movilFiador" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="IdEstadoCivilFiador" Parameter="idEstadoCivilFiador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TiempoMatrimonio" Parameter="tiempoMatrimonio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EdadFiador" Parameter="edadFiador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EmpresaTrabajaFiador" Parameter="empresaTrabajaFiador" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="DireccionEmpleoFiador" Parameter="direccionEmpleoFiador" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="PuestoEmpleoFiador" Parameter="puestoEmpleoFiador" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="SalarioMensualFiador" Parameter="salarioMensualFiador" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdTipoIdentificacion" Parameter="idTipoIdentificacion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateDetalleInmuebles" Method="sp_UpdateDetalleInmuebles">
+    <Parameter Name="IdDetalleInmueble" Parameter="idDetalleInmueble" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumRecamaras" Parameter="numRecamaras" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumBanos" Parameter="numBanos" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumServicios" Parameter="numServicios" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumEstacionamientos" Parameter="numEstacionamientos" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ConAlberca" Parameter="conAlberca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumM2" Parameter="numM2" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NumTotal" Parameter="numTotal" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_UpdateInmuebles" Method="sp_UpdateInmuebles">
@@ -568,88 +606,48 @@
     <Parameter Name="Calle" Parameter="calle" Type="System.String" DbType="VarChar(150)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_InsertContratos" Method="sp_InsertContratos">
-    <Parameter Name="NumContrato" Parameter="numContrato" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ContratoMeses" Parameter="contratoMeses" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ContratoAnio" Parameter="contratoAnio" Type="System.Int32" DbType="Int" />
-    <Parameter Name="FechaVigenciaInicio" Parameter="fechaVigenciaInicio" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="FechaVigenciaFin" Parameter="fechaVigenciaFin" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="IdArrendador" Parameter="idArrendador" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdArrendatario" Parameter="idArrendatario" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IdContrato" Parameter="idContrato" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_GetTipoPago" Method="sp_GetTipoPago">
-    <ElementType Name="sp_GetTipoPagoResult">
-      <Column Name="IdTipoPago" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_InsertPagosInmuebles" Method="sp_InsertPagosInmuebles">
-    <Parameter Name="IdTipoPago" Parameter="idTipoPago" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Cantidad" Parameter="cantidad" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="FechaPago" Parameter="fechaPago" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_GetPagosInmuebles" Method="sp_GetPagosInmuebles">
-    <Parameter Name="IdInmueble" Parameter="idInmueble" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_GetPagosInmueblesResult">
-      <Column Name="IdPagoInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IdTipoPago" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="FechaPago" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.sp_UpdatePagosInmueble" Method="sp_UpdatePagosInmueble">
     <Parameter Name="Cantidad" Parameter="cantidad" Type="System.Decimal" DbType="Decimal(18,0)" />
     <Parameter Name="FechaPago" Parameter="fechaPago" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="IdPagoInmueble" Parameter="idPagoInmueble" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_GetContratosActivos" Method="sp_GetContratosActivos">
-    <ElementType Name="sp_GetContratosActivosResult">
-      <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NumContrato" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ContratoMeses" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ContratoAnio" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FechaVigenciaInicio" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="FechaVigenciaFin" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="IdArrendador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NombreArrendador" Type="System.String" DbType="VarChar(151)" CanBeNull="true" />
-      <Column Name="IdArrendatario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NombreArrendatario" Type="System.String" DbType="VarChar(151)" CanBeNull="true" />
-      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NombreInmueble" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
-      <Column Name="IdArchivoContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Contrato" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="UbicacionContrato" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="IdArchivoCarta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Carta" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="UbicacionCarta" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="FechaAlta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Activo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
+  <Function Name="dbo.sp_UpdateRoles" Method="sp_UpdateRoles">
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_GetReporteContratos" Method="sp_GetReporteContratos">
-    <ElementType Name="sp_GetReporteContratosResult">
-      <Column Name="IdInmueble" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NombreInmueble" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NumContrato" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NombreArrendatario" Type="System.String" DbType="VarChar(151)" CanBeNull="true" />
-      <Column Name="CostoTotal" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="RentaMensual" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="CostoMto" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="FechaPago" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-    </ElementType>
+  <Function Name="dbo.sp_UpdateTipoIdentificacion" Method="sp_UpdateTipoIdentificacion">
+    <Parameter Name="IdTipoIdentificacion" Parameter="idTipoIdentificacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateTipoPropiedad" Method="sp_UpdateTipoPropiedad">
+    <Parameter Name="IdTipoPropiedad" Parameter="idTipoPropiedad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateUsuario" Method="sp_UpdateUsuario">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Paterno" Parameter="paterno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Materno" Parameter="materno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NombreUsuario" Parameter="nombreUsuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Movil" Parameter="movil" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateUsuariosInmuebles" Method="sp_UpdateUsuariosInmuebles">
+    <Parameter Name="IdUsuarioInmueble" Parameter="idUsuarioInmueble" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateUsuariosRoles" Method="sp_UpdateUsuariosRoles">
+    <Parameter Name="IdUsuarioRol" Parameter="idUsuarioRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdRol" Parameter="idRol" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

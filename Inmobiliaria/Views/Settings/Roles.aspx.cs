@@ -25,7 +25,7 @@ namespace Inmobiliaria.Views.Settings
 
         private void GetRoles(int busqueda, int idRol)
         {
-            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             DataSet dsRoles = new DataSet();
 
             try
@@ -115,7 +115,7 @@ namespace Inmobiliaria.Views.Settings
 
         protected void btn_Guardar_Click(object sender, EventArgs e)
         {
-            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
 
             try
             {

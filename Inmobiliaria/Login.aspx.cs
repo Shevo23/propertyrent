@@ -16,7 +16,7 @@ namespace Inmobiliaria.Views
     {
         #region Variables
 
-        BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
+        BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
         public enum MessageType { Exito, Error, Importante, Advertencia };
 
         #endregion

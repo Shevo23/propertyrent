@@ -22,7 +22,7 @@ namespace Inmobiliaria.Views.Pagos
 
         private void GetTipoPago()
         {
-            BTLInmobiliaria.Pagos pagos = new BTLInmobiliaria.Pagos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Pagos pagos = new BTLInmobiliaria.Pagos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             DataSet dsTipoPago = new DataSet();
 
             try
@@ -48,7 +48,7 @@ namespace Inmobiliaria.Views.Pagos
 
         private void GetPagosInmueble(int idPagoInmueble, int idInmueble)
         {
-            BTLInmobiliaria.Pagos pagos = new BTLInmobiliaria.Pagos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Pagos pagos = new BTLInmobiliaria.Pagos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             DataSet dsPagos = new DataSet();
 
             try
@@ -92,7 +92,7 @@ namespace Inmobiliaria.Views.Pagos
 
         private void GetInmuebles()
         {
-            BTLInmobiliaria.Contratos contratos = new BTLInmobiliaria.Contratos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Contratos contratos = new BTLInmobiliaria.Contratos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             DataSet dsContratos = new DataSet();
 
             try
@@ -195,7 +195,7 @@ namespace Inmobiliaria.Views.Pagos
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            BTLInmobiliaria.Pagos pagos = new BTLInmobiliaria.Pagos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Pagos pagos = new BTLInmobiliaria.Pagos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
 
             try
             {

@@ -27,7 +27,7 @@ namespace Inmobiliaria.Views.Settings
 
         private void GetUsuarios(int busqueda, int idUsuario)
         {
-            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             DataSet dtUsuario = new DataSet();
             Cifrados cifrados = new Cifrados();
 
@@ -113,7 +113,7 @@ namespace Inmobiliaria.Views.Settings
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             Cifrados cifrados = new Cifrados();
             string pass = string.Empty;
 

@@ -19,7 +19,7 @@ namespace Inmobiliaria.Master
 
         private void MuestraMenu(string usuario)
         {
-            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
             DataSet dataSet = new DataSet();
             string perfil;
 

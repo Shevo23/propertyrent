@@ -17,7 +17,7 @@ namespace Inmobiliaria.Views
 
         private void GetReporteContratos()
         {
-            BTLInmobiliaria.Reportes reportes = new BTLInmobiliaria.Reportes(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Reportes reportes = new BTLInmobiliaria.Reportes(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             DataSet dsContratos = new DataSet();
 
             try

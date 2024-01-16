@@ -15,7 +15,7 @@ namespace Inmobiliaria.Views.Settings
 
         private void GetRoles(int busqueda, int idRol)
         {
-            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             DataSet dsRoles = new DataSet();
 
             try
@@ -53,7 +53,7 @@ namespace Inmobiliaria.Views.Settings
 
         private void GetUsuarios(int busqueda, int idUsuario)
         {
-            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             DataSet dtUsuario = new DataSet();
 
             try
@@ -94,7 +94,7 @@ namespace Inmobiliaria.Views.Settings
 
         private void GetUsuariosRoles(int busqueda, int idUsuarioRol)
         {
-            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
             DataSet dsUsuariosRoles = new DataSet();
 
             try
@@ -183,7 +183,7 @@ namespace Inmobiliaria.Views.Settings
 
         protected void btn_Guardar_Click(object sender, EventArgs e)
         {
-            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDInmuebles"].ToString());
+            BTLInmobiliaria.Catalogos catalogos = new BTLInmobiliaria.Catalogos(ConfigurationManager.ConnectionStrings["BDPropertyRent"].ToString());
 
             var idUsuario = int.Parse(cmbUsuarios.SelectedValue);
             var idRol = int.Parse(cmbRoles.SelectedValue);
