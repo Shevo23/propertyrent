@@ -114,15 +114,6 @@ namespace Inmobiliaria.Views.Pagos
         protected global::System.Web.UI.WebControls.DropDownList cmbInmueble;
 
         /// <summary>
-        /// grdPagosInmueble control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdPagosInmueble;
-
-        /// <summary>
         /// btn_Agregar control.
         /// </summary>
         /// <remarks>
@@ -130,5 +121,14 @@ namespace Inmobiliaria.Views.Pagos
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Agregar;
+
+        /// <summary>
+        /// grdPagosInmueble control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdPagosInmueble;
     }
 }

@@ -97,21 +97,25 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <asp:Button ID="btn_Agregar" runat="server" Text="Agregar pago" CssClass="btn btn-default float-right" data-toggle="modal" data-target="#divAgregar" OnClick="btn_Agregar_Click" style="background-color: #0c2b54; color: white"  />
+                                    </div>
+                                </div>
                                 <br />
-                                <div class="table table-hover table-responsive" style="font-size: small">
+                                <div class="table table-responsive" style="font-size: small">
                                     <asp:GridView ID="grdPagosInmueble" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered"
-                                        DataKeyNames="IdPagoInmueble" AllowPaging="true" PagerSettings-Mode="Numeric" PageSize="10"
-                                        OnPageIndexChanging="grdPagosInmueble_PageIndexChanging">
+                                        DataKeyNames="IdPagoInmueble">
                                         <Columns>
-                                            <asp:TemplateField HeaderStyle-BackColor="#0c2b54">
+                                            <asp:TemplateField HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton runat="server" ID="ibtnEditar" ToolTip="Editar" ImageUrl="~/Images/editar.png" Width="25px" data-toggle="modal" data-target="#divAgregar" OnClick="ibtnEditar_Click" />
+                                                    <asp:ImageButton runat="server" ID="ibtnEditar" ToolTip="Editar" ImageUrl="~/Images/editar.png" Width="20px" data-toggle="modal" data-target="#divAgregar" OnClick="ibtnEditar_Click" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:BoundField DataField="IdPagoInmueble" HeaderText="#" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                             <asp:BoundField DataField="IdTipoPago" HeaderText="IdTipoPago" Visible="false" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                             <asp:BoundField DataField="Descripcion" HeaderText="Tipo de pago" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
-                                            <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" HeaderStyle-BackColor="#0c2b54" DataFormatString="{0:C}" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
+                                            <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" DataFormatString="{0:C}" HeaderStyle-HorizontalAlign="Center" />
                                             <asp:BoundField DataField="FechaPago" HeaderText="Fecha de pago" DataFormatString="{0:dd/MM/yyyy}" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                             <asp:BoundField DataField="IdInmueble" HeaderText="IdInmueble" Visible="false" HeaderStyle-BackColor="#0c2b54" HeaderStyle-ForeColor="White" HeaderStyle-HorizontalAlign="Center" />
                                         </Columns>
@@ -125,11 +129,6 @@
                                 <asp:AsyncPostBackTrigger EventName="Click" ControlID="btn_Agregar" />
                             </Triggers>
                         </asp:UpdatePanel>
-                    </div>
-                    <div class="card-footer">
-                        <div class="col-lg-12">
-                            <asp:Button ID="btn_Agregar" runat="server" Text="Agregar pago" CssClass="btn float-right" BackColor="#0c2b54" ForeColor="White" data-toggle="modal" data-target="#divAgregar" OnClick="btn_Agregar_Click" />
-                        </div>
                     </div>
                 </div>
             </div>
